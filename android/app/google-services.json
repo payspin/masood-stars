@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "302414225946",
+    "project_id": "oozf-aaff4",
+    "storage_bucket": "oozf-aaff4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302414225946:android:afcf5acbc61c08436027a3",
+        "android_client_info": {
+          "package_name": "OOZF.Eventapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302414225946-c4rpjv9u3n5bjheasvq5lp6nr8mhumj6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "OOZF.Eventapp",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "302414225946-d3p862f835vcijog3td0fbfj6v6u6sr1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkJO59mmOfE0y8yjGAOuNkPtsv0DjwFCs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302414225946-d3p862f835vcijog3td0fbfj6v6u6sr1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "302414225946-tpnh93lud0uaqjnao869hfakod5kdfmv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "OOZF.Eventapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
