@@ -1,3 +1,4 @@
+import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'event_widget.dart' show EventWidget;
@@ -15,19 +16,19 @@ class EventModel extends FlutterFlowModel<EventWidget> {
   List<String>? get choiceChipsValues => choiceChipsValueController?.value;
   set choiceChipsValues(List<String>? val) =>
       choiceChipsValueController?.value = val;
-  // State field(s) for TabBar widget.
-  TabController? tabBarController;
-  int get tabBarCurrentIndex =>
-      tabBarController != null ? tabBarController!.index : 0;
+  // Model for NAVBAR component.
+  late NavbarModel navbarModel;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    navbarModel = createModel(context, () => NavbarModel());
+  }
 
   @override
   void dispose() {
     textFieldFocusNode?.dispose();
     textController?.dispose();
 
-    tabBarController?.dispose();
+    navbarModel.dispose();
   }
 }
