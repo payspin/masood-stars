@@ -133,13 +133,13 @@ class _LoginEventManagerOTPWidgetState extends State<LoginEventManagerOTPWidget>
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return const Scaffold(
+          return Scaffold(
             body: Center(
               child: SizedBox(
                 width: 40.0,
                 height: 40.0,
                 child: SpinKitRipple(
-                  color: Color(0xFF5088FA),
+                  color: FlutterFlowTheme.of(context).logoBlue,
                   size: 40.0,
                 ),
               ),

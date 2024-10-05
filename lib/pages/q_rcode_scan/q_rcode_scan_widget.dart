@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'q_rcode_scan_model.dart';
 export 'q_rcode_scan_model.dart';
@@ -844,25 +843,75 @@ class _QRcodeScanWidgetState extends State<QRcodeScanWidget> {
                                                   .asValidator(context),
                                             ),
                                           ),
-                                          Row(
+                                          Column(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
                                             children: [
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(12.0),
+                                                    child: FFButtonWidget(
+                                                      onPressed: () {
+                                                        print(
+                                                            'Button pressed ...');
+                                                      },
+                                                      text: 'QR Code Scanner',
+                                                      icon: const Icon(
+                                                        Icons
+                                                            .qr_code_scanner_sharp,
+                                                        size: 15.0,
+                                                      ),
+                                                      options: FFButtonOptions(
+                                                        width: 160.0,
+                                                        height: 40.0,
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0),
+                                                        iconPadding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Space Grotesk',
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        elevation: 3.0,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                               Padding(
                                                 padding: const EdgeInsets.all(12.0),
                                                 child: FFButtonWidget(
-                                                  onPressed: () async {
-                                                    _model.qrCodeScanOutput =
-                                                        await FlutterBarcodeScanner
-                                                            .scanBarcode(
-                                                      '#C62828', // scanning line color
-                                                      'Cancel', // cancel button text
-                                                      true, // whether to show the flash icon
-                                                      ScanMode.BARCODE,
-                                                    );
-
-                                                    safeSetState(() {});
+                                                  onPressed: () {
+                                                    print('Button pressed ...');
                                                   },
                                                   text: 'QR Code Scanner',
                                                   icon: const Icon(

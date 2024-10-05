@@ -9,6 +9,7 @@ import '/backend/schema/structs/index.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -195,6 +196,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/ruffleDraw',
           requireAuth: true,
           builder: (context, params) => const RuffleDrawWidget(),
+        ),
+        FFRoute(
+          name: 'Event031024',
+          path: '/event031024',
+          requireAuth: true,
+          builder: (context, params) => const Event031024Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -381,12 +388,12 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? const Center(
+              ? Center(
                   child: SizedBox(
                     width: 40.0,
                     height: 40.0,
                     child: SpinKitRipple(
-                      color: Color(0xFF5088FA),
+                      color: FlutterFlowTheme.of(context).logoBlue,
                       size: 40.0,
                     ),
                   ),

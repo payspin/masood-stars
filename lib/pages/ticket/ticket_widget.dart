@@ -151,12 +151,12 @@ class _TicketWidgetState extends State<TicketWidget>
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
-                  return const Center(
+                  return Center(
                     child: SizedBox(
                       width: 40.0,
                       height: 40.0,
                       child: SpinKitRipple(
-                        color: Color(0xFF5088FA),
+                        color: FlutterFlowTheme.of(context).logoBlue,
                         size: 40.0,
                       ),
                     ),
@@ -840,7 +840,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                 // Customize what your widget looks like when it's loading.
                                                                 if (!snapshot
                                                                     .hasData) {
-                                                                  return const Center(
+                                                                  return Center(
                                                                     child:
                                                                         SizedBox(
                                                                       width:
@@ -849,8 +849,8 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                           40.0,
                                                                       child:
                                                                           SpinKitRipple(
-                                                                        color: Color(
-                                                                            0xFF5088FA),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .logoBlue,
                                                                         size:
                                                                             40.0,
                                                                       ),

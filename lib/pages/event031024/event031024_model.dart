@@ -1,17 +1,21 @@
 import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'q_rcode_scan_widget.dart' show QRcodeScanWidget;
+import '/flutter_flow/form_field_controller.dart';
+import 'event031024_widget.dart' show Event031024Widget;
 import 'package:flutter/material.dart';
 
-class QRcodeScanModel extends FlutterFlowModel<QRcodeScanWidget> {
+class Event031024Model extends FlutterFlowModel<Event031024Widget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  var qrCodeOutput = '';
-  var qrCodeOutput = '';
+  // State field(s) for ChoiceChips widget.
+  FormFieldController<List<String>>? choiceChipsValueController;
+  List<String>? get choiceChipsValues => choiceChipsValueController?.value;
+  set choiceChipsValues(List<String>? val) =>
+      choiceChipsValueController?.value = val;
   // Model for NAVBAR component.
   late NavbarModel navbarModel;
 

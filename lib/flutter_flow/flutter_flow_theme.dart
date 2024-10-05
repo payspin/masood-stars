@@ -32,6 +32,34 @@ abstract class FlutterFlowTheme {
   late Color error;
   late Color info;
 
+  late Color customColor1;
+  late Color customColor2;
+  late Color customColor3;
+  late Color customColor4;
+  late Color customColor5;
+  late Color customColor6;
+  late Color customColor7;
+  late Color customColor8;
+  late Color customColor9;
+  late Color customColor10;
+  late Color customColor11;
+  late Color customColor12;
+  late Color bestaward;
+  late Color logoBlue;
+  late Color logoOr1;
+  late Color logoOr2;
+  late Color logoRed;
+  late Color logoBalck;
+  late Color awardB1;
+  late Color awardB2;
+  late Color customColor15;
+  late Color customColor16;
+  late Color customColor17;
+  late Color customColor18;
+  late Color awardOrg1;
+  late Color awardOrg2;
+  late Color customColor13;
+
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
   @Deprecated('Use displaySmall instead')
@@ -103,22 +131,50 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFFCE035F);
-  late Color secondary = const Color(0xFFD43EED);
-  late Color tertiary = const Color(0xFF02FFF4);
-  late Color alternate = const Color(0xFFDBE2E7);
+  late Color primary = const Color(0xFF315BA8);
+  late Color secondary = const Color(0xFF6B8BB4);
+  late Color tertiary = const Color(0xFF29B5EF);
+  late Color alternate = const Color(0xFFE0E3E7);
   late Color primaryText = const Color(0xFF14181B);
   late Color secondaryText = const Color(0xFF57636C);
   late Color primaryBackground = const Color(0xFFF1F4F8);
   late Color secondaryBackground = const Color(0xFFFFFFFF);
-  late Color accent1 = const Color(0x4CCE035F);
-  late Color accent2 = const Color(0x4DD43EED);
-  late Color accent3 = const Color(0x4C02FFF4);
-  late Color accent4 = const Color(0xB3FFFFFF);
-  late Color success = const Color(0xFF39D2C0);
-  late Color warning = const Color(0xFFC96F46);
-  late Color error = const Color(0xFFE65454);
+  late Color accent1 = const Color(0xFFF8C116);
+  late Color accent2 = const Color(0xFFF9C52E);
+  late Color accent3 = const Color(0xFFD56949);
+  late Color accent4 = const Color(0xFFE9A34B);
+  late Color success = const Color(0xFFB62426);
+  late Color warning = const Color(0xFFF05843);
+  late Color error = const Color(0xFFB62426);
   late Color info = const Color(0xFF1C4494);
+
+  late Color customColor1 = const Color(0xFF188C4A);
+  late Color customColor2 = const Color(0xFF87BF60);
+  late Color customColor3 = const Color(0xFF8DBF41);
+  late Color customColor4 = const Color(0xFFD3D930);
+  late Color customColor5 = const Color(0xFFF2D649);
+  late Color customColor6 = const Color(0xFF863986);
+  late Color customColor7 = const Color(0xFF16A6ED);
+  late Color customColor8 = const Color(0xFF3862AD);
+  late Color customColor9 = const Color(0xFF4D68B0);
+  late Color customColor10 = const Color(0xFF174DEA);
+  late Color customColor11 = const Color(0xFF3881C1);
+  late Color customColor12 = const Color(0xFF5A96D0);
+  late Color bestaward = const Color(0xFF273479);
+  late Color logoBlue = const Color(0xFF20448C);
+  late Color logoOr1 = const Color(0xFFF2CE16);
+  late Color logoOr2 = const Color(0xFFF2BD1D);
+  late Color logoRed = const Color(0xFF8C0303);
+  late Color logoBalck = const Color(0xFF0D0D0D);
+  late Color awardB1 = const Color(0xFF3F61A6);
+  late Color awardB2 = const Color(0xFF548DBF);
+  late Color customColor15 = const Color(0xFF548DBF);
+  late Color customColor16 = const Color(0xFF62ABD9);
+  late Color customColor17 = const Color(0xFF66B8D9);
+  late Color customColor18 = const Color(0xFF633A8C);
+  late Color awardOrg1 = const Color(0xFFF2A81D);
+  late Color awardOrg2 = const Color(0xFFF2BB16);
+  late Color customColor13 = const Color(0xFF93E33F);
 }
 
 abstract class Typography {

@@ -8,28 +8,26 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/custom_code/actions/index.dart' as actions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'event_model.dart';
-export 'event_model.dart';
+import 'event031024_model.dart';
+export 'event031024_model.dart';
 
-class EventWidget extends StatefulWidget {
-  const EventWidget({super.key});
+class Event031024Widget extends StatefulWidget {
+  const Event031024Widget({super.key});
 
   @override
-  State<EventWidget> createState() => _EventWidgetState();
+  State<Event031024Widget> createState() => _Event031024WidgetState();
 }
 
-class _EventWidgetState extends State<EventWidget>
+class _Event031024WidgetState extends State<Event031024Widget>
     with TickerProviderStateMixin {
-  late EventModel _model;
+  late Event031024Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -38,12 +36,7 @@ class _EventWidgetState extends State<EventWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EventModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.screenShot();
-    });
+    _model = createModel(context, () => Event031024Model());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -295,7 +288,7 @@ class _EventWidgetState extends State<EventWidget>
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'Event',
+                                                    'Event031024',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           const TransitionInfo(

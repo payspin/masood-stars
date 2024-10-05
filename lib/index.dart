@@ -25,3 +25,4 @@ export '/pages/login_event_manager_o_t_p/login_event_manager_o_t_p_widget.dart'
 export '/pages/event/event_widget.dart' show EventWidget;
 export '/pages/q_rcode_scan/q_rcode_scan_widget.dart' show QRcodeScanWidget;
 export '/pages/ruffle_draw/ruffle_draw_widget.dart' show RuffleDrawWidget;
+export '/pages/event031024/event031024_widget.dart' show Event031024Widget;
