@@ -8,17 +8,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'event031024_model.dart';
 export 'event031024_model.dart';
 
@@ -61,8 +57,8 @@ class _Event031024WidgetState extends State<Event031024Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 50.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 50.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -81,8 +77,8 @@ class _Event031024WidgetState extends State<Event031024Widget>
             curve: Curves.easeInOut,
             delay: 120.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 40.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 40.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -101,8 +97,8 @@ class _Event031024WidgetState extends State<Event031024Widget>
             curve: Curves.easeInOut,
             delay: 240.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 70.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 70.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -121,8 +117,8 @@ class _Event031024WidgetState extends State<Event031024Widget>
             curve: Curves.bounceOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.7, 0.7),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.7, 0.7),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -172,15 +168,15 @@ class _Event031024WidgetState extends State<Event031024Widget>
                           width: 220.0,
                           height: double.infinity,
                           decoration: BoxDecoration(
-                            color: Color(0xFFF1F4F8),
+                            color: const Color(0xFFF1F4F8),
                             borderRadius: BorderRadius.circular(0.0),
                             border: Border.all(
-                              color: Color(0xFFE5E7EB),
+                              color: const Color(0xFFE5E7EB),
                               width: 1.0,
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 16.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -190,19 +186,19 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.add_task_rounded,
                                             color: Color(0xFF6F61EF),
                                             size: 32.0,
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Dashboard',
@@ -211,7 +207,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   .headlineMedium
                                                   .override(
                                                     fontFamily: 'Outfit',
-                                                    color: Color(0xFF15161E),
+                                                    color: const Color(0xFF15161E),
                                                     fontSize: 24.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -232,7 +228,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                     ),
                                   ],
                                 ),
-                                Divider(
+                                const Divider(
                                   height: 12.0,
                                   thickness: 2.0,
                                   color: Color(0xFFE5E7EB),
@@ -244,7 +240,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           'Platform Navigation',
@@ -252,7 +248,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               .labelMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF606A85),
+                                                color: const Color(0xFF606A85),
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -267,22 +263,22 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                       ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: AnimatedContainer(
                                             duration:
-                                                Duration(milliseconds: 200),
+                                                const Duration(milliseconds: 200),
                                             curve: Curves.easeInOut,
                                             width: double.infinity,
                                             height: 44.0,
                                             decoration: BoxDecoration(
-                                              color: Color(0x4D9489F5),
+                                              color: const Color(0x4D9489F5),
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 6.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -295,7 +291,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                     'Event031024',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -310,14 +306,14 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.space_dashboard,
                                                       color: Color(0xFF6F61EF),
                                                       size: 24.0,
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -331,7 +327,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF15161E),
                                                               fontSize: 14.0,
                                                               letterSpacing:
@@ -349,22 +345,22 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                           ),
                                         ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: AnimatedContainer(
-                                          duration: Duration(milliseconds: 200),
+                                          duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFFF1F4F8),
+                                            color: const Color(0xFFF1F4F8),
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -377,7 +373,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   'RuffleDraw',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -391,14 +387,14 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  FaIcon(
+                                                  const FaIcon(
                                                     FontAwesomeIcons.spinner,
                                                     color: Color(0xFF15161E),
                                                     size: 24.0,
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -409,7 +405,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           .override(
                                                             fontFamily:
                                                                 'Plus Jakarta Sans',
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF15161E),
                                                             fontSize: 14.0,
                                                             letterSpacing: 0.0,
@@ -425,7 +421,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Settings',
@@ -433,7 +429,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               .labelMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF606A85),
+                                                color: const Color(0xFF606A85),
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -449,27 +445,27 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                       ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: AnimatedContainer(
                                             duration:
-                                                Duration(milliseconds: 200),
+                                                const Duration(milliseconds: 200),
                                             curve: Curves.easeInOut,
                                             width: double.infinity,
                                             height: 44.0,
                                             decoration: BoxDecoration(
-                                              color: Color(0x4D9489F5),
+                                              color: const Color(0x4D9489F5),
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 6.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Icon(
+                                                  const Icon(
                                                     Icons.notifications_rounded,
                                                     color: Color(0xFF6F61EF),
                                                     size: 24.0,
@@ -477,7 +473,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -491,7 +487,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF15161E),
                                                               fontSize: 14.0,
                                                               letterSpacing:
@@ -506,18 +502,18 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   Container(
                                                     height: 32.0,
                                                     decoration: BoxDecoration(
-                                                      color: Color(0xFF6F61EF),
+                                                      color: const Color(0xFF6F61EF),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.0),
                                                     ),
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     4.0,
@@ -550,22 +546,22 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                           ),
                                         ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: AnimatedContainer(
-                                          duration: Duration(milliseconds: 200),
+                                          duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFFF1F4F8),
+                                            color: const Color(0xFFF1F4F8),
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -586,14 +582,14 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Icon(
+                                                  const Icon(
                                                     Icons.logout,
                                                     color: Color(0xFF15161E),
                                                     size: 24.0,
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -604,7 +600,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           .override(
                                                             fontFamily:
                                                                 'Plus Jakarta Sans',
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF15161E),
                                                             fontSize: 14.0,
                                                             letterSpacing: 0.0,
@@ -619,16 +615,16 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                           ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(height: 12.0)),
+                                    ].divide(const SizedBox(height: 12.0)),
                                   ),
                                 ),
-                                Divider(
+                                const Divider(
                                   height: 12.0,
                                   thickness: 2.0,
                                   color: Color(0xFFE5E7EB),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 12.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -637,24 +633,24 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                         width: 50.0,
                                         height: 50.0,
                                         decoration: BoxDecoration(
-                                          color: Color(0x4D9489F5),
+                                          color: const Color(0x4D9489F5),
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                           border: Border.all(
-                                            color: Color(0xFF6F61EF),
+                                            color: const Color(0xFF6F61EF),
                                             width: 2.0,
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(2.0),
+                                          padding: const EdgeInsets.all(2.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: CachedNetworkImage(
                                               fadeInDuration:
-                                                  Duration(milliseconds: 500),
+                                                  const Duration(milliseconds: 500),
                                               fadeOutDuration:
-                                                  Duration(milliseconds: 500),
+                                                  const Duration(milliseconds: 500),
                                               imageUrl:
                                                   'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
                                               width: 44.0,
@@ -667,7 +663,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -683,7 +679,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF15161E),
+                                                              const Color(0xFF15161E),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -699,7 +695,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF606A85),
+                                                              const Color(0xFF606A85),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -713,7 +709,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                     ],
                                   ),
                                 ),
-                                Padding(
+                                const Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Row(
@@ -734,15 +730,15 @@ class _Event031024WidgetState extends State<Event031024Widget>
                         ),
                       Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Container(
                             width: double.infinity,
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               maxWidth: 970.0,
                             ),
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -754,7 +750,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -767,7 +763,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.6,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -785,15 +781,15 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           width: 100.0,
                                                           height: 70.0,
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                         ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       16.0,
@@ -807,7 +803,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                 .override(
                                                                   fontFamily:
                                                                       'Outfit',
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF15161E),
                                                                   fontSize:
                                                                       24.0,
@@ -822,11 +818,11 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       16.0,
@@ -840,7 +836,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                 .override(
                                                                   fontFamily:
                                                                       'Outfit',
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF15161E),
                                                                   fontSize:
                                                                       24.0,
@@ -855,11 +851,11 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -887,16 +883,16 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.5,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                 ),
                                               ],
                                             ),
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: Wrap(
@@ -926,7 +922,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -934,7 +930,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             MainAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          Icon(
+                                                          const Icon(
                                                             Icons
                                                                 .supervisor_account_rounded,
                                                             color: Color(
@@ -943,7 +939,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         12.0,
@@ -960,7 +956,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF101213),
                                                                     fontSize:
                                                                         36.0,
@@ -982,7 +978,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                 .override(
                                                                   fontFamily:
                                                                       'Plus Jakarta Sans',
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF57636C),
                                                                   fontSize:
                                                                       12.0,
@@ -1001,14 +997,14 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                     width: 150.0,
                                                     height: 150.0,
                                                     decoration: BoxDecoration(
-                                                      color: Color(0xC139D2C0),
+                                                      color: const Color(0xC139D2C0),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               24.0),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1016,7 +1012,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             MainAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          Icon(
+                                                          const Icon(
                                                             Icons
                                                                 .supervisor_account_rounded,
                                                             color: Color(
@@ -1025,7 +1021,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         12.0,
@@ -1042,7 +1038,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF101213),
                                                                     fontSize:
                                                                         36.0,
@@ -1064,7 +1060,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                 .override(
                                                                   fontFamily:
                                                                       'Plus Jakarta Sans',
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF57636C),
                                                                   fontSize:
                                                                       12.0,
@@ -1083,14 +1079,14 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                     width: 150.0,
                                                     height: 150.0,
                                                     decoration: BoxDecoration(
-                                                      color: Color(0xB2E65454),
+                                                      color: const Color(0xB2E65454),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               24.0),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1098,7 +1094,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             MainAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          Icon(
+                                                          const Icon(
                                                             Icons
                                                                 .supervisor_account_rounded,
                                                             color: Color(
@@ -1107,7 +1103,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         12.0,
@@ -1124,7 +1120,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF101213),
                                                                     fontSize:
                                                                         36.0,
@@ -1167,7 +1163,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(12.0),
+                                            padding: const EdgeInsets.all(12.0),
                                             child: Text(
                                               'Guests and events Dashboard',
                                               style:
@@ -1181,24 +1177,24 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(12.0),
+                                            padding: const EdgeInsets.all(12.0),
                                             child: FFButtonWidget(
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
                                               text: 'Add Guest',
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 Icons.person_add_rounded,
                                                 size: 15.0,
                                               ),
                                               options: FFButtonOptions(
                                                 width: 125.0,
                                                 height: 30.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -1236,11 +1232,11 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                             Container(
                                               width: double.infinity,
                                               height: 24.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                             ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 0.0, 4.0),
                                             child: Text(
                                               'Guests list',
@@ -1249,7 +1245,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   .headlineMedium
                                                   .override(
                                                     fontFamily: 'Outfit',
-                                                    color: Color(0xFF15161E),
+                                                    color: const Color(0xFF15161E),
                                                     fontSize: 24.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -1258,7 +1254,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Below are a list of Guests in the event.',
@@ -1268,7 +1264,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: Color(0xFF606A85),
+                                                    color: const Color(0xFF606A85),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -1277,7 +1273,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 0.0),
                                             child: TextFormField(
                                               controller: _model.textController,
@@ -1295,7 +1291,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF606A85),
+                                                              const Color(0xFF606A85),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1308,7 +1304,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF606A85),
+                                                              const Color(0xFF606A85),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1316,7 +1312,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE5E7EB),
                                                     width: 2.0,
                                                   ),
@@ -1326,7 +1322,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF6F61EF),
                                                     width: 2.0,
                                                   ),
@@ -1335,7 +1331,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFFF5963),
                                                     width: 2.0,
                                                   ),
@@ -1345,7 +1341,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFFF5963),
                                                     width: 2.0,
                                                   ),
@@ -1354,10 +1350,10 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           12.0),
                                                 ),
                                                 contentPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(20.0, 0.0,
                                                             0.0, 0.0),
-                                                suffixIcon: Icon(
+                                                suffixIcon: const Icon(
                                                   Icons.search_rounded,
                                                   color: Color(0xFF606A85),
                                                 ),
@@ -1368,12 +1364,12 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: Color(0xFF15161E),
+                                                    color: const Color(0xFF15161E),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
-                                              cursorColor: Color(0xFF6F61EF),
+                                              cursorColor: const Color(0xFF6F61EF),
                                               validator: _model
                                                   .textControllerValidator
                                                   .asValidator(context),
@@ -1385,11 +1381,11 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 8.0),
                                                   child: FlutterFlowChoiceChips(
-                                                    options: [
+                                                    options: const [
                                                       ChipData('All'),
                                                       ChipData('Registered'),
                                                       ChipData('Arrived'),
@@ -1402,7 +1398,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                     selectedChipStyle:
                                                         ChipStyle(
                                                       backgroundColor:
-                                                          Color(0xFF6F61EF),
+                                                          const Color(0xFF6F61EF),
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1423,7 +1419,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       iconSize: 18.0,
                                                       elevation: 2.0,
                                                       borderColor:
-                                                          Color(0x4D9489F5),
+                                                          const Color(0x4D9489F5),
                                                       borderWidth: 1.0,
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -1432,7 +1428,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                     unselectedChipStyle:
                                                         ChipStyle(
                                                       backgroundColor:
-                                                          Color(0xFFE5E7EB),
+                                                          const Color(0xFFE5E7EB),
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1440,7 +1436,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF606A85),
                                                                 fontSize: 14.0,
                                                                 letterSpacing:
@@ -1450,11 +1446,11 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                         .w500,
                                                               ),
                                                       iconColor:
-                                                          Color(0xFF606A85),
+                                                          const Color(0xFF606A85),
                                                       iconSize: 18.0,
                                                       elevation: 0.0,
                                                       borderColor:
-                                                          Color(0xFFF1F4F8),
+                                                          const Color(0xFFF1F4F8),
                                                       borderWidth: 1.0,
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -1479,24 +1475,24 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                 ),
                                               ]
                                                   .addToStart(
-                                                      SizedBox(width: 16.0))
+                                                      const SizedBox(width: 16.0))
                                                   .addToEnd(
-                                                      SizedBox(width: 16.0)),
+                                                      const SizedBox(width: 16.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Container(
                                               width: double.infinity,
                                               height: 40.0,
                                               decoration: BoxDecoration(
-                                                color: Color(0xFFF1F4F8),
+                                                color: const Color(0xFFF1F4F8),
                                                 borderRadius:
                                                     BorderRadius.circular(12.0),
                                               ),
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1509,17 +1505,17 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       width: 40.0,
                                                       height: 100.0,
                                                       decoration:
-                                                          BoxDecoration(),
+                                                          const BoxDecoration(),
                                                     ),
                                                   Expanded(
                                                     flex: 4,
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -1533,7 +1529,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF606A85),
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
@@ -1554,7 +1550,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       flex: 2,
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Text(
                                                           'Last Active',
@@ -1564,7 +1560,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF606A85),
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
@@ -1585,7 +1581,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       flex: 3,
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Text(
                                                           'Title',
@@ -1595,7 +1591,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF606A85),
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
@@ -1618,7 +1614,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   1.0, 0.0),
                                                           child: Text(
                                                             'Status',
@@ -1628,7 +1624,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                 .override(
                                                                   fontFamily:
                                                                       'Plus Jakarta Sans',
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF606A85),
                                                                   fontSize:
                                                                       12.0,
@@ -1648,7 +1644,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                             ),
                                           ),
                                           ListView(
-                                            padding: EdgeInsets.fromLTRB(
+                                            padding: const EdgeInsets.fromLTRB(
                                               0,
                                               0,
                                               0,
@@ -1659,7 +1655,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                             children: [
                                               Container(
                                                 width: double.infinity,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   color: Colors.white,
                                                   boxShadow: [
                                                     BoxShadow(
@@ -1673,7 +1669,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 12.0,
                                                           16.0, 12.0),
                                                   child: Row(
@@ -1686,20 +1682,20 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Color(0x4D9489F5),
+                                                              const Color(0x4D9489F5),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       12.0),
                                                           border: Border.all(
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF6F61EF),
                                                             width: 2.0,
                                                           ),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   2.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -1720,7 +1716,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -1745,7 +1741,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF15161E),
                                                                       fontSize:
                                                                           16.0,
@@ -1758,7 +1754,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1772,7 +1768,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF6F61EF),
                                                                         fontSize:
                                                                             12.0,
@@ -1783,7 +1779,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -1796,7 +1792,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           flex: 2,
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1810,7 +1806,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         14.0,
@@ -1832,7 +1828,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           flex: 3,
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Text(
                                                               'Head of Design',
@@ -1842,7 +1838,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         14.0,
@@ -1864,7 +1860,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             Container(
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0x4CEE8B60),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -1872,17 +1868,17 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                             8.0),
                                                                 border:
                                                                     Border.all(
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFFEE8B60),
                                                                 ),
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           4.0,
@@ -1897,7 +1893,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              Color(0xFF15161E),
+                                                                              const Color(0xFF15161E),
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
@@ -1918,7 +1914,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               ),
                                               Container(
                                                 width: double.infinity,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   color: Colors.white,
                                                   boxShadow: [
                                                     BoxShadow(
@@ -1932,7 +1928,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 12.0,
                                                           16.0, 12.0),
                                                   child: Row(
@@ -1945,20 +1941,20 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Color(0x4D9489F5),
+                                                              const Color(0x4D9489F5),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       12.0),
                                                           border: Border.all(
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF6F61EF),
                                                             width: 2.0,
                                                           ),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   2.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -1979,7 +1975,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -2004,7 +2000,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF15161E),
                                                                       fontSize:
                                                                           16.0,
@@ -2017,7 +2013,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2031,7 +2027,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF6F61EF),
                                                                         fontSize:
                                                                             12.0,
@@ -2042,7 +2038,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -2055,7 +2051,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           flex: 2,
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -2069,7 +2065,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         14.0,
@@ -2091,7 +2087,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           flex: 3,
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Text(
                                                               'Head of Design',
@@ -2101,7 +2097,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         14.0,
@@ -2123,7 +2119,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             Container(
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0x4CEE8B60),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -2131,17 +2127,17 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                             8.0),
                                                                 border:
                                                                     Border.all(
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFFEE8B60),
                                                                 ),
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           4.0,
@@ -2156,7 +2152,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              Color(0xFF15161E),
+                                                                              const Color(0xFF15161E),
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
@@ -2177,7 +2173,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               ),
                                               Container(
                                                 width: double.infinity,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   color: Colors.white,
                                                   boxShadow: [
                                                     BoxShadow(
@@ -2191,7 +2187,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 12.0,
                                                           16.0, 12.0),
                                                   child: Row(
@@ -2204,20 +2200,20 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Color(0x4D9489F5),
+                                                              const Color(0x4D9489F5),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       12.0),
                                                           border: Border.all(
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF6F61EF),
                                                             width: 2.0,
                                                           ),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   2.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -2238,7 +2234,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -2263,7 +2259,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF15161E),
                                                                       fontSize:
                                                                           16.0,
@@ -2276,7 +2272,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2290,7 +2286,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF6F61EF),
                                                                         fontSize:
                                                                             12.0,
@@ -2301,7 +2297,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -2314,7 +2310,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           flex: 2,
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -2328,7 +2324,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         14.0,
@@ -2350,7 +2346,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           flex: 3,
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Text(
                                                               'Head of Design',
@@ -2360,7 +2356,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         14.0,
@@ -2382,7 +2378,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             Container(
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0x4CEE8B60),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -2390,17 +2386,17 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                             8.0),
                                                                 border:
                                                                     Border.all(
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFFEE8B60),
                                                                 ),
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           4.0,
@@ -2415,7 +2411,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              Color(0xFF15161E),
+                                                                              const Color(0xFF15161E),
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
@@ -2436,7 +2432,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               ),
                                               Container(
                                                 width: double.infinity,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   color: Colors.white,
                                                   boxShadow: [
                                                     BoxShadow(
@@ -2450,7 +2446,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 12.0,
                                                           16.0, 12.0),
                                                   child: Row(
@@ -2463,20 +2459,20 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Color(0x4D9489F5),
+                                                              const Color(0x4D9489F5),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       12.0),
                                                           border: Border.all(
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF6F61EF),
                                                             width: 2.0,
                                                           ),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   2.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -2497,7 +2493,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -2522,7 +2518,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF15161E),
                                                                       fontSize:
                                                                           16.0,
@@ -2535,7 +2531,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2549,7 +2545,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF6F61EF),
                                                                         fontSize:
                                                                             12.0,
@@ -2560,7 +2556,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -2573,7 +2569,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           flex: 2,
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -2587,7 +2583,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         14.0,
@@ -2609,7 +2605,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           flex: 3,
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Text(
                                                               'Head of Design',
@@ -2619,7 +2615,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         14.0,
@@ -2641,7 +2637,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             Container(
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0x4CEE8B60),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -2649,17 +2645,17 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                             8.0),
                                                                 border:
                                                                     Border.all(
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFFEE8B60),
                                                                 ),
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           4.0,
@@ -2674,7 +2670,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              Color(0xFF15161E),
+                                                                              const Color(0xFF15161E),
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
@@ -2695,7 +2691,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               ),
                                               Container(
                                                 width: double.infinity,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   color: Colors.white,
                                                   boxShadow: [
                                                     BoxShadow(
@@ -2709,7 +2705,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 12.0,
                                                           16.0, 12.0),
                                                   child: Row(
@@ -2722,20 +2718,20 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Color(0x4D9489F5),
+                                                              const Color(0x4D9489F5),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       12.0),
                                                           border: Border.all(
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF6F61EF),
                                                             width: 2.0,
                                                           ),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   2.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -2756,7 +2752,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -2781,7 +2777,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF15161E),
                                                                       fontSize:
                                                                           16.0,
@@ -2794,7 +2790,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2808,7 +2804,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF6F61EF),
                                                                         fontSize:
                                                                             12.0,
@@ -2819,7 +2815,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -2832,7 +2828,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           flex: 2,
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -2846,7 +2842,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         14.0,
@@ -2868,7 +2864,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           flex: 3,
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Text(
                                                               'Head of Design',
@@ -2878,7 +2874,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF15161E),
                                                                     fontSize:
                                                                         14.0,
@@ -2900,7 +2896,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             Container(
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0x4C39D2C0),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -2908,17 +2904,17 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                             8.0),
                                                                 border:
                                                                     Border.all(
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF39D2C0),
                                                                 ),
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           4.0,
@@ -2933,7 +2929,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              Color(0xFF15161E),
+                                                                              const Color(0xFF15161E),
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
@@ -2952,7 +2948,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 1.0)),
+                                            ].divide(const SizedBox(height: 1.0)),
                                           ),
                                         ],
                                       ),
@@ -2971,21 +2967,21 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                             Container(
                                               width: double.infinity,
                                               height: 24.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                             ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Container(
                                               width: double.infinity,
                                               height: 40.0,
                                               decoration: BoxDecoration(
-                                                color: Color(0xFFF1F4F8),
+                                                color: const Color(0xFFF1F4F8),
                                                 borderRadius:
                                                     BorderRadius.circular(12.0),
                                               ),
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                             ),
                                           ),
@@ -3006,7 +3002,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                       currentUserDocument?.eventManager, false) !=
                   true)
                 Align(
-                  alignment: AlignmentDirectional(0.0, -1.0),
+                  alignment: const AlignmentDirectional(0.0, -1.0),
                   child: AuthUserStreamWidget(
                     builder: (context) => StreamBuilder<List<UsersRecord>>(
                       stream: queryUsersRecord(
@@ -3039,7 +3035,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
 
                         return Container(
                           width: 450.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -3049,7 +3045,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                     Container(
                                       width: double.infinity,
                                       height: 400.0,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         color: Colors.white,
                                         boxShadow: [
                                           BoxShadow(
@@ -3063,7 +3059,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                         ],
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -3084,7 +3080,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       .override(
                                                         fontFamily: 'Outfit',
                                                         color:
-                                                            Color(0xFF101213),
+                                                            const Color(0xFF101213),
                                                         fontSize: 32.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -3093,11 +3089,11 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(12.0),
+                                                        const EdgeInsets.all(12.0),
                                                     child:
                                                         FlutterFlowIconButton(
                                                       borderColor:
@@ -3131,7 +3127,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               ],
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: Text(
@@ -3143,7 +3139,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF57636C),
+                                                              const Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -3152,7 +3148,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 'Abu Dhabi, ADNEC, Hall 1',
@@ -3162,7 +3158,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         .override(
                                                           fontFamily: 'Outfit',
                                                           color:
-                                                              Color(0xFF101213),
+                                                              const Color(0xFF101213),
                                                           fontSize: 18.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -3170,7 +3166,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                         ),
                                               ),
                                             ),
-                                            Divider(
+                                            const Divider(
                                               height: 20.0,
                                               thickness: 1.0,
                                               color: Color(0xFFE0E3E7),
@@ -3183,14 +3179,14 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: Color(0xFF57636C),
+                                                    color: const Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 8.0, 0.0, 0.0),
                                               child: Text(
                                                 'Al Masaood is hosting a star awards ceremony for its employees recognizing their hard work and performance',
@@ -3201,7 +3197,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF101213),
+                                                              const Color(0xFF101213),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -3214,9 +3210,9 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                       ),
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 230.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -3224,10 +3220,10 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                               MainAxisAlignment.end,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 16.0, 16.0, 44.0),
                                                 child: Material(
@@ -3242,7 +3238,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                     width: double.infinity,
                                                     decoration: BoxDecoration(
                                                       color: Colors.white,
-                                                      boxShadow: [
+                                                      boxShadow: const [
                                                         BoxShadow(
                                                           blurRadius: 12.0,
                                                           color:
@@ -3269,7 +3265,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -3278,7 +3274,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                           child: Container(
                                                             width: 100.0,
                                                             decoration:
-                                                                BoxDecoration(
+                                                                const BoxDecoration(
                                                               color: Color(
                                                                   0xFF4B39EF),
                                                               borderRadius:
@@ -3300,7 +3296,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           20.0,
@@ -3318,7 +3314,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                         .start,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             20.0,
                                                                             0.0,
@@ -3349,7 +3345,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                         Expanded(
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 4.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -3386,7 +3382,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             20.0,
                                                                             0.0,
@@ -3405,7 +3401,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                Color(0xCCFFFFFF),
+                                                                                const Color(0xCCFFFFFF),
                                                                             fontSize:
                                                                                 16.0,
                                                                             letterSpacing:
@@ -3416,7 +3412,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             20.0,
                                                                             32.0,
@@ -3446,7 +3442,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             20.0,
                                                                             4.0,
@@ -3465,7 +3461,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                Color(0xCCFFFFFF),
+                                                                                const Color(0xCCFFFFFF),
                                                                             fontSize:
                                                                                 16.0,
                                                                             letterSpacing:
@@ -3502,7 +3498,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                               children: [
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           -0.85,
                                                                           -0.15),
                                                                   child:
@@ -3512,7 +3508,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     elevation:
                                                                         0.0,
                                                                     shape:
-                                                                        RoundedRectangleBorder(
+                                                                        const RoundedRectangleBorder(
                                                                       borderRadius:
                                                                           BorderRadius
                                                                               .only(
@@ -3533,7 +3529,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       height:
                                                                           40.0,
                                                                       decoration:
-                                                                          BoxDecoration(
+                                                                          const BoxDecoration(
                                                                         color: Color(
                                                                             0xFFF1F4F8),
                                                                         borderRadius:
@@ -3570,7 +3566,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     height: 8.0,
                                                                     decoration:
                                                                         BoxDecoration(
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFFE0E3E7),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
@@ -3597,7 +3593,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     height: 8.0,
                                                                     decoration:
                                                                         BoxDecoration(
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFFE0E3E7),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
@@ -3624,7 +3620,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     height: 8.0,
                                                                     decoration:
                                                                         BoxDecoration(
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFFE0E3E7),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
@@ -3636,7 +3632,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.85,
                                                                           -0.15),
                                                                   child:
@@ -3646,7 +3642,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     elevation:
                                                                         0.0,
                                                                     shape:
-                                                                        RoundedRectangleBorder(
+                                                                        const RoundedRectangleBorder(
                                                                       borderRadius:
                                                                           BorderRadius
                                                                               .only(
@@ -3667,7 +3663,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                       height:
                                                                           40.0,
                                                                       decoration:
-                                                                          BoxDecoration(
+                                                                          const BoxDecoration(
                                                                         color: Color(
                                                                             0xFFF1F4F8),
                                                                         borderRadius:
@@ -3691,7 +3687,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           12.0,
@@ -3759,7 +3755,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                             .headlineMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                              color: Color(0xFF101213),
+                                                                              color: const Color(0xFF101213),
                                                                               fontSize: 24.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
@@ -3768,7 +3764,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     },
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             12.0,
@@ -3780,7 +3776,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                               .max,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               12.0,
@@ -3790,7 +3786,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                             'ID number',
                                                                             style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                  color: Color(0xFF57636C),
+                                                                                  color: const Color(0xFF57636C),
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w500,
@@ -3807,7 +3803,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                               .labelLarge
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                color: Color(0xFF57636C),
+                                                                                color: const Color(0xFF57636C),
                                                                                 fontSize: 16.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w500,
@@ -3817,7 +3813,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             12.0,
@@ -3829,7 +3825,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                               .max,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               12.0,
@@ -3839,7 +3835,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                             'Color code',
                                                                             style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                  color: Color(0xFF57636C),
+                                                                                  color: const Color(0xFF57636C),
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w500,
@@ -3856,7 +3852,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                               .labelLarge
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                color: Color(0xFF57636C),
+                                                                                color: const Color(0xFF57636C),
                                                                                 fontSize: 16.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w500,
@@ -3872,7 +3868,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           24.0,
@@ -3885,12 +3881,12 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                     1.0,
                                                                 height: 150.0,
                                                                 decoration:
-                                                                    BoxDecoration(
+                                                                    const BoxDecoration(
                                                                   color: Color(
                                                                       0x00FFFFFF),
                                                                 ),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -3907,15 +3903,15 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                         100.0,
                                                                     height:
                                                                         30.0,
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF101213),
                                                                     backgroundColor:
                                                                         Colors
                                                                             .transparent,
                                                                     errorBuilder:
-                                                                        (_context,
-                                                                                _error) =>
-                                                                            SizedBox(
+                                                                        (context,
+                                                                                error) =>
+                                                                            const SizedBox(
                                                                       width:
                                                                           100.0,
                                                                       height:
@@ -3965,7 +3961,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                   builder: (context) => wrapWithModel(
                     model: _model.navbarModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: NavbarWidget(
+                    child: const NavbarWidget(
                       selectedPageIndex: 1,
                       hidden: false,
                     ),

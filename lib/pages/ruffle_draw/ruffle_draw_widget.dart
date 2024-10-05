@@ -5,10 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'ruffle_draw_model.dart';
 export 'ruffle_draw_model.dart';
 
@@ -67,15 +64,15 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                           width: 220.0,
                           height: double.infinity,
                           decoration: BoxDecoration(
-                            color: Color(0xFFF1F4F8),
+                            color: const Color(0xFFF1F4F8),
                             borderRadius: BorderRadius.circular(0.0),
                             border: Border.all(
-                              color: Color(0xFFE5E7EB),
+                              color: const Color(0xFFE5E7EB),
                               width: 1.0,
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 16.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -85,19 +82,19 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.add_task_rounded,
                                             color: Color(0xFF6F61EF),
                                             size: 32.0,
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Dashboard',
@@ -106,7 +103,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                   .headlineMedium
                                                   .override(
                                                     fontFamily: 'Outfit',
-                                                    color: Color(0xFF15161E),
+                                                    color: const Color(0xFF15161E),
                                                     fontSize: 24.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -127,7 +124,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                     ),
                                   ],
                                 ),
-                                Divider(
+                                const Divider(
                                   height: 12.0,
                                   thickness: 2.0,
                                   color: Color(0xFFE5E7EB),
@@ -139,7 +136,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           'Platform Navigation',
@@ -147,7 +144,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                               .labelMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF606A85),
+                                                color: const Color(0xFF606A85),
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -155,22 +152,22 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: AnimatedContainer(
-                                          duration: Duration(milliseconds: 200),
+                                          duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFFF1F4F8),
+                                            color: const Color(0xFFF1F4F8),
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -183,7 +180,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                   'Event',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -197,14 +194,14 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Icon(
+                                                  const Icon(
                                                     Icons.space_dashboard,
                                                     color: Color(0xFF15161E),
                                                     size: 24.0,
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -215,7 +212,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Plus Jakarta Sans',
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF15161E),
                                                             fontSize: 14.0,
                                                             letterSpacing: 0.0,
@@ -238,22 +235,22 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                       ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: AnimatedContainer(
                                             duration:
-                                                Duration(milliseconds: 200),
+                                                const Duration(milliseconds: 200),
                                             curve: Curves.easeInOut,
                                             width: double.infinity,
                                             height: 44.0,
                                             decoration: BoxDecoration(
-                                              color: Color(0x4D9489F5),
+                                              color: const Color(0x4D9489F5),
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 6.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -266,7 +263,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                     'RuffleDraw',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -281,14 +278,14 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    FaIcon(
+                                                    const FaIcon(
                                                       FontAwesomeIcons.spinner,
                                                       color: Color(0xFF6F61EF),
                                                       size: 24.0,
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -302,7 +299,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF15161E),
                                                               fontSize: 14.0,
                                                               letterSpacing:
@@ -320,7 +317,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                           ),
                                         ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Settings',
@@ -328,7 +325,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                               .labelMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF606A85),
+                                                color: const Color(0xFF606A85),
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -344,27 +341,27 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                       ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: AnimatedContainer(
                                             duration:
-                                                Duration(milliseconds: 200),
+                                                const Duration(milliseconds: 200),
                                             curve: Curves.easeInOut,
                                             width: double.infinity,
                                             height: 44.0,
                                             decoration: BoxDecoration(
-                                              color: Color(0x4D9489F5),
+                                              color: const Color(0x4D9489F5),
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 6.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Icon(
+                                                  const Icon(
                                                     Icons.notifications_rounded,
                                                     color: Color(0xFF6F61EF),
                                                     size: 24.0,
@@ -372,7 +369,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -386,7 +383,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF15161E),
                                                               fontSize: 14.0,
                                                               letterSpacing:
@@ -401,18 +398,18 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                   Container(
                                                     height: 32.0,
                                                     decoration: BoxDecoration(
-                                                      color: Color(0xFF6F61EF),
+                                                      color: const Color(0xFF6F61EF),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.0),
                                                     ),
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     4.0,
@@ -445,22 +442,22 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                           ),
                                         ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: AnimatedContainer(
-                                          duration: Duration(milliseconds: 200),
+                                          duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFFF1F4F8),
+                                            color: const Color(0xFFF1F4F8),
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -481,14 +478,14 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Icon(
+                                                  const Icon(
                                                     Icons.logout,
                                                     color: Color(0xFF15161E),
                                                     size: 24.0,
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -499,7 +496,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Plus Jakarta Sans',
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF15161E),
                                                             fontSize: 14.0,
                                                             letterSpacing: 0.0,
@@ -514,16 +511,16 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                           ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(height: 12.0)),
+                                    ].divide(const SizedBox(height: 12.0)),
                                   ),
                                 ),
-                                Divider(
+                                const Divider(
                                   height: 12.0,
                                   thickness: 2.0,
                                   color: Color(0xFFE5E7EB),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 12.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -532,24 +529,24 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                         width: 50.0,
                                         height: 50.0,
                                         decoration: BoxDecoration(
-                                          color: Color(0x4D9489F5),
+                                          color: const Color(0x4D9489F5),
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                           border: Border.all(
-                                            color: Color(0xFF6F61EF),
+                                            color: const Color(0xFF6F61EF),
                                             width: 2.0,
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(2.0),
+                                          padding: const EdgeInsets.all(2.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: CachedNetworkImage(
                                               fadeInDuration:
-                                                  Duration(milliseconds: 500),
+                                                  const Duration(milliseconds: 500),
                                               fadeOutDuration:
-                                                  Duration(milliseconds: 500),
+                                                  const Duration(milliseconds: 500),
                                               imageUrl:
                                                   'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
                                               width: 44.0,
@@ -562,7 +559,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -578,7 +575,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF15161E),
+                                                              const Color(0xFF15161E),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -594,7 +591,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              Color(0xFF606A85),
+                                                              const Color(0xFF606A85),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -608,7 +605,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                     ],
                                   ),
                                 ),
-                                Padding(
+                                const Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Row(
@@ -629,15 +626,15 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                         ),
                       Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Container(
                             width: double.infinity,
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               maxWidth: 970.0,
                             ),
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -649,7 +646,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -662,7 +659,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.6,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -684,15 +681,15 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                                   0.5,
                                                           height: 70.0,
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                         ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       16.0,
@@ -706,7 +703,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Outfit',
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF15161E),
                                                                   fontSize:
                                                                       24.0,
@@ -721,11 +718,11 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       16.0,
@@ -739,7 +736,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Outfit',
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF15161E),
                                                                   fontSize:
                                                                       24.0,
@@ -754,11 +751,11 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -790,13 +787,13 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(16.0),
+                                                padding: const EdgeInsets.all(16.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () {
                                                     print('Button pressed ...');
                                                   },
                                                   text: 'Start Ruffle Draw',
-                                                  icon: Icon(
+                                                  icon: const Icon(
                                                     Icons.person_add_rounded,
                                                     size: 15.0,
                                                   ),
@@ -804,11 +801,11 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                     width: 160.0,
                                                     height: 30.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -858,7 +855,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                   builder: (context) => wrapWithModel(
                     model: _model.navbarModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: NavbarWidget(
+                    child: const NavbarWidget(
                       selectedPageIndex: 3,
                       hidden: false,
                     ),

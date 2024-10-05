@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
-import '../schema/structs/index.dart';
 
 import 'package:flutter/foundation.dart';
 
@@ -32,15 +30,15 @@ class SendAnEmailCall {
 
     final ffApiRequestBody = '''
 {
-  "senderName": "${senderName}",
-  "subject": "${subject}",
-  "message": "${message}",
-  "email": "${email}",
-  "imageUrl": "${imageUrl}"
+  "senderName": "$senderName",
+  "subject": "$subject",
+  "message": "$message",
+  "email": "$email",
+  "imageUrl": "$imageUrl"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Send an email',
-      apiUrl: '${baseUrl}/sendEmails',
+      apiUrl: '$baseUrl/sendEmails',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

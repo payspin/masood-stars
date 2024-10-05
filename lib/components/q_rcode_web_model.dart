@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'ticket_widget.dart' show TicketWidget;
+import 'q_rcode_web_widget.dart' show QRcodeWebWidget;
 import 'package:flutter/material.dart';
 
-class TicketModel extends FlutterFlowModel<TicketWidget> {
+class QRcodeWebModel extends FlutterFlowModel<QRcodeWebWidget> {
   @override
   void initState(BuildContext context) {}
 

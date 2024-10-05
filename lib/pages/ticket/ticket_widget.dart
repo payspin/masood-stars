@@ -4,17 +4,12 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'ticket_model.dart';
 export 'ticket_model.dart';
@@ -55,8 +50,8 @@ class _TicketWidgetState extends State<TicketWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 50.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 50.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -75,8 +70,8 @@ class _TicketWidgetState extends State<TicketWidget>
             curve: Curves.easeInOut,
             delay: 120.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 40.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 40.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -95,8 +90,8 @@ class _TicketWidgetState extends State<TicketWidget>
             curve: Curves.easeInOut,
             delay: 240.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 70.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 70.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -115,8 +110,8 @@ class _TicketWidgetState extends State<TicketWidget>
             curve: Curves.bounceOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.7, 0.7),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.7, 0.7),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -144,11 +139,11 @@ class _TicketWidgetState extends State<TicketWidget>
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0x0037A6F0),
+        backgroundColor: const Color(0x0037A6F0),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: StreamBuilder<List<UsersRecord>>(
               stream: queryUsersRecord(
                 singleRecord: true,
@@ -178,7 +173,7 @@ class _TicketWidgetState extends State<TicketWidget>
 
                 return Container(
                   width: 450.0,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -188,7 +183,7 @@ class _TicketWidgetState extends State<TicketWidget>
                             Container(
                               width: double.infinity,
                               height: 400.0,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
@@ -202,7 +197,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                 ],
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -219,7 +214,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                               .headlineLarge
                                               .override(
                                                 fontFamily: 'Outfit',
-                                                color: Color(0xFF101213),
+                                                color: const Color(0xFF101213),
                                                 fontSize: 32.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
@@ -227,9 +222,9 @@ class _TicketWidgetState extends State<TicketWidget>
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
-                                            padding: EdgeInsets.all(12.0),
+                                            padding: const EdgeInsets.all(12.0),
                                             child: FlutterFlowIconButton(
                                               borderRadius: 8.0,
                                               buttonSize: 40.0,
@@ -257,7 +252,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Text(
                                         'Address',
@@ -265,7 +260,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
-                                              color: Color(0xFF57636C),
+                                              color: const Color(0xFF57636C),
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
@@ -273,7 +268,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         'Abu Dhabi, ADNEC, Hall 1',
@@ -281,14 +276,14 @@ class _TicketWidgetState extends State<TicketWidget>
                                             .titleLarge
                                             .override(
                                               fontFamily: 'Outfit',
-                                              color: Color(0xFF101213),
+                                              color: const Color(0xFF101213),
                                               fontSize: 18.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
                                     ),
-                                    Divider(
+                                    const Divider(
                                       height: 20.0,
                                       thickness: 1.0,
                                       color: Color(0xFFE0E3E7),
@@ -299,14 +294,14 @@ class _TicketWidgetState extends State<TicketWidget>
                                           .labelMedium
                                           .override(
                                             fontFamily: 'Plus Jakarta Sans',
-                                            color: Color(0xFF57636C),
+                                            color: const Color(0xFF57636C),
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: Text(
                                         'Al Masaood is hosting a star awards ceremony for its employees recognizing their hard work and performance',
@@ -314,7 +309,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
-                                              color: Color(0xFF101213),
+                                              color: const Color(0xFF101213),
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
@@ -326,18 +321,18 @@ class _TicketWidgetState extends State<TicketWidget>
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 230.0, 0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 16.0, 44.0),
                                         child: Material(
                                           color: Colors.transparent,
@@ -350,7 +345,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                             width: double.infinity,
                                             decoration: BoxDecoration(
                                               color: Colors.white,
-                                              boxShadow: [
+                                              boxShadow: const [
                                                 BoxShadow(
                                                   blurRadius: 12.0,
                                                   color: Color(0x33000000),
@@ -372,12 +367,12 @@ class _TicketWidgetState extends State<TicketWidget>
                                                   CrossAxisAlignment.stretch,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: Container(
                                                     width: 100.0,
-                                                    decoration: BoxDecoration(
+                                                    decoration: const BoxDecoration(
                                                       color: Color(0xFF4B39EF),
                                                       borderRadius:
                                                           BorderRadius.only(
@@ -397,7 +392,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   20.0,
@@ -415,7 +410,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         0.0,
@@ -453,7 +448,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             4.0,
                                                                             0.0,
@@ -503,7 +498,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         0.0,
@@ -520,7 +515,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xCCFFFFFF),
                                                                     fontSize:
                                                                         16.0,
@@ -534,7 +529,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         32.0,
@@ -565,7 +560,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         4.0,
@@ -582,7 +577,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xCCFFFFFF),
                                                                     fontSize:
                                                                         16.0,
@@ -619,14 +614,14 @@ class _TicketWidgetState extends State<TicketWidget>
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -0.85, -0.15),
                                                           child: Material(
                                                             color: Colors
                                                                 .transparent,
                                                             elevation: 0.0,
                                                             shape:
-                                                                RoundedRectangleBorder(
+                                                                const RoundedRectangleBorder(
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
@@ -648,7 +643,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                               width: 50.0,
                                                               height: 40.0,
                                                               decoration:
-                                                                  BoxDecoration(
+                                                                  const BoxDecoration(
                                                                 color: Color(
                                                                     0xFFF1F4F8),
                                                                 borderRadius:
@@ -689,7 +684,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                             height: 8.0,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFFE0E3E7),
                                                               borderRadius:
                                                                   BorderRadius
@@ -716,7 +711,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                             height: 8.0,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFFE0E3E7),
                                                               borderRadius:
                                                                   BorderRadius
@@ -743,7 +738,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                             height: 8.0,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFFE0E3E7),
                                                               borderRadius:
                                                                   BorderRadius
@@ -756,14 +751,14 @@ class _TicketWidgetState extends State<TicketWidget>
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.85, -0.15),
                                                           child: Material(
                                                             color: Colors
                                                                 .transparent,
                                                             elevation: 0.0,
                                                             shape:
-                                                                RoundedRectangleBorder(
+                                                                const RoundedRectangleBorder(
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
@@ -785,7 +780,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                               width: 50.0,
                                                               height: 40.0,
                                                               decoration:
-                                                                  BoxDecoration(
+                                                                  const BoxDecoration(
                                                                 color: Color(
                                                                     0xFFF1F4F8),
                                                                 borderRadius:
@@ -814,7 +809,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   12.0,
@@ -887,7 +882,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF101213),
                                                                         fontSize:
                                                                             24.0,
@@ -902,7 +897,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         12.0,
@@ -914,7 +909,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -929,7 +924,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              Color(0xFF57636C),
+                                                                              const Color(0xFF57636C),
                                                                           fontSize:
                                                                               16.0,
                                                                           letterSpacing:
@@ -952,7 +947,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF57636C),
                                                                         fontSize:
                                                                             16.0,
@@ -967,7 +962,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         12.0,
@@ -979,7 +974,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -994,7 +989,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              Color(0xFF57636C),
+                                                                              const Color(0xFF57636C),
                                                                           fontSize:
                                                                               16.0,
                                                                           letterSpacing:
@@ -1017,7 +1012,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF57636C),
                                                                         fontSize:
                                                                             16.0,
@@ -1037,7 +1032,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   24.0,
@@ -1051,13 +1046,13 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                 1.0,
                                                         height: 150.0,
                                                         decoration:
-                                                            BoxDecoration(
+                                                            const BoxDecoration(
                                                           color:
                                                               Color(0x00FFFFFF),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -1078,7 +1073,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                   Uri(
                                                                       scheme:
                                                                           'mailto',
-                                                                      path: containerUsersRecord!
+                                                                      path: containerUsersRecord
                                                                           .email,
                                                                       query: {
                                                                         'subject':
@@ -1101,15 +1096,15 @@ class _TicketWidgetState extends State<TicketWidget>
                                                                   .qrCode(),
                                                               width: 100.0,
                                                               height: 30.0,
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF101213),
                                                               backgroundColor:
                                                                   Colors
                                                                       .transparent,
                                                               errorBuilder:
-                                                                  (_context,
-                                                                          _error) =>
-                                                                      SizedBox(
+                                                                  (context,
+                                                                          error) =>
+                                                                      const SizedBox(
                                                                 width: 100.0,
                                                                 height: 30.0,
                                                               ),

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'ticket_widget.dart' show TicketWidget;
+import 'screenshoot_widget.dart' show ScreenshootWidget;
 import 'package:flutter/material.dart';
 
-class TicketModel extends FlutterFlowModel<TicketWidget> {
+class ScreenshootModel extends FlutterFlowModel<ScreenshootWidget> {
   @override
   void initState(BuildContext context) {}
 

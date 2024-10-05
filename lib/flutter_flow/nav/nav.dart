@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
@@ -11,12 +9,8 @@ import '/backend/schema/structs/index.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -81,133 +75,133 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? EventWidget() : LoginWidget(),
+          appStateNotifier.loggedIn ? const EventWidget() : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? EventWidget() : LoginWidget(),
+              appStateNotifier.loggedIn ? const EventWidget() : const LoginWidget(),
         ),
         FFRoute(
           name: 'Settings',
           path: '/settings1',
           requireAuth: true,
-          builder: (context, params) => SettingsWidget(),
+          builder: (context, params) => const SettingsWidget(),
         ),
         FFRoute(
           name: 'Eventold',
           path: '/eventold',
           requireAuth: true,
-          builder: (context, params) => EventoldWidget(),
+          builder: (context, params) => const EventoldWidget(),
         ),
         FFRoute(
           name: 'Createacount',
           path: '/createacount',
           requireAuth: true,
-          builder: (context, params) => CreateacountWidget(),
+          builder: (context, params) => const CreateacountWidget(),
         ),
         FFRoute(
           name: 'Login',
           path: '/login',
-          builder: (context, params) => LoginWidget(),
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'Onboarding01Copy',
           path: '/onboarding01Copy',
           requireAuth: true,
-          builder: (context, params) => Onboarding01CopyWidget(),
+          builder: (context, params) => const Onboarding01CopyWidget(),
         ),
         FFRoute(
           name: 'Onboarding03',
           path: '/onboarding03',
           requireAuth: true,
-          builder: (context, params) => Onboarding03Widget(),
+          builder: (context, params) => const Onboarding03Widget(),
         ),
         FFRoute(
           name: 'CreateAccount5',
           path: '/createAccount5',
           requireAuth: true,
-          builder: (context, params) => CreateAccount5Widget(),
+          builder: (context, params) => const CreateAccount5Widget(),
         ),
         FFRoute(
           name: 'eventt',
           path: '/eventt',
           requireAuth: true,
-          builder: (context, params) => EventtWidget(),
+          builder: (context, params) => const EventtWidget(),
         ),
         FFRoute(
           name: 'settingss',
           path: '/settings',
           requireAuth: true,
-          builder: (context, params) => SettingssWidget(),
+          builder: (context, params) => const SettingssWidget(),
         ),
         FFRoute(
           name: 'profile',
           path: '/profile',
           requireAuth: true,
-          builder: (context, params) => ProfileWidget(),
+          builder: (context, params) => const ProfileWidget(),
         ),
         FFRoute(
           name: 'ticket',
           path: '/ticket',
           requireAuth: true,
-          builder: (context, params) => TicketWidget(),
+          builder: (context, params) => const TicketWidget(),
         ),
         FFRoute(
           name: 'RecoverPasswordX',
           path: '/recoverPasswordX',
           requireAuth: true,
-          builder: (context, params) => RecoverPasswordXWidget(),
+          builder: (context, params) => const RecoverPasswordXWidget(),
         ),
         FFRoute(
           name: 'Registeration',
           path: '/registeration',
-          builder: (context, params) => RegisterationWidget(),
+          builder: (context, params) => const RegisterationWidget(),
         ),
         FFRoute(
           name: 'LoginEventManager',
           path: '/loginEventManager',
-          builder: (context, params) => LoginEventManagerWidget(),
+          builder: (context, params) => const LoginEventManagerWidget(),
         ),
         FFRoute(
           name: 'Recoverpassword',
           path: '/recoverpassword',
-          builder: (context, params) => RecoverpasswordWidget(),
+          builder: (context, params) => const RecoverpasswordWidget(),
         ),
         FFRoute(
           name: 'LoginOTP',
           path: '/loginOTP',
-          builder: (context, params) => LoginOTPWidget(),
+          builder: (context, params) => const LoginOTPWidget(),
         ),
         FFRoute(
           name: 'LoginEventManagerOTP',
           path: '/loginEventManagerOTP',
-          builder: (context, params) => LoginEventManagerOTPWidget(),
+          builder: (context, params) => const LoginEventManagerOTPWidget(),
         ),
         FFRoute(
           name: 'Event',
           path: '/event',
           requireAuth: true,
-          builder: (context, params) => EventWidget(),
+          builder: (context, params) => const EventWidget(),
         ),
         FFRoute(
           name: 'QRcodeScan',
           path: '/qRcodeScan',
           requireAuth: true,
-          builder: (context, params) => QRcodeScanWidget(),
+          builder: (context, params) => const QRcodeScanWidget(),
         ),
         FFRoute(
           name: 'RuffleDraw',
           path: '/ruffleDraw',
           requireAuth: true,
-          builder: (context, params) => RuffleDrawWidget(),
+          builder: (context, params) => const RuffleDrawWidget(),
         ),
         FFRoute(
           name: 'Event031024',
           path: '/event031024',
           requireAuth: true,
-          builder: (context, params) => Event031024Widget(),
+          builder: (context, params) => const Event031024Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -446,7 +440,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

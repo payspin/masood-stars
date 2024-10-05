@@ -1,12 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'eventt_model.dart';
 export 'eventt_model.dart';
 
@@ -54,7 +50,7 @@ class _EventtWidgetState extends State<EventtWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Color(0xFF101213),
               size: 30.0,
@@ -63,7 +59,7 @@ class _EventtWidgetState extends State<EventtWidget> {
               context.pop();
             },
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -79,14 +75,14 @@ class _EventtWidgetState extends State<EventtWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
                                 'Ocean Viability',
@@ -94,7 +90,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                                     .headlineMedium
                                     .override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: Color(0xFF101213),
+                                      color: const Color(0xFF101213),
                                       fontSize: 24.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
@@ -102,14 +98,14 @@ class _EventtWidgetState extends State<EventtWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: Container(
                                 width: double.infinity,
                                 height: 230.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFE0E3E7),
-                                  boxShadow: [
+                                  color: const Color(0xFFE0E3E7),
+                                  boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 12.0,
                                       color: Color(0x33000000),
@@ -122,7 +118,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(2.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(10.0),
                                     child: Image.network(
@@ -136,7 +132,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
                               child: Text(
                                 '12:30pm',
@@ -144,7 +140,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: Color(0xFF57636C),
+                                      color: const Color(0xFF57636C),
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
@@ -155,7 +151,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Container(
                           width: double.infinity,
@@ -164,7 +160,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                             controller: _model.expandableExpandableController,
                             child: ExpandablePanel(
                               header: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: Text(
                                   'Main  Center Stage',
@@ -172,7 +168,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                                       .headlineSmall
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: Color(0xFF101213),
+                                        color: const Color(0xFF101213),
                                         fontSize: 22.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
@@ -182,11 +178,11 @@ class _EventtWidgetState extends State<EventtWidget> {
                               collapsed: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 60.0,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.white,
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Text(
                                     'By protecting and preserving our oceans, we can effectively reduce global warming as healthy...',
@@ -194,7 +190,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: Color(0xFF57636C),
+                                          color: const Color(0xFF57636C),
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -206,7 +202,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 12.0),
                                     child: Text(
                                       'By protecting and preserving our oceans, we can effectively reduce global warming as healthy oceans absorb a significant amount of atmospheric carbon dioxide. Implementing measures to prevent overfishing, reducing plastic pollution, and conserving marine habitats will contribute to a balanced ocean ecosystem, ultimately mitigating global warming.',
@@ -214,7 +210,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                                           .labelMedium
                                           .override(
                                             fontFamily: 'Plus Jakarta Sans',
-                                            color: Color(0xFF57636C),
+                                            color: const Color(0xFF57636C),
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
@@ -223,7 +219,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                                   ),
                                 ],
                               ),
-                              theme: ExpandableThemeData(
+                              theme: const ExpandableThemeData(
                                 tapHeaderToExpand: true,
                                 tapBodyToExpand: true,
                                 tapBodyToCollapse: true,
@@ -235,20 +231,20 @@ class _EventtWidgetState extends State<EventtWidget> {
                           ),
                         ),
                       ),
-                      Divider(
+                      const Divider(
                         height: 12.0,
                         thickness: 1.0,
                         color: Color(0xFFE0E3E7),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 0.0, 0.0),
                         child: Text(
                           'Featured Speakers',
                           style:
                               FlutterFlowTheme.of(context).labelLarge.override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF57636C),
+                                    color: const Color(0xFF57636C),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -256,13 +252,13 @@ class _EventtWidgetState extends State<EventtWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   2.0, 2.0, 12.0, 2.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(12.0),
@@ -275,7 +271,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   2.0, 2.0, 12.0, 2.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(12.0),
@@ -288,7 +284,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   2.0, 2.0, 12.0, 2.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(12.0),
@@ -305,13 +301,13 @@ class _EventtWidgetState extends State<EventtWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Address',
                           style:
                               FlutterFlowTheme.of(context).labelLarge.override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF57636C),
+                                    color: const Color(0xFF57636C),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -320,14 +316,14 @@ class _EventtWidgetState extends State<EventtWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                         child: Text(
                           '420 Magnificant Ocean Way',
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
                                 fontFamily: 'Plus Jakarta Sans',
-                                color: Color(0xFF101213),
+                                color: const Color(0xFF101213),
                                 fontSize: 22.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
@@ -335,14 +331,14 @@ class _EventtWidgetState extends State<EventtWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 8.0, 0.0, 44.0),
                         child: Text(
                           'San Diego, CA 91911',
                           style:
                               FlutterFlowTheme.of(context).labelLarge.override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF57636C),
+                                    color: const Color(0xFF57636C),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -354,12 +350,12 @@ class _EventtWidgetState extends State<EventtWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 12.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 12.0),
                 child: Container(
                   width: double.infinity,
                   height: 50.0,
                   decoration: BoxDecoration(
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x33000000),
@@ -369,7 +365,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                         ),
                       )
                     ],
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [Color(0xFF4B39EF), Color(0x4C4B39EF)],
                       stops: [0.0, 1.0],
                       begin: AlignmentDirectional(-1.0, 0.0),
@@ -377,7 +373,7 @@ class _EventtWidgetState extends State<EventtWidget> {
                     ),
                     borderRadius: BorderRadius.circular(12.0),
                   ),
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     'Get Tickets',
                     style: FlutterFlowTheme.of(context).titleSmall.override(
@@ -391,13 +387,13 @@ class _EventtWidgetState extends State<EventtWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                 child: Container(
                   width: double.infinity,
                   height: 50.0,
                   decoration: BoxDecoration(
-                    color: Color(0x4C4B39EF),
-                    boxShadow: [
+                    color: const Color(0x4C4B39EF),
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x33000000),
@@ -409,16 +405,16 @@ class _EventtWidgetState extends State<EventtWidget> {
                     ],
                     borderRadius: BorderRadius.circular(12.0),
                     border: Border.all(
-                      color: Color(0xFF4B39EF),
+                      color: const Color(0xFF4B39EF),
                       width: 2.0,
                     ),
                   ),
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     'View in Map',
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Plus Jakarta Sans',
-                          color: Color(0xFF4B39EF),
+                          color: const Color(0xFF4B39EF),
                           fontSize: 16.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,

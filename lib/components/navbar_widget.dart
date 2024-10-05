@@ -3,14 +3,9 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'navbar_model.dart';
 export 'navbar_model.dart';
 
@@ -19,8 +14,8 @@ class NavbarWidget extends StatefulWidget {
     super.key,
     int? selectedPageIndex,
     bool? hidden,
-  })  : this.selectedPageIndex = selectedPageIndex ?? 1,
-        this.hidden = hidden ?? false;
+  })  : selectedPageIndex = selectedPageIndex ?? 1,
+        hidden = hidden ?? false;
 
   final int selectedPageIndex;
   final bool hidden;
@@ -54,8 +49,8 @@ class _NavbarWidgetState extends State<NavbarWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.5, 1.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.5, 1.0),
+            end: const Offset(1.0, 1.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -73,8 +68,8 @@ class _NavbarWidgetState extends State<NavbarWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.5, 1.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.5, 1.0),
+            end: const Offset(1.0, 1.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -92,8 +87,8 @@ class _NavbarWidgetState extends State<NavbarWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.5, 1.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.5, 1.0),
+            end: const Offset(1.0, 1.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -121,13 +116,13 @@ class _NavbarWidgetState extends State<NavbarWidget>
     return Stack(
       children: [
         Align(
-          alignment: AlignmentDirectional(0.0, 1.0),
+          alignment: const AlignmentDirectional(0.0, 1.0),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(8.0, 16.0, 8.0, 8.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 16.0, 8.0, 8.0),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 50.0,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Color(0xFF3F1E8C), Color(0xFF3EB0ED)],
                   stops: [0.0, 1.0],
@@ -142,7 +137,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                 ),
               ),
               child: Align(
-                alignment: AlignmentDirectional(0.0, 1.0),
+                alignment: const AlignmentDirectional(0.0, 1.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -151,7 +146,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Opacity(
-                          opacity: widget!.selectedPageIndex == 1 ? 1.0 : 0.5,
+                          opacity: widget.selectedPageIndex == 1 ? 1.0 : 0.5,
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             borderWidth: 1.0,
@@ -165,7 +160,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                               context.goNamed(
                                 'Event',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -175,7 +170,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                             },
                           ),
                         ),
-                        if (widget!.selectedPageIndex == 1)
+                        if (widget.selectedPageIndex == 1)
                           SizedBox(
                             width: 40.0,
                             child: Divider(
@@ -191,7 +186,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Opacity(
-                          opacity: widget!.selectedPageIndex == 2 ? 1.0 : 0.5,
+                          opacity: widget.selectedPageIndex == 2 ? 1.0 : 0.5,
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             borderWidth: 1.0,
@@ -205,7 +200,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                               context.goNamed(
                                 'QRcodeScan',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -215,7 +210,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                             },
                           ),
                         ),
-                        if (widget!.selectedPageIndex == 2)
+                        if (widget.selectedPageIndex == 2)
                           SizedBox(
                             width: 40.0,
                             child: Divider(
@@ -231,7 +226,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Opacity(
-                          opacity: widget!.selectedPageIndex == 3 ? 1.0 : 0.5,
+                          opacity: widget.selectedPageIndex == 3 ? 1.0 : 0.5,
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             borderWidth: 1.0,
@@ -245,7 +240,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                               context.goNamed(
                                 'RuffleDraw',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -255,7 +250,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                             },
                           ),
                         ),
-                        if (widget!.selectedPageIndex == 3)
+                        if (widget.selectedPageIndex == 3)
                           SizedBox(
                             width: 40.0,
                             child: Divider(
@@ -267,7 +262,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                               animationsMap['dividerOnPageLoadAnimation3']!),
                       ],
                     ),
-                  ].divide(SizedBox(width: 10.0)).around(SizedBox(width: 10.0)),
+                  ].divide(const SizedBox(width: 10.0)).around(const SizedBox(width: 10.0)),
                 ),
               ),
             ),
@@ -277,7 +272,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
           width: double.infinity,
           height: 69.0,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               colors: [Color(0xFF3F1E8C), Color(0xFF3EB0ED)],
               stops: [0.0, 1.0],
               begin: AlignmentDirectional(0.0, 1.0),
@@ -286,13 +281,13 @@ class _NavbarWidgetState extends State<NavbarWidget>
             borderRadius: BorderRadius.circular(0.0),
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
@@ -304,7 +299,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                   child: FlutterFlowIconButton(
                     borderRadius: 8.0,
                     buttonSize: 60.0,

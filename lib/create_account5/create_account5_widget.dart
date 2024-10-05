@@ -5,9 +5,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'create_account5_model.dart';
 export 'create_account5_model.dart';
 
@@ -76,7 +73,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Color(0xFF101213),
               size: 30.0,
@@ -85,20 +82,20 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
               context.pop();
             },
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Container(
               width: double.infinity,
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 maxWidth: 670.0,
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
               ),
               child: Column(
@@ -108,14 +105,14 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 32.0, 0.0, 8.0),
                               child: Text(
                                 'Join us & cook with confidence',
@@ -124,7 +121,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                     .displayMedium
                                     .override(
                                       fontFamily: 'Urbanist',
-                                      color: Color(0xFF101213),
+                                      color: const Color(0xFF101213),
                                       fontSize: 48.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -132,7 +129,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 12.0),
                               child: Text(
                                 'Save delicious recipes and get personalized content.',
@@ -141,7 +138,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                     .labelLarge
                                     .override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: Color(0xFF57636C),
+                                      color: const Color(0xFF57636C),
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
@@ -149,7 +146,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 16.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController1,
@@ -163,47 +160,47 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: Color(0xFF57636C),
+                                        color: const Color(0xFF57636C),
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
-                                  enabledBorder: UnderlineInputBorder(
+                                  enabledBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFE0E3E7),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
-                                  focusedBorder: UnderlineInputBorder(
+                                  focusedBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFF4B39EF),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
-                                  errorBorder: UnderlineInputBorder(
+                                  errorBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFFF5963),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
-                                  focusedErrorBorder: UnderlineInputBorder(
+                                  focusedErrorBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFFF5963),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
@@ -211,14 +208,14 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                   filled: true,
                                   fillColor: Colors.white,
                                   contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
+                                      const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 16.0, 8.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: Color(0xFF101213),
+                                      color: const Color(0xFF101213),
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
@@ -229,7 +226,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 16.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController2,
@@ -242,47 +239,47 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: Color(0xFF57636C),
+                                        color: const Color(0xFF57636C),
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
-                                  enabledBorder: UnderlineInputBorder(
+                                  enabledBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFE0E3E7),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
-                                  focusedBorder: UnderlineInputBorder(
+                                  focusedBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFF4B39EF),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
-                                  errorBorder: UnderlineInputBorder(
+                                  errorBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFFF5963),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
-                                  focusedErrorBorder: UnderlineInputBorder(
+                                  focusedErrorBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFFF5963),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
@@ -290,14 +287,14 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                   filled: true,
                                   fillColor: Colors.white,
                                   contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
+                                      const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 16.0, 8.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: Color(0xFF101213),
+                                      color: const Color(0xFF101213),
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
@@ -308,7 +305,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 16.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController3,
@@ -322,47 +319,47 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: Color(0xFF57636C),
+                                        color: const Color(0xFF57636C),
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
-                                  enabledBorder: UnderlineInputBorder(
+                                  enabledBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFE0E3E7),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
-                                  focusedBorder: UnderlineInputBorder(
+                                  focusedBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFF4B39EF),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
-                                  errorBorder: UnderlineInputBorder(
+                                  errorBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFFF5963),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
-                                  focusedErrorBorder: UnderlineInputBorder(
+                                  focusedErrorBorder: const UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFFF5963),
                                       width: 2.0,
                                     ),
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
                                       topRight: Radius.circular(4.0),
                                     ),
@@ -370,7 +367,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                   filled: true,
                                   fillColor: Colors.white,
                                   contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
+                                      const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 16.0, 8.0),
                                   suffixIcon: InkWell(
                                     onTap: () => safeSetState(
@@ -382,7 +379,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                       _model.passwordVisibility
                                           ? Icons.visibility_outlined
                                           : Icons.visibility_off_outlined,
-                                      color: Color(0xFF101213),
+                                      color: const Color(0xFF101213),
                                       size: 24.0,
                                     ),
                                   ),
@@ -391,7 +388,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                     .bodyLarge
                                     .override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: Color(0xFF101213),
+                                      color: const Color(0xFF101213),
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
@@ -403,7 +400,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                             ),
                             Theme(
                               data: ThemeData(
-                                unselectedWidgetColor: Color(0xFF57636C),
+                                unselectedWidgetColor: const Color(0xFF57636C),
                               ),
                               child: CheckboxListTile(
                                 value: _model.checkboxListTileValue ??= true,
@@ -417,19 +414,19 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                       .labelMedium
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: Color(0xFF57636C),
+                                        color: const Color(0xFF57636C),
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
                                 tileColor: Colors.white,
-                                activeColor: Color(0xFF101213),
+                                activeColor: const Color(0xFF101213),
                                 checkColor: Colors.white,
                                 dense: false,
                                 controlAffinity:
                                     ListTileControlAffinity.leading,
-                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(4.0),
@@ -445,7 +442,7 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                       ? MediaQuery.viewInsetsOf(context).bottom > 0
                       : _isKeyboardVisible))
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           16.0, 12.0, 16.0, 24.0),
                       child: FFButtonWidget(
                         onPressed: () {
@@ -455,11 +452,11 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 60.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFF101213),
+                          color: const Color(0xFF101213),
                           textStyle:
                               FlutterFlowTheme.of(context).titleMedium.override(
                                     fontFamily: 'Plus Jakarta Sans',
@@ -469,12 +466,12 @@ class _CreateAccount5WidgetState extends State<CreateAccount5Widget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                           elevation: 4.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(50.0),
-                          hoverColor: Color(0xFF101213),
+                          hoverColor: const Color(0xFF101213),
                         ),
                       ),
                     ),
