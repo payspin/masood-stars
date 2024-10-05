@@ -45,7 +45,7 @@ class _EventWidgetState extends State<EventWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.screenShot();
+      await actions.screenShot(context, scaffoldKey);
     });
 
     _model.textController ??= TextEditingController();
