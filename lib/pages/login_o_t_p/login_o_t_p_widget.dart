@@ -3,9 +3,14 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'login_o_t_p_model.dart';
 export 'login_o_t_p_model.dart';
 
@@ -51,8 +56,8 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(3.0, 3.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(3.0, 3.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -70,8 +75,8 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
             curve: Curves.bounceOut,
             delay: 300.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.6, 0.6),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 0.6),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -90,8 +95,8 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -109,8 +114,8 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
             curve: Curves.bounceOut,
             delay: 300.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.6, 0.6),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 0.6),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -129,8 +134,8 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -149,8 +154,8 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -173,11 +178,11 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
       child: Scaffold(
         key: scaffoldKey,
         body: Align(
-          alignment: const AlignmentDirectional(0.0, -1.0),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [Color(0xFF3F1E8C), Color(0xFF3EB0ED)],
                 stops: [0.0, 1.0],
@@ -186,10 +191,10 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
               ),
             ),
             child: Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Container(
                 width: 1000.0,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -198,18 +203,18 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                       child: Container(
                         width: double.infinity,
                         height: 200.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Container(
                           width: 100.0,
                           height: 100.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 40.0, 0.0, 40.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
@@ -222,9 +227,9 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 1.0),
+                                  alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         34.0, 0.0, 34.0, 5.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -234,7 +239,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                         context.pushNamed(
                                           'Registeration',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -248,12 +253,12 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                       options: FFButtonOptions(
                                         width: 600.0,
                                         height: 70.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: const Color(0xB73D4DB4),
+                                        color: Color(0xB73D4DB4),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -264,14 +269,14 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                               fontWeight: FontWeight.bold,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0xBEFFFFFF),
                                           width: 1.0,
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(12.0),
-                                        hoverColor: const Color(0xFFE8AA00),
-                                        hoverBorderSide: const BorderSide(
+                                        hoverColor: Color(0xFFE8AA00),
+                                        hoverBorderSide: BorderSide(
                                           color: Color(0xFFE8AA00),
                                           width: 1.0,
                                         ),
@@ -281,14 +286,14 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Form(
                                     key: _model.formKey1,
                                     autovalidateMode: AutovalidateMode.always,
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 40.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -296,7 +301,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                               MainAxisAlignment.spaceEvenly,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       44.0, 44.0, 44.0, 22.0),
                                               child: Text(
@@ -320,10 +325,10 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                   'textOnPageLoadAnimation1']!),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       34.0, 0.0, 34.0, 12.0),
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: 600.0,
                                                 child: TextFormField(
                                                   controller: _model
@@ -331,7 +336,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                   focusNode: _model
                                                       .emailAddressGuestFocusNode,
                                                   autofocus: true,
-                                                  autofillHints: const [
+                                                  autofillHints: [
                                                     AutofillHints.email
                                                   ],
                                                   obscureText: false,
@@ -343,7 +348,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -352,7 +357,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     hintText: 'Email address',
                                                     enabledBorder:
                                                         UnderlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0xFFF1F4F8),
                                                         width: 2.0,
@@ -363,7 +368,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     ),
                                                     focusedBorder:
                                                         UnderlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 2.0,
@@ -374,7 +379,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     ),
                                                     errorBorder:
                                                         UnderlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 2.0,
@@ -385,7 +390,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     ),
                                                     focusedErrorBorder:
                                                         UnderlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 2.0,
@@ -396,7 +401,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     ),
                                                     filled: true,
                                                     fillColor:
-                                                        const Color(0xFFF1F4F8),
+                                                        Color(0xFFF1F4F8),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -405,7 +410,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF101213),
+                                                            Color(0xFF101213),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -420,10 +425,10 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       34.0, 0.0, 34.0, 16.0),
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: 600.0,
                                                 child: TextFormField(
                                                   controller: _model
@@ -431,7 +436,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                   focusNode: _model
                                                       .passwordGuestFocusNode,
                                                   autofocus: true,
-                                                  autofillHints: const [
+                                                  autofillHints: [
                                                     AutofillHints.password
                                                   ],
                                                   obscureText: !_model
@@ -444,7 +449,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -453,7 +458,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     hintText: 'Password',
                                                     enabledBorder:
                                                         UnderlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0xFFF1F4F8),
                                                         width: 2.0,
@@ -464,7 +469,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     ),
                                                     focusedBorder:
                                                         UnderlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 2.0,
@@ -475,7 +480,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     ),
                                                     errorBorder:
                                                         UnderlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 2.0,
@@ -486,7 +491,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     ),
                                                     focusedErrorBorder:
                                                         UnderlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 2.0,
@@ -497,7 +502,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     ),
                                                     filled: true,
                                                     fillColor:
-                                                        const Color(0xFFF1F4F8),
+                                                        Color(0xFFF1F4F8),
                                                     suffixIcon: InkWell(
                                                       onTap: () => safeSetState(
                                                         () => _model
@@ -514,7 +519,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                             : Icons
                                                                 .visibility_off_outlined,
                                                         color:
-                                                            const Color(0xFF57636C),
+                                                            Color(0xFF57636C),
                                                         size: 24.0,
                                                       ),
                                                     ),
@@ -526,7 +531,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF101213),
+                                                            Color(0xFF101213),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -539,10 +544,10 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         34.0, 0.0, 34.0, 10.0),
                                                 child: FFButtonWidget(
@@ -570,7 +575,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                       context.mounted,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -593,14 +598,14 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     width: 600.0,
                                                     height: 50.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: const Color(0xFFE8AA00),
+                                                    color: Color(0xFFE8AA00),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyLarge
@@ -616,7 +621,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                               FontWeight.w500,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Color(0xFFE8AA00),
                                                       width: 2.0,
                                                     ),
@@ -624,8 +629,8 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                         BorderRadius.circular(
                                                             12.0),
                                                     hoverColor:
-                                                        const Color(0xFFE8AA00),
-                                                    hoverBorderSide: const BorderSide(
+                                                        Color(0xFFE8AA00),
+                                                    hoverBorderSide: BorderSide(
                                                       color: Color(0xFFE8AA00),
                                                       width: 2.0,
                                                     ),
@@ -640,7 +645,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 6.0, 0.0, 32.0),
                                               child: InkWell(
@@ -669,7 +674,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                             Container(
                                               width: 100.0,
                                               height: 100.0,
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                             ),
                                           ],
                                         ).animateOnPageLoad(animationsMap[
@@ -679,14 +684,14 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Form(
                                     key: _model.formKey2,
                                     autovalidateMode: AutovalidateMode.always,
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 40.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -694,7 +699,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                               MainAxisAlignment.spaceEvenly,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       44.0, 44.0, 44.0, 22.0),
                                               child: Text(
@@ -718,7 +723,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                   'textOnPageLoadAnimation2']!),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       44.0, 44.0, 44.0, 22.0),
                                               child: Text(
@@ -742,7 +747,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                   'textOnPageLoadAnimation3']!),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       34.0, 0.0, 34.0, 0.0),
                                               child: PinCodeTextField(
@@ -778,7 +783,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                   fieldWidth: 44.0,
                                                   borderWidth: 2.0,
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(12.0),
                                                     bottomRight:
@@ -813,10 +818,10 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         34.0, 0.0, 34.0, 10.0),
                                                 child: FFButtonWidget(
@@ -826,11 +831,12 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     final smsCodeVal = _model
                                                         .pinCodeController!
                                                         .text;
-                                                    if (smsCodeVal.isEmpty) {
+                                                    if (smsCodeVal == null ||
+                                                        smsCodeVal.isEmpty) {
                                                       ScaffoldMessenger.of(
                                                               context)
                                                           .showSnackBar(
-                                                        const SnackBar(
+                                                        SnackBar(
                                                           content: Text(
                                                               'Enter SMS verification code.'),
                                                         ),
@@ -857,7 +863,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                       context.mounted,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -880,14 +886,14 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                     width: 600.0,
                                                     height: 50.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: const Color(0xFFE8AA00),
+                                                    color: Color(0xFFE8AA00),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyLarge
@@ -903,7 +909,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                               FontWeight.w500,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Color(0xFFE8AA00),
                                                       width: 2.0,
                                                     ),
@@ -911,8 +917,8 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                                         BorderRadius.circular(
                                                             12.0),
                                                     hoverColor:
-                                                        const Color(0xFFE8AA00),
-                                                    hoverBorderSide: const BorderSide(
+                                                        Color(0xFFE8AA00),
+                                                    hoverBorderSide: BorderSide(
                                                       color: Color(0xFFE8AA00),
                                                       width: 2.0,
                                                     ),
@@ -929,7 +935,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                             Container(
                                               width: 100.0,
                                               height: 100.0,
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                             ),
                                           ],
                                         ).animateOnPageLoad(animationsMap[
