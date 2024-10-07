@@ -1,10 +1,10 @@
-import '/components/navbar_widget.dart';
+import '/comp/tap_bar_mob_view/tap_bar_mob_view_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'event_widget.dart' show EventWidget;
+import 'event_page_widget.dart' show EventPageWidget;
 import 'package:flutter/material.dart';
 
-class EventModel extends FlutterFlowModel<EventWidget> {
+class EventPageModel extends FlutterFlowModel<EventPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.
@@ -16,12 +16,12 @@ class EventModel extends FlutterFlowModel<EventWidget> {
   List<String>? get choiceChipsValues => choiceChipsValueController?.value;
   set choiceChipsValues(List<String>? val) =>
       choiceChipsValueController?.value = val;
-  // Model for NAVBAR component.
-  late NavbarModel navbarModel;
+  // Model for TapBarMobView component.
+  late TapBarMobViewModel tapBarMobViewModel;
 
   @override
   void initState(BuildContext context) {
-    navbarModel = createModel(context, () => NavbarModel());
+    tapBarMobViewModel = createModel(context, () => TapBarMobViewModel());
   }
 
   @override
@@ -29,6 +29,6 @@ class EventModel extends FlutterFlowModel<EventWidget> {
     textFieldFocusNode?.dispose();
     textController?.dispose();
 
-    navbarModel.dispose();
+    tapBarMobViewModel.dispose();
   }
 }

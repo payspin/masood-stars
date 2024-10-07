@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/navbar_widget.dart';
+import '/comp/tap_bar_mob_view/tap_bar_mob_view_widget.dart';
+import '/components/dropdown_widget.dart';
 import '/components/q_rcode_web_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -7,25 +8,25 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'q_rcode_scan_model.dart';
-export 'q_rcode_scan_model.dart';
+import 'q_rcode_scan_page_model.dart';
+export 'q_rcode_scan_page_model.dart';
 
-class QRcodeScanWidget extends StatefulWidget {
-  const QRcodeScanWidget({super.key});
+class QRcodeScanPageWidget extends StatefulWidget {
+  const QRcodeScanPageWidget({super.key});
 
   @override
-  State<QRcodeScanWidget> createState() => _QRcodeScanWidgetState();
+  State<QRcodeScanPageWidget> createState() => _QRcodeScanPageWidgetState();
 }
 
-class _QRcodeScanWidgetState extends State<QRcodeScanWidget> {
-  late QRcodeScanModel _model;
+class _QRcodeScanPageWidgetState extends State<QRcodeScanPageWidget> {
+  late QRcodeScanPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => QRcodeScanModel());
+    _model = createModel(context, () => QRcodeScanPageModel());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -47,6 +48,30 @@ class _QRcodeScanWidgetState extends State<QRcodeScanWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar:
+            valueOrDefault<bool>(currentUserDocument?.eventManager, false) ==
+                    true
+                ? AppBar(
+                    backgroundColor: const Color(0xFF4B39EF),
+                    automaticallyImplyLeading: false,
+                    title: Visibility(
+                      visible: responsiveVisibility(
+                        context: context,
+                        tablet: false,
+                        tabletLandscape: false,
+                        desktop: false,
+                      ),
+                      child: wrapWithModel(
+                        model: _model.tapBarMobViewModel,
+                        updateCallback: () => safeSetState(() {}),
+                        child: const TapBarMobViewWidget(),
+                      ),
+                    ),
+                    actions: const [],
+                    centerTitle: false,
+                    elevation: 2.0,
+                  )
+                : null,
         body: SafeArea(
           top: true,
           child: Stack(
@@ -543,17 +568,45 @@ class _QRcodeScanWidgetState extends State<QRcodeScanWidget> {
                                     ],
                                   ),
                                 ),
-                                const Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Icon(
-                                        Icons.menu_open_rounded,
-                                        color: Color(0xFF606A85),
-                                        size: 24.0,
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: const DropdownWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
+                                        },
+                                        child: const Icon(
+                                          Icons.menu_open_rounded,
+                                          color: Color(0xFF606A85),
+                                          size: 24.0,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -605,17 +658,6 @@ class _QRcodeScanWidgetState extends State<QRcodeScanWidget> {
                                                         CrossAxisAlignment
                                                             .start,
                                                     children: [
-                                                      if (responsiveVisibility(
-                                                        context: context,
-                                                        tablet: false,
-                                                        tabletLandscape: false,
-                                                        desktop: false,
-                                                      ))
-                                                        Container(
-                                                          height: 70.0,
-                                                          decoration:
-                                                              const BoxDecoration(),
-                                                        ),
                                                       Align(
                                                         alignment:
                                                             const AlignmentDirectional(
@@ -963,25 +1005,6 @@ class _QRcodeScanWidgetState extends State<QRcodeScanWidget> {
                         ),
                       ),
                     ],
-                  ),
-                ),
-              if ((valueOrDefault<bool>(
-                          currentUserDocument?.eventManager, false) ==
-                      true) &&
-                  responsiveVisibility(
-                    context: context,
-                    tablet: false,
-                    tabletLandscape: false,
-                    desktop: false,
-                  ))
-                AuthUserStreamWidget(
-                  builder: (context) => wrapWithModel(
-                    model: _model.navbarModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: const NavbarWidget(
-                      selectedPageIndex: 2,
-                      hidden: false,
-                    ),
                   ),
                 ),
             ],

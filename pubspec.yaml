@@ -25,8 +25,9 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  another_flushbar: ^1.12.30
   auto_size_text: 3.0.0
-  barcode_widget: 2.0.3
+  barcode_widget: ^2.0.4
   cached_network_image: 3.3.1
   cloud_firestore: 4.17.3
   cloud_firestore_platform_interface: 6.2.3

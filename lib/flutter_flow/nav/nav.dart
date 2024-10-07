@@ -75,13 +75,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const EventWidget() : const LoginWidget(),
+          appStateNotifier.loggedIn ? const EventPageWidget() : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const EventWidget() : const LoginWidget(),
+              appStateNotifier.loggedIn ? const EventPageWidget() : const LoginWidget(),
         ),
         FFRoute(
           name: 'Settings',
@@ -180,20 +180,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const LoginEventManagerOTPWidget(),
         ),
         FFRoute(
-          name: 'Event',
-          path: '/event',
+          name: 'EventPage',
+          path: '/eventpage',
           requireAuth: true,
-          builder: (context, params) => const EventWidget(),
+          builder: (context, params) => const EventPageWidget(),
         ),
         FFRoute(
-          name: 'QRcodeScan',
-          path: '/qRcodeScan',
+          name: 'QRcodeScanPage',
+          path: '/qRcodeScanPage',
           requireAuth: true,
-          builder: (context, params) => const QRcodeScanWidget(),
+          builder: (context, params) => const QRcodeScanPageWidget(),
         ),
         FFRoute(
           name: 'RuffleDraw',
-          path: '/ruffleDraw',
+          path: '/ruffleDrawpage',
           requireAuth: true,
           builder: (context, params) => const RuffleDrawWidget(),
         ),
@@ -202,6 +202,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/event031024',
           requireAuth: true,
           builder: (context, params) => const Event031024Widget(),
+        ),
+        FFRoute(
+          name: 'RuffleDrawPage',
+          path: '/ruffleDrawPage',
+          requireAuth: true,
+          builder: (context, params) => const RuffleDrawPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -22,7 +22,10 @@ export '/pages/recoverpassword/recoverpassword_widget.dart'
 export '/pages/login_o_t_p/login_o_t_p_widget.dart' show LoginOTPWidget;
 export '/pages/login_event_manager_o_t_p/login_event_manager_o_t_p_widget.dart'
     show LoginEventManagerOTPWidget;
-export '/pages/event/event_widget.dart' show EventWidget;
-export '/pages/q_rcode_scan/q_rcode_scan_widget.dart' show QRcodeScanWidget;
+export '/pages/event_page/event_page_widget.dart' show EventPageWidget;
+export '/pages/q_rcode_scan_page/q_rcode_scan_page_widget.dart'
+    show QRcodeScanPageWidget;
 export '/pages/ruffle_draw/ruffle_draw_widget.dart' show RuffleDrawWidget;
 export '/pages/event031024/event031024_widget.dart' show Event031024Widget;
+export '/pages/ruffle_draw_page/ruffle_draw_page_widget.dart'
+    show RuffleDrawPageWidget;

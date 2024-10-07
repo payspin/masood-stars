@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/navbar_widget.dart';
+import '/comp/tap_bar_mob_view/tap_bar_mob_view_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -16,19 +16,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'event_model.dart';
-export 'event_model.dart';
+import 'event_page_model.dart';
+export 'event_page_model.dart';
 
-class EventWidget extends StatefulWidget {
-  const EventWidget({super.key});
+class EventPageWidget extends StatefulWidget {
+  const EventPageWidget({super.key});
 
   @override
-  State<EventWidget> createState() => _EventWidgetState();
+  State<EventPageWidget> createState() => _EventPageWidgetState();
 }
 
-class _EventWidgetState extends State<EventWidget>
+class _EventPageWidgetState extends State<EventPageWidget>
     with TickerProviderStateMixin {
-  late EventModel _model;
+  late EventPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -37,7 +37,7 @@ class _EventWidgetState extends State<EventWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EventModel());
+    _model = createModel(context, () => EventPageModel());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -148,6 +148,30 @@ class _EventWidgetState extends State<EventWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar:
+            valueOrDefault<bool>(currentUserDocument?.eventManager, false) ==
+                    true
+                ? AppBar(
+                    backgroundColor: const Color(0xFF4B39EF),
+                    automaticallyImplyLeading: false,
+                    title: Visibility(
+                      visible: responsiveVisibility(
+                        context: context,
+                        tablet: false,
+                        tabletLandscape: false,
+                        desktop: false,
+                      ),
+                      child: wrapWithModel(
+                        model: _model.tapBarMobViewModel,
+                        updateCallback: () => safeSetState(() {}),
+                        child: const TapBarMobViewWidget(),
+                      ),
+                    ),
+                    actions: const [],
+                    centerTitle: false,
+                    elevation: 2.0,
+                  )
+                : null,
         body: SafeArea(
           top: true,
           child: Stack(
@@ -289,7 +313,7 @@ class _EventWidgetState extends State<EventWidget>
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'Event',
+                                                    'EventPage',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           const TransitionInfo(
@@ -772,18 +796,6 @@ class _EventWidgetState extends State<EventWidget>
                                                         CrossAxisAlignment
                                                             .start,
                                                     children: [
-                                                      if (responsiveVisibility(
-                                                        context: context,
-                                                        tablet: false,
-                                                        tabletLandscape: false,
-                                                        desktop: false,
-                                                      ))
-                                                        Container(
-                                                          width: 100.0,
-                                                          height: 70.0,
-                                                          decoration:
-                                                              const BoxDecoration(),
-                                                        ),
                                                       Align(
                                                         alignment:
                                                             const AlignmentDirectional(
@@ -3074,7 +3086,7 @@ class _EventWidgetState extends State<EventWidget>
                                                       .spaceBetween,
                                               children: [
                                                 Text(
-                                                  'Annual Conference',
+                                                  'Al Masaood Stars Event',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .headlineLarge
@@ -3152,7 +3164,7 @@ class _EventWidgetState extends State<EventWidget>
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
-                                                'Abu Dhabi, ADNEC, Hall 1',
+                                                'Abu Dhabi, ADNEC, Hall 11',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .titleLarge
@@ -3275,11 +3287,18 @@ class _EventWidgetState extends State<EventWidget>
                                                           child: Container(
                                                             width: 100.0,
                                                             decoration:
-                                                                const BoxDecoration(
-                                                              color: Color(
-                                                                  0xFF4B39EF),
+                                                                BoxDecoration(
+                                                              image:
+                                                                  DecorationImage(
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                                image:
+                                                                    Image.asset(
+                                                                  'assets/images/5-A3-BEST_TEAM_AWARD-01.png',
+                                                                ).image,
+                                                              ),
                                                               borderRadius:
-                                                                  BorderRadius
+                                                                  const BorderRadius
                                                                       .only(
                                                                 bottomLeft: Radius
                                                                     .circular(
@@ -3353,7 +3372,7 @@ class _EventWidgetState extends State<EventWidget>
                                                                                 0.0),
                                                                             child:
                                                                                 AutoSizeText(
-                                                                              'Masaood Stars Awards 2024',
+                                                                              'Al Masaood Stars Awards 2024',
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
@@ -3391,7 +3410,7 @@ class _EventWidgetState extends State<EventWidget>
                                                                             0.0),
                                                                     child:
                                                                         AutoSizeText(
-                                                                      '@ Abu Dhabi, ADNEC, Hall 1',
+                                                                      '@ Abu Dhabi, ADNEC, Hall 11',
                                                                       textAlign:
                                                                           TextAlign
                                                                               .start,
@@ -3833,6 +3852,55 @@ class _EventWidgetState extends State<EventWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
+                                                                            'Ruffle Draw',
+                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  color: const Color(0xFF57636C),
+                                                                                  fontSize: 16.0,
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
+                                                                        ),
+                                                                        Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            ticketviewUsersRecord?.iDnumber,
+                                                                            'ID Number',
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                color: const Color(0xFF57636C),
+                                                                                fontSize: 16.0,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w500,
+                                                                              ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ),
+                                                                  Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              12.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
                                                                             'Color code',
                                                                             style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
@@ -3891,38 +3959,49 @@ class _EventWidgetState extends State<EventWidget>
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
-                                                                    Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          BarcodeWidget(
-                                                                        data: ticketviewUsersRecord!
-                                                                            .uid,
-                                                                        barcode:
-                                                                            Barcode.qrCode(),
-                                                                        width:
-                                                                            200.0,
-                                                                        height:
-                                                                            200.0,
-                                                                        color: const Color(
-                                                                            0xFF101213),
-                                                                        backgroundColor:
-                                                                            Colors.transparent,
-                                                                        errorBuilder:
-                                                                            (context, error) =>
-                                                                                const SizedBox(
+                                                                    if (responsiveVisibility(
+                                                                      context:
+                                                                          context,
+                                                                      phone:
+                                                                          false,
+                                                                      tablet:
+                                                                          false,
+                                                                      tabletLandscape:
+                                                                          false,
+                                                                      desktop:
+                                                                          false,
+                                                                    ))
+                                                                      Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            16.0,
+                                                                            0.0,
+                                                                            16.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            BarcodeWidget(
+                                                                          data:
+                                                                              ticketviewUsersRecord!.uid,
+                                                                          barcode:
+                                                                              Barcode.qrCode(),
                                                                           width:
                                                                               200.0,
                                                                           height:
                                                                               200.0,
+                                                                          color:
+                                                                              const Color(0xFF101213),
+                                                                          backgroundColor:
+                                                                              Colors.transparent,
+                                                                          errorBuilder: (context, error) =>
+                                                                              const SizedBox(
+                                                                            width:
+                                                                                200.0,
+                                                                            height:
+                                                                                200.0,
+                                                                          ),
+                                                                          drawText:
+                                                                              false,
                                                                         ),
-                                                                        drawText:
-                                                                            false,
                                                                       ),
-                                                                    ),
                                                                     SizedBox(
                                                                       width:
                                                                           200.0,
@@ -3935,7 +4014,9 @@ class _EventWidgetState extends State<EventWidget>
                                                                         height:
                                                                             200.0,
                                                                         qrCode:
-                                                                            ticketviewUsersRecord.uid,
+                                                                            ticketviewUsersRecord?.uid,
+                                                                        email:
+                                                                            currentUserEmail,
                                                                       ),
                                                                     ),
                                                                   ],
@@ -3964,25 +4045,6 @@ class _EventWidgetState extends State<EventWidget>
                           ),
                         );
                       },
-                    ),
-                  ),
-                ),
-              if ((valueOrDefault<bool>(
-                          currentUserDocument?.eventManager, false) ==
-                      true) &&
-                  responsiveVisibility(
-                    context: context,
-                    tablet: false,
-                    tabletLandscape: false,
-                    desktop: false,
-                  ))
-                AuthUserStreamWidget(
-                  builder: (context) => wrapWithModel(
-                    model: _model.navbarModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: const NavbarWidget(
-                      selectedPageIndex: 1,
-                      hidden: false,
                     ),
                   ),
                 ),

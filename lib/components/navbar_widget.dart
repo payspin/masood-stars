@@ -158,7 +158,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                             ),
                             onPressed: () async {
                               context.goNamed(
-                                'Event',
+                                'EventPage',
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
@@ -198,7 +198,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                             ),
                             onPressed: () async {
                               context.goNamed(
-                                'QRcodeScan',
+                                'QRcodeScanPage',
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,

@@ -414,7 +414,7 @@ class _LoginEventWidgetState extends State<LoginEventWidget>
                                       }
 
                                       context.goNamedAuth(
-                                          'Event', context.mounted);
+                                          'EventPage', context.mounted);
                                     },
                                     text: 'Sign In',
                                     options: FFButtonOptions(
@@ -480,7 +480,7 @@ class _LoginEventWidgetState extends State<LoginEventWidget>
                                       }
 
                                       context.goNamedAuth(
-                                          'Event', context.mounted);
+                                          'EventPage', context.mounted);
                                     },
                                     text: 'Forgot Password?',
                                     options: FFButtonOptions(

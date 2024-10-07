@@ -1,5 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/navbar_widget.dart';
+import '/comp/tap_bar_mob_view/tap_bar_mob_view_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -43,6 +43,30 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar:
+            valueOrDefault<bool>(currentUserDocument?.eventManager, false) ==
+                    true
+                ? AppBar(
+                    backgroundColor: const Color(0xFF4B39EF),
+                    automaticallyImplyLeading: false,
+                    title: Visibility(
+                      visible: responsiveVisibility(
+                        context: context,
+                        tablet: false,
+                        tabletLandscape: false,
+                        desktop: false,
+                      ),
+                      child: wrapWithModel(
+                        model: _model.tapBarMobViewModel,
+                        updateCallback: () => safeSetState(() {}),
+                        child: const TapBarMobViewWidget(),
+                      ),
+                    ),
+                    actions: const [],
+                    centerTitle: false,
+                    elevation: 2.0,
+                  )
+                : null,
         body: SafeArea(
           top: true,
           child: Stack(
@@ -177,7 +201,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'Event',
+                                                  'EventPage',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         const TransitionInfo(
@@ -667,22 +691,6 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                         CrossAxisAlignment
                                                             .start,
                                                     children: [
-                                                      if (responsiveVisibility(
-                                                        context: context,
-                                                        tablet: false,
-                                                        tabletLandscape: false,
-                                                        desktop: false,
-                                                      ))
-                                                        Container(
-                                                          width:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  0.5,
-                                                          height: 70.0,
-                                                          decoration:
-                                                              const BoxDecoration(),
-                                                        ),
                                                       Align(
                                                         alignment:
                                                             const AlignmentDirectional(
@@ -789,8 +797,21 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                               Padding(
                                                 padding: const EdgeInsets.all(16.0),
                                                 child: FFButtonWidget(
-                                                  onPressed: () {
-                                                    print('Button pressed ...');
+                                                  onPressed: () async {
+                                                    context.pushNamed(
+                                                      'RuffleDrawPage',
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            const TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                          duration: Duration(
+                                                              milliseconds: 0),
+                                                        ),
+                                                      },
+                                                    );
                                                   },
                                                   text: 'Start Ruffle Draw',
                                                   icon: const Icon(
@@ -840,25 +861,6 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                         ),
                       ),
                     ],
-                  ),
-                ),
-              if ((valueOrDefault<bool>(
-                          currentUserDocument?.eventManager, false) ==
-                      true) &&
-                  responsiveVisibility(
-                    context: context,
-                    tablet: false,
-                    tabletLandscape: false,
-                    desktop: false,
-                  ))
-                AuthUserStreamWidget(
-                  builder: (context) => wrapWithModel(
-                    model: _model.navbarModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: const NavbarWidget(
-                      selectedPageIndex: 3,
-                      hidden: false,
-                    ),
                   ),
                 ),
             ],

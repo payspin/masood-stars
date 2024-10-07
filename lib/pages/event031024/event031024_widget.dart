@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -147,6 +146,127 @@ class _Event031024WidgetState extends State<Event031024Widget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).logoBlue,
+          automaticallyImplyLeading: false,
+          title: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/footer-logo-white.png',
+                    width: 130.0,
+                    height: 55.0,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
+                    child: FFButtonWidget(
+                      onPressed: () {
+                        print('Button pressed ...');
+                      },
+                      text: '',
+                      icon: const FaIcon(
+                        FontAwesomeIcons.spinner,
+                        size: 30.0,
+                      ),
+                      options: FFButtonOptions(
+                        width: 40.0,
+                        height: 40.0,
+                        padding: const EdgeInsets.all(0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(4.0, 2.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).logoBlue,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Space Grotesk',
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                ),
+                        elevation: 15.0,
+                        borderRadius: BorderRadius.circular(100.0),
+                        hoverTextColor: FlutterFlowTheme.of(context).logoOr2,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 6.0),
+                    child: FFButtonWidget(
+                      onPressed: () {
+                        print('Button pressed ...');
+                      },
+                      text: '',
+                      icon: const Icon(
+                        Icons.qr_code_scanner_outlined,
+                        size: 30.0,
+                      ),
+                      options: FFButtonOptions(
+                        width: 40.0,
+                        height: 40.0,
+                        padding: const EdgeInsets.all(0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).logoBlue,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Space Grotesk',
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                ),
+                        elevation: 15.0,
+                        borderRadius: BorderRadius.circular(100.0),
+                        hoverTextColor: FlutterFlowTheme.of(context).logoOr2,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 6.0),
+                    child: FFButtonWidget(
+                      onPressed: () {
+                        print('Button pressed ...');
+                      },
+                      text: '',
+                      icon: const Icon(
+                        Icons.menu_outlined,
+                        size: 30.0,
+                      ),
+                      options: FFButtonOptions(
+                        width: 40.0,
+                        height: 40.0,
+                        padding: const EdgeInsets.all(0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).logoBlue,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Space Grotesk',
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                ),
+                        elevation: 0.0,
+                        borderRadius: BorderRadius.circular(100.0),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 2.0,
+        ),
         body: SafeArea(
           top: true,
           child: Stack(
@@ -3945,25 +4065,6 @@ class _Event031024WidgetState extends State<Event031024Widget>
                           ),
                         );
                       },
-                    ),
-                  ),
-                ),
-              if ((valueOrDefault<bool>(
-                          currentUserDocument?.eventManager, false) ==
-                      true) &&
-                  responsiveVisibility(
-                    context: context,
-                    tablet: false,
-                    tabletLandscape: false,
-                    desktop: false,
-                  ))
-                AuthUserStreamWidget(
-                  builder: (context) => wrapWithModel(
-                    model: _model.navbarModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: const NavbarWidget(
-                      selectedPageIndex: 1,
-                      hidden: false,
                     ),
                   ),
                 ),

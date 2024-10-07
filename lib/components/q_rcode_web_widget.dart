@@ -39,20 +39,44 @@ class _QRcodeWebWidgetState extends State<QRcodeWebWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: double.infinity,
+      width: 400.0,
+      height: 850.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
-      child: const Column(
+      child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          SizedBox(
-            width: 300.0,
-            height: 300.0,
-            child: custom_widgets.QrCodeScannerWeb(
+          Text(
+            'Output',
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  fontFamily: 'Space Grotesk',
+                  letterSpacing: 0.0,
+                ),
+          ),
+          Text(
+            valueOrDefault<String>(
+              _model.outputQrCode,
+              'zoz',
+            ),
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  fontFamily: 'Space Grotesk',
+                  letterSpacing: 0.0,
+                ),
+          ),
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+            child: SizedBox(
               width: 300.0,
               height: 300.0,
+              child: custom_widgets.QrCodeScannerWeb(
+                width: 300.0,
+                height: 300.0,
+                onQrCodeScanned: (scannedText) async {
+                  _model.outputQrCode = scannedText;
+                  safeSetState(() {});
+                },
+              ),
             ),
           ),
         ],
