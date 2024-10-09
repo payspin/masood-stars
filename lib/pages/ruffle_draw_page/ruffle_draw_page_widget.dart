@@ -1,10 +1,16 @@
+import '/backend/backend.dart';
+import '/components/listview_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'ruffle_draw_page_model.dart';
@@ -29,6 +35,21 @@ class _RuffleDrawPageWidgetState extends State<RuffleDrawPageWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => RuffleDrawPageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.drawList = await queryUsersRecordOnce(
+        queryBuilder: (usersRecord) => usersRecord
+            .where(
+              'UserStateStatus',
+              isEqualTo: 'Registered',
+            )
+            .where(
+              'RuffleDraw',
+              isNotEqualTo: true,
+            ),
+      );
+    });
 
     animationsMap.addAll({
       'imageOnPageLoadAnimation': AnimationInfo(
@@ -256,326 +277,168 @@ class _RuffleDrawPageWidgetState extends State<RuffleDrawPageWidget>
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              'Ruffle Draw',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .headlineMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: const Color(0xFF15161E),
-                                                    fontSize: 24.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment
                                                       .spaceBetween,
                                               children: [
-                                                RichText(
-                                                  textScaler:
-                                                      MediaQuery.of(context)
-                                                          .textScaler,
-                                                  text: TextSpan(
-                                                    children: const [
-                                                      TextSpan(
-                                                        text: 'Wooster St.',
-                                                        style: TextStyle(),
+                                                Text(
+                                                  'Ruffle Draw',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineMedium
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color:
+                                                            const Color(0xFF15161E),
+                                                        fontSize: 24.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                       ),
-                                                      TextSpan(
-                                                        text: ' || ',
-                                                        style: TextStyle(),
-                                                      ),
-                                                      TextSpan(
-                                                        text: '0.8 mi',
-                                                        style: TextStyle(),
-                                                      )
-                                                    ],
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color:
-                                                              const Color(0xFF606A85),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
                                                 ),
-                                                Container(
-                                                  height: 32.0,
-                                                  decoration: BoxDecoration(
-                                                    color: const Color(0x4C39D2C0),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.0),
+                                                FlutterFlowTimer(
+                                                  initialTime:
+                                                      _model.timerInitialTimeMs,
+                                                  getDisplayTime: (value) =>
+                                                      StopWatchTimer
+                                                          .getDisplayTime(
+                                                    value,
+                                                    hours: false,
+                                                    milliSecond: false,
                                                   ),
-                                                  child: Align(
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                            0.0, 0.0),
-                                                    child: Padding(
+                                                  controller:
+                                                      _model.timerController,
+                                                  updateStateInterval: const Duration(
+                                                      milliseconds: 600),
+                                                  onChanged: (value,
+                                                      displayTime,
+                                                      shouldUpdate) {
+                                                    _model.timerMilliseconds =
+                                                        value;
+                                                    _model.timerValue =
+                                                        displayTime;
+                                                    if (shouldUpdate) {
+                                                      safeSetState(() {});
+                                                    }
+                                                  },
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                                GradientText(
+                                                  valueOrDefault<String>(
+                                                    _model.randomPick
+                                                        ?.toString(),
+                                                    'Ruffle Draw',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineMedium
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color:
+                                                            const Color(0xFF15161E),
+                                                        fontSize: 30.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                  colors: [
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
+                                                    FlutterFlowTheme.of(context)
+                                                        .customColor2,
+                                                    FlutterFlowTheme.of(context)
+                                                        .logoOr1
+                                                  ],
+                                                  gradientDirection:
+                                                      GradientDirection.ltr,
+                                                  gradientType:
+                                                      GradientType.linear,
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsets.all(10.0),
+                                                  child: FFButtonWidget(
+                                                    onPressed: () async {
+                                                      _model.randomPick =
+                                                          random_data
+                                                              .randomInteger(
+                                                                  valueOrDefault<
+                                                                      int>(
+                                                                    _model
+                                                                        .drawList
+                                                                        ?.length,
+                                                                    1,
+                                                                  ),
+                                                                  valueOrDefault<
+                                                                      int>(
+                                                                    _model
+                                                                        .drawList
+                                                                        ?.length,
+                                                                    1500,
+                                                                  ));
+                                                      safeSetState(() {});
+                                                    },
+                                                    text: 'Draw',
+                                                    icon: const Icon(
+                                                      Icons
+                                                          .play_circle_outline_sharp,
+                                                      size: 35.0,
+                                                    ),
+                                                    options: FFButtonOptions(
+                                                      height: 40.0,
                                                       padding:
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  12.0,
+                                                                  16.0,
                                                                   0.0,
-                                                                  12.0,
+                                                                  16.0,
                                                                   0.0),
-                                                      child: Text(
-                                                        'Available',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Figtree',
-                                                              color: const Color(
-                                                                  0xFF15161E),
-                                                              fontSize: 14.0,
-                                                              letterSpacing:
+                                                      iconPadding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ].divide(const SizedBox(width: 8.0)),
-                                            ),
-                                            const Divider(
-                                              height: 16.0,
-                                              thickness: 1.0,
-                                              color: Color(0xFFE5E7EB),
-                                            ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Expanded(
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      const Icon(
-                                                        Icons.bed_rounded,
-                                                        color:
-                                                            Color(0xFF15161E),
-                                                        size: 24.0,
-                                                      ),
-                                                      Text(
-                                                        '4 beds',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Figtree',
-                                                              color: const Color(
-                                                                  0xFF15161E),
-                                                              fontSize: 14.0,
-                                                              letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                      ),
-                                                    ].divide(
-                                                        const SizedBox(width: 4.0)),
-                                                  ),
-                                                ),
-                                                Expanded(
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      const Icon(
-                                                        Icons.bathtub_outlined,
-                                                        color:
-                                                            Color(0xFF15161E),
-                                                        size: 24.0,
-                                                      ),
-                                                      Text(
-                                                        '2 baths',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Figtree',
-                                                              color: const Color(
-                                                                  0xFF15161E),
-                                                              fontSize: 14.0,
-                                                              letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                      ),
-                                                    ].divide(
-                                                        const SizedBox(width: 4.0)),
-                                                  ),
-                                                ),
-                                                Expanded(
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      const Icon(
-                                                        Icons
-                                                            .space_dashboard_outlined,
-                                                        color:
-                                                            Color(0xFF15161E),
-                                                        size: 24.0,
-                                                      ),
-                                                      Text(
-                                                        '1,250 sqft',
-                                                        style: FlutterFlowTheme
+                                                                  0.0),
+                                                      color: const Color(0x831EFF00),
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Roboto',
+                                                                color: Colors
+                                                                    .white,
+                                                                fontSize: 25.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      elevation: 10.0,
+                                                      borderSide: BorderSide(
+                                                        color: FlutterFlowTheme
                                                                 .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Figtree',
-                                                              color: const Color(
-                                                                  0xFF15161E),
-                                                              fontSize: 14.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
+                                                            .secondaryBackground,
+                                                        width: 1.0,
                                                       ),
-                                                    ].divide(
-                                                        const SizedBox(width: 4.0)),
-                                                  ),
-                                                ),
-                                              ].divide(const SizedBox(width: 4.0)),
-                                            ),
-                                            const Divider(
-                                              height: 16.0,
-                                              thickness: 1.0,
-                                              color: Color(0xFFE5E7EB),
-                                            ),
-                                            Text(
-                                              'Rate',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: const Color(0xFF606A85),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Text(
-                                                      '\$2,520',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                'Figtree',
-                                                            color: const Color(
-                                                                0xFF15161E),
-                                                            fontSize: 16.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                          ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      hoverColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent4,
+                                                      hoverElevation: 5.0,
                                                     ),
-                                                    Text(
-                                                      'per month',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            color: const Color(
-                                                                0xFF606A85),
-                                                            fontSize: 14.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                    ),
-                                                  ].divide(
-                                                      const SizedBox(width: 4.0)),
-                                                ),
-                                                FFButtonWidget(
-                                                  onPressed: () {
-                                                    print('Button pressed ...');
-                                                  },
-                                                  text: 'Inquire',
-                                                  options: FFButtonOptions(
-                                                    height: 40.0,
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
-                                                    iconPadding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: const Color(0xFF6F61EF),
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Figtree',
-                                                          color: Colors.white,
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                    elevation: 3.0,
-                                                    borderSide: const BorderSide(
-                                                      color: Colors.transparent,
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.0),
-                                                    hoverColor:
-                                                        const Color(0x4D9489F5),
-                                                    hoverBorderSide: const BorderSide(
-                                                      color: Color(0xFF6F61EF),
-                                                      width: 2.0,
-                                                    ),
-                                                    hoverTextColor:
-                                                        const Color(0xFF15161E),
                                                   ),
                                                 ),
                                               ],
@@ -586,186 +449,14 @@ class _RuffleDrawPageWidgetState extends State<RuffleDrawPageWidget>
                                               color: Color(0xFFE5E7EB),
                                             ),
                                             Text(
-                                              'Hosted By',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: const Color(0xFF606A85),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 1.0),
-                                              child: Container(
-                                                width: double.infinity,
-                                                height: 60.0,
-                                                decoration: const BoxDecoration(
-                                                  color: Colors.white,
-                                                ),
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 4.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Container(
-                                                        width: 44.0,
-                                                        height: 44.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color:
-                                                              const Color(0x4D9489F5),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          border: Border.all(
-                                                            color: const Color(
-                                                                0xFF6F61EF),
-                                                            width: 2.0,
-                                                          ),
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              const EdgeInsets.all(
-                                                                  2.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                            child:
-                                                                Image.network(
-                                                              'https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMnx8cHJvZmlsZXxlbnwwfHx8fDE3MDY4MDg3MDl8MA&ixlib=rb-4.0.3&q=80&w=400',
-                                                              width: 40.0,
-                                                              height: 40.0,
-                                                              fit: BoxFit.cover,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            'Henry Lewis',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Figtree',
-                                                                  color: const Color(
-                                                                      0xFF15161E),
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                ),
-                                                          ),
-                                                          Text(
-                                                            'henry@realestate.com',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  color: const Color(
-                                                                      0xFF606A85),
-                                                                  fontSize:
-                                                                      14.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                          ),
-                                                        ].divide(const SizedBox(
-                                                            height: 4.0)),
-                                                      ),
-                                                    ].divide(
-                                                        const SizedBox(width: 12.0)),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            const Divider(
-                                              height: 16.0,
-                                              thickness: 1.0,
-                                              color: Color(0xFFE5E7EB),
-                                            ),
-                                            Text(
-                                              'Description',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: const Color(0xFF606A85),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                            Text(
-                                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Figtree',
-                                                    color: const Color(0xFF15161E),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                            ),
-                                            const Divider(
-                                              height: 16.0,
-                                              thickness: 1.0,
-                                              color: Color(0xFFE5E7EB),
-                                            ),
-                                            Text(
-                                              'Address',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: const Color(0xFF606A85),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                            Text(
-                                              '123 Disney Way, New York, NY 10294',
+                                              'Winner list',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyLarge
                                                   .override(
                                                     fontFamily: 'Figtree',
                                                     color: const Color(0xFF15161E),
-                                                    fontSize: 16.0,
+                                                    fontSize: 18.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
@@ -775,7 +466,7 @@ class _RuffleDrawPageWidgetState extends State<RuffleDrawPageWidget>
                                                   .fromSTEB(0.0, 8.0, 0.0, 0.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                height: 140.0,
+                                                height: 250.0,
                                                 decoration: BoxDecoration(
                                                   color: const Color(0xFFF1F4F8),
                                                   borderRadius:
@@ -785,25 +476,11 @@ class _RuffleDrawPageWidgetState extends State<RuffleDrawPageWidget>
                                                     color: const Color(0xFFE5E7EB),
                                                   ),
                                                 ),
-                                                child: Align(
-                                                  alignment:
-                                                      const AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Text(
-                                                    'Map goes here...',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Figtree',
-                                                          color:
-                                                              const Color(0xFF15161E),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                  ),
+                                                child: wrapWithModel(
+                                                  model: _model.listviewModel,
+                                                  updateCallback: () =>
+                                                      safeSetState(() {}),
+                                                  child: const ListviewWidget(),
                                                 ),
                                               ),
                                             ),

@@ -1,3 +1,18 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "UserStateStatus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "RuffleDraw",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
 }

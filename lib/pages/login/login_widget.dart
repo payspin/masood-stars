@@ -551,15 +551,6 @@ class _LoginWidgetState extends State<LoginWidget>
               ).animateOnPageLoad(
                   animationsMap['containerOnPageLoadAnimation']!),
             ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.asset(
-                'assets/images/mwmx0_600',
-                width: 200.0,
-                height: 200.0,
-                fit: BoxFit.cover,
-              ),
-            ),
           ],
         ),
       ),

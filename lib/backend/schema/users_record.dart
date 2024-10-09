@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -60,11 +61,6 @@ class UsersRecord extends FirestoreRecord {
   String get iDnumber => _iDnumber ?? '';
   bool hasIDnumber() => _iDnumber != null;
 
-  // "Color_Code" field.
-  String? _colorCode;
-  String get colorCode => _colorCode ?? '';
-  bool hasColorCode() => _colorCode != null;
-
   // "Admin" field.
   String? _admin;
   String get admin => _admin ?? '';
@@ -80,6 +76,31 @@ class UsersRecord extends FirestoreRecord {
   String get qrCodeUrl => _qrCodeUrl ?? '';
   bool hasQrCodeUrl() => _qrCodeUrl != null;
 
+  // "SendEmail" field.
+  bool? _sendEmail;
+  bool get sendEmail => _sendEmail ?? false;
+  bool hasSendEmail() => _sendEmail != null;
+
+  // "Colorcode" field.
+  Color? _colorcode;
+  Color? get colorcode => _colorcode;
+  bool hasColorcode() => _colorcode != null;
+
+  // "UserStateStatus" field.
+  String? _userStateStatus;
+  String get userStateStatus => _userStateStatus ?? '';
+  bool hasUserStateStatus() => _userStateStatus != null;
+
+  // "Color_Code" field.
+  String? _colorCode;
+  String get colorCode => _colorCode ?? '';
+  bool hasColorCode() => _colorCode != null;
+
+  // "RuffleDraw" field.
+  bool? _ruffleDraw;
+  bool get ruffleDraw => _ruffleDraw ?? false;
+  bool hasRuffleDraw() => _ruffleDraw != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -90,10 +111,14 @@ class UsersRecord extends FirestoreRecord {
     _department = snapshotData['Department'] as String?;
     _password = snapshotData['Password'] as String?;
     _iDnumber = snapshotData['IDnumber'] as String?;
-    _colorCode = snapshotData['Color_Code'] as String?;
     _admin = snapshotData['Admin'] as String?;
     _eventManager = snapshotData['Event_manager'] as bool?;
     _qrCodeUrl = snapshotData['qrCodeUrl'] as String?;
+    _sendEmail = snapshotData['SendEmail'] as bool?;
+    _colorcode = getSchemaColor(snapshotData['Colorcode']);
+    _userStateStatus = snapshotData['UserStateStatus'] as String?;
+    _colorCode = snapshotData['Color_Code'] as String?;
+    _ruffleDraw = snapshotData['RuffleDraw'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -139,10 +164,14 @@ Map<String, dynamic> createUsersRecordData({
   String? department,
   String? password,
   String? iDnumber,
-  String? colorCode,
   String? admin,
   bool? eventManager,
   String? qrCodeUrl,
+  bool? sendEmail,
+  Color? colorcode,
+  String? userStateStatus,
+  String? colorCode,
+  bool? ruffleDraw,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -155,10 +184,14 @@ Map<String, dynamic> createUsersRecordData({
       'Department': department,
       'Password': password,
       'IDnumber': iDnumber,
-      'Color_Code': colorCode,
       'Admin': admin,
       'Event_manager': eventManager,
       'qrCodeUrl': qrCodeUrl,
+      'SendEmail': sendEmail,
+      'Colorcode': colorcode,
+      'UserStateStatus': userStateStatus,
+      'Color_Code': colorCode,
+      'RuffleDraw': ruffleDraw,
     }.withoutNulls,
   );
 
@@ -179,10 +212,14 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.department == e2?.department &&
         e1?.password == e2?.password &&
         e1?.iDnumber == e2?.iDnumber &&
-        e1?.colorCode == e2?.colorCode &&
         e1?.admin == e2?.admin &&
         e1?.eventManager == e2?.eventManager &&
-        e1?.qrCodeUrl == e2?.qrCodeUrl;
+        e1?.qrCodeUrl == e2?.qrCodeUrl &&
+        e1?.sendEmail == e2?.sendEmail &&
+        e1?.colorcode == e2?.colorcode &&
+        e1?.userStateStatus == e2?.userStateStatus &&
+        e1?.colorCode == e2?.colorCode &&
+        e1?.ruffleDraw == e2?.ruffleDraw;
   }
 
   @override
@@ -196,10 +233,14 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.department,
         e?.password,
         e?.iDnumber,
-        e?.colorCode,
         e?.admin,
         e?.eventManager,
-        e?.qrCodeUrl
+        e?.qrCodeUrl,
+        e?.sendEmail,
+        e?.colorcode,
+        e?.userStateStatus,
+        e?.colorCode,
+        e?.ruffleDraw
       ]);
 
   @override

@@ -1,6 +1,5 @@
 // Automatic FlutterFlow imports
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom widgets
@@ -8,12 +7,14 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'package:http/http.dart' as http;
 import 'dart:typed_data'; // Import this for ByteData
 import 'dart:ui' as ui;
-import 'package:flutter/rendering.dart';
+
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/rendering.dart';
+
+import 'package:http/http.dart' as http;
 
 class ScreenshotCustom extends StatefulWidget {
   const ScreenshotCustom({
@@ -22,12 +23,14 @@ class ScreenshotCustom extends StatefulWidget {
     this.height,
     this.qrCode,
     this.email,
+    this.userId,
   });
 
   final double? width;
   final double? height;
   final String? qrCode;
   final String? email;
+  final String? userId;
 
   @override
   State<ScreenshotCustom> createState() => _ScreenshotCustomState();
@@ -61,37 +64,29 @@ class _ScreenshotCustomState extends State<ScreenshotCustom> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // Delay the capture to ensure full rendering
-      Future.delayed(
-          const Duration(milliseconds: 5000), () => _captureAndUploadImage2());
+      Future.delayed(const Duration(milliseconds: 5000),
+          () => _captureAndUploadImage(widget.userId));
     });
   }
 
-  Future<String?> _captureAndUploadImage() async {
+  Future<String?> _captureAndUploadImage(String userId) async {
     try {
-      RenderRepaintBoundary boundary = _repaintBoundaryKey.currentContext!
-          .findRenderObject() as RenderRepaintBoundary;
-      ui.Image image = await boundary.toImage();
-      ByteData? byteData =
-          await image.toByteData(format: ui.ImageByteFormat.png);
-      Uint8List pngBytes = byteData!.buffer.asUint8List();
+      // Check if receivedEmail is true in Firestore before proceeding
+      DocumentSnapshot userSnapshot = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(userId)
+          .get();
 
-      // Upload to Firebase Storage
-      String fileName =
-          'screenshots/${DateTime.now().millisecondsSinceEpoch}.png';
-      Reference storageRef = FirebaseStorage.instance.ref().child(fileName);
-      UploadTask uploadTask = storageRef.putData(pngBytes);
-      TaskSnapshot snapshot = await uploadTask;
-      String downloadUrl = await snapshot.ref.getDownloadURL();
+      if (userSnapshot.exists && userSnapshot.data() != null) {
+        var userData = userSnapshot.data() as Map<String, dynamic>;
+        if (userData['receivedEmail'] == true) {
+          // If receivedEmail is true, return without proceeding further
+          print('Email already sent to this user.');
+          return null;
+        }
+      }
 
-      return downloadUrl;
-    } catch (e) {
-      print('Error capturing and uploading image: $e');
-      return null;
-    }
-  }
-
-  Future<String?> _captureAndUploadImage2() async {
-    try {
+      // If receivedEmail is false or field not found, continue to send email
       RenderRepaintBoundary boundary = _repaintBoundaryKey.currentContext!
           .findRenderObject() as RenderRepaintBoundary;
       ui.Image image = await boundary.toImage();
@@ -126,6 +121,12 @@ class _ScreenshotCustomState extends State<ScreenshotCustom> {
 
       if (response.statusCode == 200) {
         print('Email sent successfully');
+
+        // Update Firestore: set receivedEmail to true after sending the email
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(userId)
+            .update({'receivedEmail': true});
       } else {
         print('Failed to send email: ${response.body}');
       }

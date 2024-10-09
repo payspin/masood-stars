@@ -9,6 +9,7 @@ import 'schema/users_record.dart';
 import 'schema/qr_data_record.dart';
 import 'schema/organizer_record.dart';
 import 'schema/event_admin_record.dart';
+import 'schema/draw_list_view_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -21,6 +22,7 @@ export 'schema/users_record.dart';
 export 'schema/qr_data_record.dart';
 export 'schema/organizer_record.dart';
 export 'schema/event_admin_record.dart';
+export 'schema/draw_list_view_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -165,6 +167,43 @@ Future<List<EventAdminRecord>> queryEventAdminRecordOnce({
     queryCollectionOnce(
       EventAdminRecord.collection,
       EventAdminRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query DrawListViewRecords (as a Stream and as a Future).
+Future<int> queryDrawListViewRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      DrawListViewRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<DrawListViewRecord>> queryDrawListViewRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      DrawListViewRecord.collection,
+      DrawListViewRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<DrawListViewRecord>> queryDrawListViewRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      DrawListViewRecord.collection,
+      DrawListViewRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
