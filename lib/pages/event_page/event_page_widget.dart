@@ -3945,10 +3945,8 @@ class _EventPageWidgetState extends State<EventPageWidget>
                                                                           ?.uid,
                                                                       email:
                                                                           currentUserEmail,
-                                                                      userId: valueOrDefault(
-                                                                          currentUserDocument
-                                                                              ?.iDnumber,
-                                                                          ''),
+                                                                      userId: ticketviewUsersRecord
+                                                                          ?.uid,
                                                                     ),
                                                                   ),
                                                                 ],

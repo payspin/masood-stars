@@ -65,7 +65,7 @@ class _ScreenshotCustomState extends State<ScreenshotCustom> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // Delay the capture to ensure full rendering
       Future.delayed(const Duration(milliseconds: 5000),
-          () => _captureAndUploadImage(widget.userId));
+          () => _captureAndUploadImage(widget.userId!));
     });
   }
 
