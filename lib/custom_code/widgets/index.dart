@@ -1,2 +1,2 @@
-export 'qr_code_scanner_web.dart' show QrCodeScannerWeb;
+export 'qr_s_canner_widget.dart' show QrSCannerWidget;
 export 'screenshot_custom.dart' show ScreenshotCustom;

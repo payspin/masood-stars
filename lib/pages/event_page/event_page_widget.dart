@@ -2997,7 +2997,7 @@ class _EventPageWidgetState extends State<EventPageWidget>
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
-                                                'Al Masaood Stars Event',
+                                                'Masaood Stars Event',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .headlineLarge
@@ -3015,7 +3015,9 @@ class _EventPageWidgetState extends State<EventPageWidget>
                                                 alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(12.0),
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 16.0, 0.0),
                                                   child: FlutterFlowIconButton(
                                                     borderColor:
                                                         Colors.transparent,
@@ -3733,12 +3735,9 @@ class _EventPageWidgetState extends State<EventPageWidget>
                                                                         ),
                                                                       ),
                                                                       Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          ticketviewUsersRecord
-                                                                              ?.iDnumber,
-                                                                          'ID Number',
-                                                                        ),
+                                                                        valueOrDefault(
+                                                                            currentUserDocument?.iDnumber,
+                                                                            ''),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
@@ -3752,27 +3751,52 @@ class _EventPageWidgetState extends State<EventPageWidget>
                                                                     ],
                                                                   ),
                                                                 ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          12.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
+                                                                if (responsiveVisibility(
+                                                                  context:
+                                                                      context,
+                                                                  phone: false,
+                                                                  tablet: false,
+                                                                  tabletLandscape:
+                                                                      false,
+                                                                  desktop:
+                                                                      false,
+                                                                ))
+                                                                  Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
                                                                             0.0,
                                                                             12.0,
+                                                                            0.0,
                                                                             0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Ruffle Draw',
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              12.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            'Ruffle Draw',
+                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  color: const Color(0xFF57636C),
+                                                                                  fontSize: 16.0,
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
+                                                                        ),
+                                                                        Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            ticketviewUsersRecord?.iDnumber,
+                                                                            'ID Number',
+                                                                          ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelLarge
                                                                               .override(
@@ -3783,27 +3807,9 @@ class _EventPageWidgetState extends State<EventPageWidget>
                                                                                 fontWeight: FontWeight.w500,
                                                                               ),
                                                                         ),
-                                                                      ),
-                                                                      Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          ticketviewUsersRecord
-                                                                              ?.iDnumber,
-                                                                          'ID Number',
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                              color: const Color(0xFF57636C),
-                                                                              fontSize: 16.0,
-                                                                              letterSpacing: 0.0,
-                                                                              fontWeight: FontWeight.w500,
-                                                                            ),
-                                                                      ),
-                                                                    ],
+                                                                      ],
+                                                                    ),
                                                                   ),
-                                                                ),
                                                                 Padding(
                                                                   padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
@@ -3941,12 +3947,18 @@ class _EventPageWidgetState extends State<EventPageWidget>
                                                                           200.0,
                                                                       height:
                                                                           200.0,
-                                                                      qrCode: ticketviewUsersRecord
-                                                                          ?.uid,
                                                                       email:
                                                                           currentUserEmail,
-                                                                      userId: ticketviewUsersRecord
-                                                                          ?.uid,
+                                                                      userName:
+                                                                          currentUserDisplayName,
+                                                                      employeeNumber: valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.iDnumber,
+                                                                          ''),
+                                                                      colorCode: valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.colorCode,
+                                                                          ''),
                                                                     ),
                                                                   ),
                                                                 ],

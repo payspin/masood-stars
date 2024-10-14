@@ -8,19 +8,19 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'recoverpassword_model.dart';
-export 'recoverpassword_model.dart';
+import 'new_password_model.dart';
+export 'new_password_model.dart';
 
-class RecoverpasswordWidget extends StatefulWidget {
-  const RecoverpasswordWidget({super.key});
+class NewPasswordWidget extends StatefulWidget {
+  const NewPasswordWidget({super.key});
 
   @override
-  State<RecoverpasswordWidget> createState() => _RecoverpasswordWidgetState();
+  State<NewPasswordWidget> createState() => _NewPasswordWidgetState();
 }
 
-class _RecoverpasswordWidgetState extends State<RecoverpasswordWidget>
+class _NewPasswordWidgetState extends State<NewPasswordWidget>
     with TickerProviderStateMixin {
-  late RecoverpasswordModel _model;
+  late NewPasswordModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -29,7 +29,7 @@ class _RecoverpasswordWidgetState extends State<RecoverpasswordWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => RecoverpasswordModel());
+    _model = createModel(context, () => NewPasswordModel());
 
     _model.emailAddressAdminTextController ??= TextEditingController();
     _model.emailAddressAdminFocusNode ??= FocusNode();
@@ -147,15 +147,14 @@ class _RecoverpasswordWidgetState extends State<RecoverpasswordWidget>
             ),
           );
         }
-        List<EventAdminRecord> recoverpasswordEventAdminRecordList =
-            snapshot.data!;
+        List<EventAdminRecord> newPasswordEventAdminRecordList = snapshot.data!;
         // Return an empty Container when the item does not exist.
         if (snapshot.data!.isEmpty) {
           return Container();
         }
-        final recoverpasswordEventAdminRecord =
-            recoverpasswordEventAdminRecordList.isNotEmpty
-                ? recoverpasswordEventAdminRecordList.first
+        final newPasswordEventAdminRecord =
+            newPasswordEventAdminRecordList.isNotEmpty
+                ? newPasswordEventAdminRecordList.first
                 : null;
 
         return GestureDetector(
@@ -356,7 +355,6 @@ class _RecoverpasswordWidgetState extends State<RecoverpasswordWidget>
                                                 .text,
                                             context: context,
                                           );
-                                          context.safePop();
                                         },
                                         text: 'Recover password',
                                         options: FFButtonOptions(

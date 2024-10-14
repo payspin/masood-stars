@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'registeration_widget.dart' show RegisterationWidget;
 import 'package:flutter/material.dart';
@@ -114,6 +115,9 @@ class RegisterationModel extends FlutterFlowModel<RegisterationWidget> {
 
     return null;
   }
+
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<UsersRecord>? o3;
 
   @override
   void initState(BuildContext context) {

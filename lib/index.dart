@@ -29,3 +29,9 @@ export '/pages/ruffle_draw/ruffle_draw_widget.dart' show RuffleDrawWidget;
 export '/pages/event031024/event031024_widget.dart' show Event031024Widget;
 export '/pages/ruffle_draw_page/ruffle_draw_page_widget.dart'
     show RuffleDrawPageWidget;
+export '/pages/new_password/new_password_widget.dart' show NewPasswordWidget;
+export '/q_rcode_page_view/q_rcode_page_view_widget.dart'
+    show QRcodePageViewWidget;
+export '/pages/email_page/email_page_widget.dart' show EmailPageWidget;
+export '/pages/email_registeration/email_registeration_widget.dart'
+    show EmailRegisterationWidget;

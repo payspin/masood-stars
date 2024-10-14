@@ -10,6 +10,7 @@ import 'schema/qr_data_record.dart';
 import 'schema/organizer_record.dart';
 import 'schema/event_admin_record.dart';
 import 'schema/draw_list_view_record.dart';
+import 'schema/masaood_d_b_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -23,6 +24,7 @@ export 'schema/qr_data_record.dart';
 export 'schema/organizer_record.dart';
 export 'schema/event_admin_record.dart';
 export 'schema/draw_list_view_record.dart';
+export 'schema/masaood_d_b_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -204,6 +206,43 @@ Future<List<DrawListViewRecord>> queryDrawListViewRecordOnce({
     queryCollectionOnce(
       DrawListViewRecord.collection,
       DrawListViewRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query MasaoodDBRecords (as a Stream and as a Future).
+Future<int> queryMasaoodDBRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      MasaoodDBRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<MasaoodDBRecord>> queryMasaoodDBRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      MasaoodDBRecord.collection,
+      MasaoodDBRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<MasaoodDBRecord>> queryMasaoodDBRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      MasaoodDBRecord.collection,
+      MasaoodDBRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

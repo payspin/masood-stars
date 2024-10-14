@@ -57,26 +57,23 @@ class _QRcodeWebWidgetState extends State<QRcodeWebWidget> {
           Text(
             valueOrDefault<String>(
               _model.outputQrCode,
-              'zoz',
+              'zoz1',
             ),
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Space Grotesk',
                   letterSpacing: 0.0,
                 ),
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-            child: SizedBox(
+          SizedBox(
+            width: 300.0,
+            height: 300.0,
+            child: custom_widgets.QrSCannerWidget(
               width: 300.0,
               height: 300.0,
-              child: custom_widgets.QrCodeScannerWeb(
-                width: 300.0,
-                height: 300.0,
-                onQrCodeScanned: (scannedText) async {
-                  _model.outputQrCode = scannedText;
-                  safeSetState(() {});
-                },
-              ),
+              onValueChanged: (selectedValue) async {
+                _model.outputQrCode = selectedValue;
+                safeSetState(() {});
+              },
             ),
           ),
         ],

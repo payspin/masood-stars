@@ -7,19 +7,21 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'registeration_model.dart';
-export 'registeration_model.dart';
+import 'package:provider/provider.dart';
+import 'email_registeration_model.dart';
+export 'email_registeration_model.dart';
 
-class RegisterationWidget extends StatefulWidget {
-  const RegisterationWidget({super.key});
+class EmailRegisterationWidget extends StatefulWidget {
+  const EmailRegisterationWidget({super.key});
 
   @override
-  State<RegisterationWidget> createState() => _RegisterationWidgetState();
+  State<EmailRegisterationWidget> createState() =>
+      _EmailRegisterationWidgetState();
 }
 
-class _RegisterationWidgetState extends State<RegisterationWidget>
+class _EmailRegisterationWidgetState extends State<EmailRegisterationWidget>
     with TickerProviderStateMixin {
-  late RegisterationModel _model;
+  late EmailRegisterationModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -28,25 +30,22 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => RegisterationModel());
+    _model = createModel(context, () => EmailRegisterationModel());
 
     _model.firstNameGuestTextController ??= TextEditingController();
     _model.firstNameGuestFocusNode ??= FocusNode();
 
-    _model.lastNameGuestTextController ??= TextEditingController();
-    _model.lastNameGuestFocusNode ??= FocusNode();
-
-    _model.iDnumberGuestTextController ??= TextEditingController();
-    _model.iDnumberGuestFocusNode ??= FocusNode();
-
     _model.emailAddressGuestTextController ??= TextEditingController();
     _model.emailAddressGuestFocusNode ??= FocusNode();
 
-    _model.createpasswordGuestTextController ??= TextEditingController();
-    _model.createpasswordGuestFocusNode ??= FocusNode();
+    _model.employeeNumberGuestTextController ??= TextEditingController();
+    _model.employeeNumberGuestFocusNode ??= FocusNode();
 
-    _model.confirmpasswordGuestTextController ??= TextEditingController();
-    _model.confirmpasswordGuestFocusNode ??= FocusNode();
+    _model.createNewPasswordGuestTextController ??= TextEditingController();
+    _model.createNewPasswordGuestFocusNode ??= FocusNode();
+
+    _model.confirmNewpasswordGuestTextController ??= TextEditingController();
+    _model.confirmNewpasswordGuestFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -121,6 +120,8 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -162,7 +163,7 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                         alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Form(
                           key: _model.formKey,
-                          autovalidateMode: AutovalidateMode.disabled,
+                          autovalidateMode: AutovalidateMode.always,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -194,8 +195,8 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                     controller:
                                         _model.firstNameGuestTextController,
                                     focusNode: _model.firstNameGuestFocusNode,
-                                    autofocus: true,
-                                    autofillHints: const [AutofillHints.givenName],
+                                    autofocus: false,
+                                    readOnly: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelStyle: FlutterFlowTheme.of(context)
@@ -205,9 +206,9 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                             color: const Color(0xFF57636C),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
+                                            fontWeight: FontWeight.bold,
                                           ),
-                                      hintText: 'First name',
+                                      hintText: FFAppState().employeeName,
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: const BorderSide(
                                           color: Color(0xFFF1F4F8),
@@ -252,7 +253,7 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
-                                    keyboardType: TextInputType.emailAddress,
+                                    keyboardType: TextInputType.name,
                                     validator: _model
                                         .firstNameGuestTextControllerValidator
                                         .asValidator(context),
@@ -266,10 +267,11 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                   width: 600.0,
                                   child: TextFormField(
                                     controller:
-                                        _model.lastNameGuestTextController,
-                                    focusNode: _model.lastNameGuestFocusNode,
-                                    autofocus: true,
-                                    autofillHints: const [AutofillHints.familyName],
+                                        _model.emailAddressGuestTextController,
+                                    focusNode:
+                                        _model.emailAddressGuestFocusNode,
+                                    autofocus: false,
+                                    readOnly: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelStyle: FlutterFlowTheme.of(context)
@@ -279,9 +281,9 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                             color: const Color(0xFF57636C),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
+                                            fontWeight: FontWeight.bold,
                                           ),
-                                      hintText: 'Last name',
+                                      hintText: FFAppState().guestEmail,
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: const BorderSide(
                                           color: Color(0xFFF1F4F8),
@@ -328,7 +330,7 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                         ),
                                     keyboardType: TextInputType.emailAddress,
                                     validator: _model
-                                        .lastNameGuestTextControllerValidator
+                                        .emailAddressGuestTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -339,9 +341,10 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                 child: SizedBox(
                                   width: 600.0,
                                   child: TextFormField(
-                                    controller:
-                                        _model.iDnumberGuestTextController,
-                                    focusNode: _model.iDnumberGuestFocusNode,
+                                    controller: _model
+                                        .employeeNumberGuestTextController,
+                                    focusNode:
+                                        _model.employeeNumberGuestFocusNode,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -399,83 +402,9 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
-                                    validator: _model
-                                        .iDnumberGuestTextControllerValidator
-                                        .asValidator(context),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    34.0, 0.0, 34.0, 12.0),
-                                child: SizedBox(
-                                  width: 600.0,
-                                  child: TextFormField(
-                                    controller:
-                                        _model.emailAddressGuestTextController,
-                                    focusNode:
-                                        _model.emailAddressGuestFocusNode,
-                                    autofocus: true,
-                                    autofillHints: const [AutofillHints.email],
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            color: const Color(0xFF57636C),
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                      hintText: 'Masaood email address',
-                                      enabledBorder: UnderlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0xFFF1F4F8),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      focusedBorder: UnderlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      errorBorder: UnderlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0xFFE0E3E7),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      focusedErrorBorder: UnderlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0xFFE0E3E7),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      filled: true,
-                                      fillColor: const Color(0xFFF1F4F8),
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          color: const Color(0xFF101213),
-                                          fontSize: 16.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
                                     keyboardType: TextInputType.emailAddress,
                                     validator: _model
-                                        .emailAddressGuestTextControllerValidator
+                                        .employeeNumberGuestTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -487,13 +416,13 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                   width: 600.0,
                                   child: TextFormField(
                                     controller: _model
-                                        .createpasswordGuestTextController,
+                                        .createNewPasswordGuestTextController,
                                     focusNode:
-                                        _model.createpasswordGuestFocusNode,
+                                        _model.createNewPasswordGuestFocusNode,
                                     autofocus: true,
                                     autofillHints: const [AutofillHints.password],
-                                    obscureText:
-                                        !_model.createpasswordGuestVisibility,
+                                    obscureText: !_model
+                                        .createNewPasswordGuestVisibility,
                                     decoration: InputDecoration(
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -544,14 +473,14 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                       suffixIcon: InkWell(
                                         onTap: () => safeSetState(
                                           () => _model
-                                                  .createpasswordGuestVisibility =
+                                                  .createNewPasswordGuestVisibility =
                                               !_model
-                                                  .createpasswordGuestVisibility,
+                                                  .createNewPasswordGuestVisibility,
                                         ),
                                         focusNode:
                                             FocusNode(skipTraversal: true),
                                         child: Icon(
-                                          _model.createpasswordGuestVisibility
+                                          _model.createNewPasswordGuestVisibility
                                               ? Icons.visibility_outlined
                                               : Icons.visibility_off_outlined,
                                           color: const Color(0xFF57636C),
@@ -569,7 +498,7 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                           fontWeight: FontWeight.w500,
                                         ),
                                     validator: _model
-                                        .createpasswordGuestTextControllerValidator
+                                        .createNewPasswordGuestTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -581,13 +510,13 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                   width: 600.0,
                                   child: TextFormField(
                                     controller: _model
-                                        .confirmpasswordGuestTextController,
+                                        .confirmNewpasswordGuestTextController,
                                     focusNode:
-                                        _model.confirmpasswordGuestFocusNode,
+                                        _model.confirmNewpasswordGuestFocusNode,
                                     autofocus: true,
                                     autofillHints: const [AutofillHints.password],
-                                    obscureText:
-                                        !_model.confirmpasswordGuestVisibility,
+                                    obscureText: !_model
+                                        .confirmNewpasswordGuestVisibility,
                                     decoration: InputDecoration(
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -636,14 +565,14 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                       suffixIcon: InkWell(
                                         onTap: () => safeSetState(
                                           () => _model
-                                                  .confirmpasswordGuestVisibility =
+                                                  .confirmNewpasswordGuestVisibility =
                                               !_model
-                                                  .confirmpasswordGuestVisibility,
+                                                  .confirmNewpasswordGuestVisibility,
                                         ),
                                         focusNode:
                                             FocusNode(skipTraversal: true),
                                         child: Icon(
-                                          _model.confirmpasswordGuestVisibility
+                                          _model.confirmNewpasswordGuestVisibility
                                               ? Icons.visibility_outlined
                                               : Icons.visibility_off_outlined,
                                           color: const Color(0xFF57636C),
@@ -661,7 +590,7 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                           fontWeight: FontWeight.w500,
                                         ),
                                     validator: _model
-                                        .confirmpasswordGuestTextControllerValidator
+                                        .confirmNewpasswordGuestTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -673,6 +602,53 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                       34.0, 34.0, 34.0, 5.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
+                                      GoRouter.of(context).prepareAuthEvent();
+                                      if (_model
+                                              .createNewPasswordGuestTextController
+                                              .text !=
+                                          _model
+                                              .confirmNewpasswordGuestTextController
+                                              .text) {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          const SnackBar(
+                                            content: Text(
+                                              'Passwords don\'t match!',
+                                            ),
+                                          ),
+                                        );
+                                        return;
+                                      }
+
+                                      final user = await authManager
+                                          .createAccountWithEmail(
+                                        context,
+                                        _model.emailAddressGuestTextController
+                                            .text,
+                                        _model
+                                            .createNewPasswordGuestTextController
+                                            .text,
+                                      );
+                                      if (user == null) {
+                                        return;
+                                      }
+
+                                      await UsersRecord.collection
+                                          .doc(user.uid)
+                                          .update(createUsersRecordData(
+                                            email: FFAppState().guestEmail,
+                                            displayName:
+                                                FFAppState().employeeName,
+                                            department:
+                                                FFAppState().guestDepartment,
+                                            iDnumber: _model
+                                                .employeeNumberGuestTextController
+                                                .text,
+                                            password: _model
+                                                .createNewPasswordGuestTextController
+                                                .text,
+                                          ));
+
                                       _model.o3 = await queryUsersRecordOnce();
                                       await Future.delayed(
                                           const Duration(milliseconds: 5000));
@@ -684,6 +660,9 @@ class _RegisterationWidgetState extends State<RegisterationWidget>
                                           1,
                                         ),
                                       ));
+
+                                      context.goNamedAuth(
+                                          'EventPage', context.mounted);
 
                                       safeSetState(() {});
                                     },

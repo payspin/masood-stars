@@ -134,13 +134,31 @@ class _LoginWidgetState extends State<LoginWidget>
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 40.0, 0.0, 20.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset(
-                            'assets/images/footer-logo-white.png',
-                            width: 250.0,
-                            height: 160.0,
-                            fit: BoxFit.contain,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(
+                              'emailPage',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: const TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              'assets/images/footer-logo-white.png',
+                              width: 250.0,
+                              height: 160.0,
+                              fit: BoxFit.contain,
+                            ),
                           ),
                         ),
                       ),
@@ -155,7 +173,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 context.pop();
                               }
                               context.pushNamed(
-                                'Registeration',
+                                'emailPage',
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
@@ -257,7 +275,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
-                                          hintText: 'Masaood email address',
+                                          hintText:
+                                              'Enter Masaood email address',
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: const BorderSide(
                                               color: Color(0xFFF1F4F8),

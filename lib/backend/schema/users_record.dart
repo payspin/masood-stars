@@ -101,6 +101,11 @@ class UsersRecord extends FirestoreRecord {
   bool get ruffleDraw => _ruffleDraw ?? false;
   bool hasRuffleDraw() => _ruffleDraw != null;
 
+  // "Index" field.
+  int? _index;
+  int get index => _index ?? 0;
+  bool hasIndex() => _index != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -119,6 +124,7 @@ class UsersRecord extends FirestoreRecord {
     _userStateStatus = snapshotData['UserStateStatus'] as String?;
     _colorCode = snapshotData['Color_Code'] as String?;
     _ruffleDraw = snapshotData['RuffleDraw'] as bool?;
+    _index = castToType<int>(snapshotData['Index']);
   }
 
   static CollectionReference get collection =>
@@ -172,6 +178,7 @@ Map<String, dynamic> createUsersRecordData({
   String? userStateStatus,
   String? colorCode,
   bool? ruffleDraw,
+  int? index,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -192,6 +199,7 @@ Map<String, dynamic> createUsersRecordData({
       'UserStateStatus': userStateStatus,
       'Color_Code': colorCode,
       'RuffleDraw': ruffleDraw,
+      'Index': index,
     }.withoutNulls,
   );
 
@@ -219,7 +227,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.colorcode == e2?.colorcode &&
         e1?.userStateStatus == e2?.userStateStatus &&
         e1?.colorCode == e2?.colorCode &&
-        e1?.ruffleDraw == e2?.ruffleDraw;
+        e1?.ruffleDraw == e2?.ruffleDraw &&
+        e1?.index == e2?.index;
   }
 
   @override
@@ -240,7 +249,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.colorcode,
         e?.userStateStatus,
         e?.colorCode,
-        e?.ruffleDraw
+        e?.ruffleDraw,
+        e?.index
       ]);
 
   @override

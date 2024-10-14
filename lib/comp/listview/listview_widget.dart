@@ -42,10 +42,12 @@ class _ListviewWidgetState extends State<ListviewWidget> {
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 6.0, 0.0),
       child: StreamBuilder<List<UsersRecord>>(
-        stream: queryUsersRecord(
-          queryBuilder: (usersRecord) => usersRecord.where(
-            'RuffleDraw',
-            isEqualTo: true,
+        stream: FFAppState().winners(
+          requestFn: () => queryUsersRecord(
+            queryBuilder: (usersRecord) => usersRecord.where(
+              'RuffleDraw',
+              isEqualTo: true,
+            ),
           ),
         ),
         builder: (context, snapshot) {
@@ -179,7 +181,7 @@ class _ListviewWidgetState extends State<ListviewWidget> {
                                           ),
                                     ),
                                     TextSpan(
-                                      text: 'Display Name',
+                                      text: listViewUsersRecord.displayName,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -204,9 +206,9 @@ class _ListviewWidgetState extends State<ListviewWidget> {
                                             fontWeight: FontWeight.w800,
                                           ),
                                     ),
-                                    const TextSpan(
-                                      text: 'Employee ID',
-                                      style: TextStyle(),
+                                    TextSpan(
+                                      text: listViewUsersRecord.iDnumber,
+                                      style: const TextStyle(),
                                     )
                                   ],
                                   style: FlutterFlowTheme.of(context)

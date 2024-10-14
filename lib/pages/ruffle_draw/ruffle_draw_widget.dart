@@ -1,8 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/comp/tap_bar_mob_view/tap_bar_mob_view_widget.dart';
+import '/components/ruffle_draw_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -737,7 +737,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                                     16.0,
                                                                     0.0,
                                                                     0.0,
-                                                                    0.0),
+                                                                    16.0),
                                                         child: Text(
                                                           '11 November 2024',
                                                           style: FlutterFlowTheme
@@ -758,68 +758,31 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                             ],
                                           ),
                                         ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsets.all(16.0),
-                                              child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  context.pushNamed(
-                                                    'RuffleDrawPage',
-                                                    extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
-                                                          const TransitionInfo(
-                                                        hasTransition: true,
-                                                        transitionType:
-                                                            PageTransitionType
-                                                                .fade,
-                                                        duration: Duration(
-                                                            milliseconds: 0),
-                                                      ),
-                                                    },
-                                                  );
-                                                },
-                                                text: 'Start Ruffle Draw',
-                                                icon: const Icon(
-                                                  Icons.person_add_rounded,
-                                                  size: 15.0,
-                                                ),
-                                                options: FFButtonOptions(
-                                                  width: 160.0,
-                                                  height: 30.0,
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondary,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Space Grotesk',
-                                                            color: Colors.white,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                  elevation: 3.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
                                       ],
+                                    ),
+                                  ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onDoubleTap: () async {
+                                      context.pushNamed(
+                                        'RuffleDrawPage',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.scale,
+                                            alignment: Alignment.bottomCenter,
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.ruffleDrawComponentModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: const RuffleDrawComponentWidget(),
                                     ),
                                   ),
                                 ],

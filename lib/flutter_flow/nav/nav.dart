@@ -191,7 +191,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         ),
         FFRoute(
           name: 'RuffleDraw',
-          path: '/ruffleDrawpage',
+          path: '/ruffleDraw',
           requireAuth: true,
           builder: (context, params) => const RuffleDrawWidget(),
         ),
@@ -206,6 +206,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/ruffleDrawPage',
           requireAuth: true,
           builder: (context, params) => const RuffleDrawPageWidget(),
+        ),
+        FFRoute(
+          name: 'NewPassword',
+          path: '/newPassword',
+          builder: (context, params) => const NewPasswordWidget(),
+        ),
+        FFRoute(
+          name: 'QRcodePageView',
+          path: '/qRcodePageView',
+          requireAuth: true,
+          builder: (context, params) => const QRcodePageViewWidget(),
+        ),
+        FFRoute(
+          name: 'emailPage',
+          path: '/emailPage',
+          builder: (context, params) => const EmailPageWidget(),
+        ),
+        FFRoute(
+          name: 'emailRegisteration',
+          path: '/emailRegisteration',
+          builder: (context, params) => const EmailRegisterationWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
