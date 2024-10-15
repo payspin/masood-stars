@@ -989,7 +989,7 @@ class _QRcodeScanPageWidgetState extends State<QRcodeScanPageWidget> {
                                                   ],
                                                 ),
                                                 Text(
-                                                  'lol4',
+                                                  ' ',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium

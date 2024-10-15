@@ -9,7 +9,7 @@ class RuffleDrawComponentModel
   ///  State fields for stateful widgets in this component.
 
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  List<UsersRecord>? registeredList;
+  List<UsersRecord>? arrivedList;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<UsersRecord>? indexselectionXX;
   // Model for listview component.

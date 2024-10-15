@@ -41,7 +41,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
     _model.textFieldFocusNode ??= FocusNode();
 
     animationsMap.addAll({
-      'containerOnPageLoadAnimation4': AnimationInfo(
+      'containerOnPageLoadAnimation5': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 1.ms),
@@ -101,7 +101,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
           ),
         ],
       ),
-      'containerOnPageLoadAnimation5': AnimationInfo(
+      'containerOnPageLoadAnimation6': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 600.ms),
@@ -1028,6 +1028,91 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                     VerticalDirection.down,
                                                 clipBehavior: Clip.none,
                                                 children: [
+                                                  Container(
+                                                    width: 150.0,
+                                                    height: 150.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              24.0),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(12.0),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          const Icon(
+                                                            Icons
+                                                                .supervisor_account_rounded,
+                                                            color: Color(
+                                                                0xFF101213),
+                                                            size: 44.0,
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        12.0,
+                                                                        0.0,
+                                                                        4.0),
+                                                            child: Text(
+                                                              '56.4k',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .displaySmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: const Color(
+                                                                        0xFF101213),
+                                                                    fontSize:
+                                                                        36.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Text(
+                                                            'Total guests',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  color: const Color(
+                                                                      0xFF57636C),
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
                                                   Container(
                                                     width: 150.0,
                                                     height: 150.0,
@@ -4043,7 +4128,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                                 ),
                                                               ).animateOnPageLoad(
                                                                   animationsMap[
-                                                                      'containerOnPageLoadAnimation5']!),
+                                                                      'containerOnPageLoadAnimation6']!),
                                                             ),
                                                           ],
                                                         ),
@@ -4051,7 +4136,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                     ),
                                                   ),
                                                 ).animateOnPageLoad(animationsMap[
-                                                    'containerOnPageLoadAnimation4']!),
+                                                    'containerOnPageLoadAnimation5']!),
                                               ),
                                             ),
                                           ],

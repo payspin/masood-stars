@@ -224,9 +224,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const EmailPageWidget(),
         ),
         FFRoute(
-          name: 'emailRegisteration',
-          path: '/emailRegisteration',
-          builder: (context, params) => const EmailRegisterationWidget(),
+          name: 'addguest',
+          path: '/addguest',
+          builder: (context, params) => const AddguestWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

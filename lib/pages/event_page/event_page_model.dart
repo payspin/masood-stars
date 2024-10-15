@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/comp/tap_bar_mob_view/tap_bar_mob_view_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -7,6 +8,12 @@ import 'package:flutter/material.dart';
 class EventPageModel extends FlutterFlowModel<EventPageWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Firestore Query - Query a collection] action in EventPage widget.
+  List<UsersRecord>? queryregisterationTotal;
+  // Stores action output result for [Firestore Query - Query a collection] action in EventPage widget.
+  List<UsersRecord>? queryArrived;
+  // Stores action output result for [Firestore Query - Query a collection] action in EventPage widget.
+  List<MasaoodDBRecord>? queryGuestsTotal;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;

@@ -28,35 +28,6 @@ class RegisterationModel extends FlutterFlowModel<RegisterationWidget> {
     return null;
   }
 
-  // State field(s) for LastNameGuest widget.
-  FocusNode? lastNameGuestFocusNode;
-  TextEditingController? lastNameGuestTextController;
-  String? Function(BuildContext, String?)? lastNameGuestTextControllerValidator;
-  String? _lastNameGuestTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    if (!RegExp(kTextValidatorUsernameRegex).hasMatch(val)) {
-      return 'Must start with a letter and can only contain letters, digits and - or _.';
-    }
-    return null;
-  }
-
-  // State field(s) for IDnumberGuest widget.
-  FocusNode? iDnumberGuestFocusNode;
-  TextEditingController? iDnumberGuestTextController;
-  String? Function(BuildContext, String?)? iDnumberGuestTextControllerValidator;
-  String? _iDnumberGuestTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    return null;
-  }
-
   // State field(s) for emailAddressGuest widget.
   FocusNode? emailAddressGuestFocusNode;
   TextEditingController? emailAddressGuestTextController;
@@ -75,6 +46,19 @@ class RegisterationModel extends FlutterFlowModel<RegisterationWidget> {
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return 'Has to be a valid email address.';
     }
+    return null;
+  }
+
+  // State field(s) for IDnumberGuest widget.
+  FocusNode? iDnumberGuestFocusNode;
+  TextEditingController? iDnumberGuestTextController;
+  String? Function(BuildContext, String?)? iDnumberGuestTextControllerValidator;
+  String? _iDnumberGuestTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
     return null;
   }
 
@@ -123,12 +107,10 @@ class RegisterationModel extends FlutterFlowModel<RegisterationWidget> {
   void initState(BuildContext context) {
     firstNameGuestTextControllerValidator =
         _firstNameGuestTextControllerValidator;
-    lastNameGuestTextControllerValidator =
-        _lastNameGuestTextControllerValidator;
-    iDnumberGuestTextControllerValidator =
-        _iDnumberGuestTextControllerValidator;
     emailAddressGuestTextControllerValidator =
         _emailAddressGuestTextControllerValidator;
+    iDnumberGuestTextControllerValidator =
+        _iDnumberGuestTextControllerValidator;
     createpasswordGuestVisibility = false;
     createpasswordGuestTextControllerValidator =
         _createpasswordGuestTextControllerValidator;
@@ -142,14 +124,11 @@ class RegisterationModel extends FlutterFlowModel<RegisterationWidget> {
     firstNameGuestFocusNode?.dispose();
     firstNameGuestTextController?.dispose();
 
-    lastNameGuestFocusNode?.dispose();
-    lastNameGuestTextController?.dispose();
+    emailAddressGuestFocusNode?.dispose();
+    emailAddressGuestTextController?.dispose();
 
     iDnumberGuestFocusNode?.dispose();
     iDnumberGuestTextController?.dispose();
-
-    emailAddressGuestFocusNode?.dispose();
-    emailAddressGuestTextController?.dispose();
 
     createpasswordGuestFocusNode?.dispose();
     createpasswordGuestTextController?.dispose();

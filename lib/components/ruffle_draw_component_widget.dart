@@ -173,20 +173,16 @@ class _RuffleDrawComponentWidgetState extends State<RuffleDrawComponentWidget>
                         animationsMap['imageOnPageLoadAnimation1']!),
                     Align(
                       alignment: const AlignmentDirectional(0.0, 1.0),
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 180.0, 0.0, 0.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset(
-                            'assets/images/ppt_cover_option3-02.png',
-                            width: 350.0,
-                            height: 200.0,
-                            fit: BoxFit.contain,
-                          ),
-                        ).animateOnPageLoad(
-                            animationsMap['imageOnPageLoadAnimation2']!),
-                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          'assets/images/ppt_cover_option3-02.png',
+                          width: 600.0,
+                          height: 500.0,
+                          fit: BoxFit.contain,
+                        ),
+                      ).animateOnPageLoad(
+                          animationsMap['imageOnPageLoadAnimation2']!),
                     ),
                     Align(
                       alignment: const AlignmentDirectional(0.0, 1.0),
@@ -304,15 +300,14 @@ class _RuffleDrawComponentWidgetState extends State<RuffleDrawComponentWidget>
                                                   padding: const EdgeInsets.all(10.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
-                                                      _model.registeredList =
+                                                      _model.arrivedList =
                                                           await queryUsersRecordOnce(
                                                         queryBuilder:
                                                             (usersRecord) =>
                                                                 usersRecord
                                                                     .where(
                                                           'UserStateStatus',
-                                                          isEqualTo:
-                                                              'Registered',
+                                                          isEqualTo: 'Arrived',
                                                         ),
                                                       );
                                                       FFAppState()
@@ -324,7 +319,7 @@ class _RuffleDrawComponentWidgetState extends State<RuffleDrawComponentWidget>
                                                                 valueOrDefault<
                                                                     int>(
                                                                   _model
-                                                                      .registeredList
+                                                                      .arrivedList
                                                                       ?.length,
                                                                   0,
                                                                 )),

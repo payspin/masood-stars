@@ -1205,33 +1205,6 @@ class _EventoldWidgetState extends State<EventoldWidget>
                                           if (responsiveVisibility(
                                             context: context,
                                             phone: false,
-                                          ))
-                                            Expanded(
-                                              flex: 2,
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    -1.0, 0.0),
-                                                child: Text(
-                                                  'Last Active',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF606A85),
-                                                        fontSize: 12.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                              ),
-                                            ),
-                                          if (responsiveVisibility(
-                                            context: context,
-                                            phone: false,
                                             tablet: false,
                                           ))
                                             Expanded(
@@ -1343,8 +1316,8 @@ class _EventoldWidgetState extends State<EventoldWidget>
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
-                                                    child: Image.network(
-                                                      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60',
+                                                    child: Image.asset(
+                                                      'assets/images/stars_awards_logo_-_white.png',
                                                       width: 120.0,
                                                       height: 120.0,
                                                       fit: BoxFit.cover,
@@ -1418,35 +1391,6 @@ class _EventoldWidgetState extends State<EventoldWidget>
                                                   ),
                                                 ),
                                               ),
-                                              if (responsiveVisibility(
-                                                context: context,
-                                                phone: false,
-                                              ))
-                                                Expanded(
-                                                  flex: 2,
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                12.0, 0.0),
-                                                    child: Text(
-                                                      '5 mins ago',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Plus Jakarta Sans',
-                                                            color: const Color(
-                                                                0xFF15161E),
-                                                            fontSize: 14.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                ),
                                               if (responsiveVisibility(
                                                 context: context,
                                                 phone: false,

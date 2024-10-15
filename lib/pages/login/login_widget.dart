@@ -134,31 +134,13 @@ class _LoginWidgetState extends State<LoginWidget>
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 40.0, 0.0, 20.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'emailPage',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
-                              },
-                            );
-                          },
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Image.asset(
-                              'assets/images/footer-logo-white.png',
-                              width: 250.0,
-                              height: 160.0,
-                              fit: BoxFit.contain,
-                            ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            'assets/images/footer-logo-white.png',
+                            width: 250.0,
+                            height: 160.0,
+                            fit: BoxFit.contain,
                           ),
                         ),
                       ),

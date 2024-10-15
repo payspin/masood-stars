@@ -27,7 +27,7 @@ class EmailPageModel extends FlutterFlowModel<EmailPageWidget> {
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'Has to be a valid email address.';
+      return 'Invalid email address, please enter a valid email address';
     }
     return null;
   }

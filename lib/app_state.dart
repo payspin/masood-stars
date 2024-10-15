@@ -105,6 +105,24 @@ class FFAppState extends ChangeNotifier {
     _emailStrange = value;
   }
 
+  int _totalGuests = 0;
+  int get totalGuests => _totalGuests;
+  set totalGuests(int value) {
+    _totalGuests = value;
+  }
+
+  int _totalArrived = 0;
+  int get totalArrived => _totalArrived;
+  set totalArrived(int value) {
+    _totalArrived = value;
+  }
+
+  int _totalRegistered = 0;
+  int get totalRegistered => _totalRegistered;
+  set totalRegistered(int value) {
+    _totalRegistered = value;
+  }
+
   final _winnersManager = StreamRequestManager<List<UsersRecord>>();
   Stream<List<UsersRecord>> winners({
     String? uniqueQueryKey,

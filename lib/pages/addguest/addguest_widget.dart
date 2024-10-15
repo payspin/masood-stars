@@ -1,6 +1,4 @@
 import '/backend/backend.dart';
-import '/comp/empty_email_field/empty_email_field_widget.dart';
-import '/comp/failure/failure_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -8,20 +6,19 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:provider/provider.dart';
-import 'email_page_model.dart';
-export 'email_page_model.dart';
+import 'addguest_model.dart';
+export 'addguest_model.dart';
 
-class EmailPageWidget extends StatefulWidget {
-  const EmailPageWidget({super.key});
+class AddguestWidget extends StatefulWidget {
+  const AddguestWidget({super.key});
 
   @override
-  State<EmailPageWidget> createState() => _EmailPageWidgetState();
+  State<AddguestWidget> createState() => _AddguestWidgetState();
 }
 
-class _EmailPageWidgetState extends State<EmailPageWidget>
+class _AddguestWidgetState extends State<AddguestWidget>
     with TickerProviderStateMixin {
-  late EmailPageModel _model;
+  late AddguestModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -30,7 +27,10 @@ class _EmailPageWidgetState extends State<EmailPageWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EmailPageModel());
+    _model = createModel(context, () => AddguestModel());
+
+    _model.firstNameGuestTextController ??= TextEditingController();
+    _model.firstNameGuestFocusNode ??= FocusNode();
 
     _model.emailAddressGuestTextController ??= TextEditingController();
     _model.emailAddressGuestFocusNode ??= FocusNode();
@@ -74,27 +74,7 @@ class _EmailPageWidgetState extends State<EmailPageWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation1': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 400.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 400.0.ms,
-            duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 400.0.ms,
-            duration: 400.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'textOnPageLoadAnimation2': AnimationInfo(
+      'textOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 400.ms),
@@ -128,8 +108,6 @@ class _EmailPageWidgetState extends State<EmailPageWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -177,9 +155,9 @@ class _EmailPageWidgetState extends State<EmailPageWidget>
                             children: [
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    44.0, 0.0, 44.0, 0.0),
+                                    44.0, 0.0, 44.0, 22.0),
                                 child: Text(
-                                  'REGISTERATION',
+                                  'ADD GUEST',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -192,26 +170,80 @@ class _EmailPageWidgetState extends State<EmailPageWidget>
                                         fontWeight: FontWeight.bold,
                                       ),
                                 ).animateOnPageLoad(
-                                    animationsMap['textOnPageLoadAnimation1']!),
+                                    animationsMap['textOnPageLoadAnimation']!),
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    44.0, 22.0, 44.0, 12.0),
-                                child: Text(
-                                  'Use your Masaood email address',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Plus Jakarta Sans',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        fontSize: 18.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
+                                    34.0, 0.0, 34.0, 12.0),
+                                child: SizedBox(
+                                  width: 600.0,
+                                  child: TextFormField(
+                                    controller:
+                                        _model.firstNameGuestTextController,
+                                    focusNode: _model.firstNameGuestFocusNode,
+                                    autofocus: false,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            color: const Color(0xFF57636C),
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                      hintText: 'Employee name',
+                                      enabledBorder: UnderlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0xFFF1F4F8),
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
-                                ).animateOnPageLoad(
-                                    animationsMap['textOnPageLoadAnimation2']!),
+                                      focusedBorder: UnderlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      errorBorder: UnderlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0xFFE0E3E7),
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      focusedErrorBorder: UnderlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0xFFE0E3E7),
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: const Color(0xFFF1F4F8),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          color: const Color(0xFF101213),
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                    keyboardType: TextInputType.name,
+                                    validator: _model
+                                        .firstNameGuestTextControllerValidator
+                                        .asValidator(context),
+                                  ),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -223,8 +255,7 @@ class _EmailPageWidgetState extends State<EmailPageWidget>
                                         _model.emailAddressGuestTextController,
                                     focusNode:
                                         _model.emailAddressGuestFocusNode,
-                                    autofocus: true,
-                                    autofillHints: const [AutofillHints.email],
+                                    autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelStyle: FlutterFlowTheme.of(context)
@@ -234,9 +265,9 @@ class _EmailPageWidgetState extends State<EmailPageWidget>
                                             color: const Color(0xFF57636C),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
+                                            fontWeight: FontWeight.bold,
                                           ),
-                                      hintText: 'Email address',
+                                      hintText: 'Masaood email address',
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: const BorderSide(
                                           color: Color(0xFFF1F4F8),
@@ -295,153 +326,19 @@ class _EmailPageWidgetState extends State<EmailPageWidget>
                                       34.0, 34.0, 34.0, 5.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      var shouldSetState = false;
-                                      _model.outputQueryDB =
-                                          await queryMasaoodDBRecordOnce(
-                                        queryBuilder: (masaoodDBRecord) =>
-                                            masaoodDBRecord
-                                                .where(
-                                                  'PrimarySmtpAddress',
-                                                  isEqualTo:
-                                                      valueOrDefault<String>(
-                                                    _model
-                                                        .emailAddressGuestTextController
-                                                        .text,
-                                                    'x',
-                                                  ),
-                                                )
-                                                .orderBy('Name'),
-                                        limit: 1,
-                                      );
-                                      shouldSetState = true;
-                                      if (_model.emailAddressGuestTextController
-                                                  .text !=
-                                              '') {
-                                        FFAppState().guestEmail =
-                                            valueOrDefault<String>(
-                                          _model.outputQueryDB?.length
-                                              .toString(),
-                                          '0',
-                                        );
-                                        safeSetState(() {});
-                                        if (FFAppState().guestEmail != '0') {
-                                          FFAppState().guestEmail =
-                                              valueOrDefault<String>(
-                                            _model.outputQueryDB?.first
-                                                .primarySmtpAddress,
-                                            'x',
-                                          );
-                                          FFAppState().employeeName =
-                                              valueOrDefault<String>(
-                                            _model.outputQueryDB?.first.name,
-                                            'x',
-                                          );
-                                          FFAppState().guestFirstName =
-                                              valueOrDefault<String>(
-                                            _model.outputQueryDB?.first
-                                                .firstName,
-                                            'x',
-                                          );
-                                          FFAppState().guestLastName =
-                                              valueOrDefault<String>(
-                                            _model
-                                                .outputQueryDB?.first.lastName,
-                                            'x',
-                                          );
-                                          FFAppState().guestDepartment =
-                                              valueOrDefault<String>(
-                                            _model.outputQueryDB?.first
-                                                .department,
-                                            'x',
-                                          );
-                                          safeSetState(() {});
-                                          if (FFAppState().guestEmail != '') {
-                                            context.pushNamed('Registeration');
-
-                                            if (shouldSetState) {
-                                              safeSetState(() {});
-                                            }
-                                            return;
-                                          } else {
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: const FailureWidget(),
-                                                  ),
-                                                );
-                                              },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
-
-                                            if (shouldSetState) {
-                                              safeSetState(() {});
-                                            }
-                                            return;
-                                          }
-                                        } else {
-                                          await showModalBottomSheet(
-                                            isScrollControlled: true,
-                                            backgroundColor: Colors.transparent,
-                                            enableDrag: false,
-                                            context: context,
-                                            builder: (context) {
-                                              return GestureDetector(
-                                                onTap: () =>
-                                                    FocusScope.of(context)
-                                                        .unfocus(),
-                                                child: Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: const FailureWidget(),
-                                                ),
-                                              );
-                                            },
-                                          ).then(
-                                              (value) => safeSetState(() {}));
-
-                                          if (shouldSetState) {
-                                            safeSetState(() {});
-                                          }
-                                          return;
-                                        }
-                                      } else {
-                                        await showModalBottomSheet(
-                                          isScrollControlled: true,
-                                          backgroundColor: Colors.transparent,
-                                          enableDrag: false,
-                                          context: context,
-                                          builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () =>
-                                                  FocusScope.of(context)
-                                                      .unfocus(),
-                                              child: Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: const EmptyEmailFieldWidget(),
-                                              ),
-                                            );
-                                          },
-                                        ).then((value) => safeSetState(() {}));
-                                      }
-
-                                      if (shouldSetState) safeSetState(() {});
+                                      await MasaoodDBRecord.collection
+                                          .doc()
+                                          .set(createMasaoodDBRecordData(
+                                            name: _model
+                                                .firstNameGuestTextController
+                                                .text,
+                                            primarySmtpAddress: _model
+                                                .emailAddressGuestTextController
+                                                .text,
+                                          ));
+                                      context.safePop();
                                     },
-                                    text: 'Click Next',
+                                    text: 'Add',
                                     options: FFButtonOptions(
                                       width: 600.0,
                                       height: 70.0,
@@ -500,7 +397,7 @@ class _EmailPageWidgetState extends State<EmailPageWidget>
                       size: 40.0,
                     ),
                     onPressed: () async {
-                      context.pushNamed('Login');
+                      context.safePop();
                     },
                   ),
                 ),

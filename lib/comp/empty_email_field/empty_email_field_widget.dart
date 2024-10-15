@@ -4,19 +4,19 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'failure_model.dart';
-export 'failure_model.dart';
+import 'empty_email_field_model.dart';
+export 'empty_email_field_model.dart';
 
-class FailureWidget extends StatefulWidget {
-  const FailureWidget({super.key});
+class EmptyEmailFieldWidget extends StatefulWidget {
+  const EmptyEmailFieldWidget({super.key});
 
   @override
-  State<FailureWidget> createState() => _FailureWidgetState();
+  State<EmptyEmailFieldWidget> createState() => _EmptyEmailFieldWidgetState();
 }
 
-class _FailureWidgetState extends State<FailureWidget>
+class _EmptyEmailFieldWidgetState extends State<EmptyEmailFieldWidget>
     with TickerProviderStateMixin {
-  late FailureModel _model;
+  late EmptyEmailFieldModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -29,7 +29,7 @@ class _FailureWidgetState extends State<FailureWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => FailureModel());
+    _model = createModel(context, () => EmptyEmailFieldModel());
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -123,7 +123,7 @@ class _FailureWidgetState extends State<FailureWidget>
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             12.0, 32.0, 0.0, 8.0),
                         child: Text(
-                          'The email you entered is either not valid or not in the guest list, please check the email and add a valid Masaood email address',
+                          'Please enter your Masaood email, don\'t leave Email address field empty....',
                           textAlign: TextAlign.start,
                           style: FlutterFlowTheme.of(context)
                               .displayMedium
