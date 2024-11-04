@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
-    userStream = eventAPPFirebaseUserStream()
+    userStream = masaoodStarsAwardsFirebaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
       });

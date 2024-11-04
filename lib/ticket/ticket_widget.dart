@@ -241,7 +241,7 @@ class _TicketWidgetState extends State<TicketWidget>
                                                   .clearRedirectLocation();
 
                                               context.goNamedAuth(
-                                                  'Login', context.mounted);
+                                                  'emailPage', context.mounted);
                                             },
                                           ),
                                         ),

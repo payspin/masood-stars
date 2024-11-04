@@ -564,38 +564,42 @@ class _CreateacountWidgetState extends State<CreateacountWidget> {
                                     .asValidator(context),
                               ),
                             ),
-                            Theme(
-                              data: ThemeData(
-                                unselectedWidgetColor: const Color(0xFF57636C),
-                              ),
-                              child: CheckboxListTile(
-                                value: _model.checkboxListTileValue ??= true,
-                                onChanged: (newValue) async {
-                                  safeSetState(() =>
-                                      _model.checkboxListTileValue = newValue!);
-                                },
-                                title: Text(
-                                  'I would like to receive inspriation emails.',
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Plus Jakarta Sans',
-                                        color: const Color(0xFF57636C),
-                                        fontSize: 14.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                            Material(
+                              color: Colors.transparent,
+                              child: Theme(
+                                data: ThemeData(
+                                  unselectedWidgetColor: const Color(0xFF57636C),
                                 ),
-                                tileColor: Colors.white,
-                                activeColor: const Color(0xFF101213),
-                                checkColor: Colors.white,
-                                dense: false,
-                                controlAffinity:
-                                    ListTileControlAffinity.leading,
-                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
+                                child: CheckboxListTile(
+                                  value: _model.checkboxListTileValue ??= true,
+                                  onChanged: (newValue) async {
+                                    safeSetState(() => _model
+                                        .checkboxListTileValue = newValue!);
+                                  },
+                                  title: Text(
+                                    'I would like to receive inspriation emails.',
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          color: const Color(0xFF57636C),
+                                          fontSize: 14.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  tileColor: Colors.white,
+                                  activeColor: const Color(0xFF101213),
+                                  checkColor: Colors.white,
+                                  dense: false,
+                                  controlAffinity:
+                                      ListTileControlAffinity.leading,
+                                  contentPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4.0),
+                                  ),
                                 ),
                               ),
                             ),

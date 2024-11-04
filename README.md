@@ -1,4 +1,4 @@
-# Event APP
+# MasaoodStarsAwards
 
 A new Flutter project.
 

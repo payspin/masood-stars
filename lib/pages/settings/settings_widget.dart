@@ -694,8 +694,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                   child: FFButtonWidget(
-                    onPressed: () async {
-                      context.pushNamed('Login');
+                    onPressed: () {
+                      print('Button pressed ...');
                     },
                     text: 'Save Changes',
                     options: FFButtonOptions(
@@ -731,7 +731,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                       await authManager.signOut();
                       GoRouter.of(context).clearRedirectLocation();
 
-                      context.goNamedAuth('Login', context.mounted);
+                      context.goNamedAuth('emailPage', context.mounted);
                     },
                     text: 'Logout',
                     options: FFButtonOptions(

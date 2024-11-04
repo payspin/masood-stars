@@ -106,6 +106,21 @@ class UsersRecord extends FirestoreRecord {
   int get index => _index ?? 0;
   bool hasIndex() => _index != null;
 
+  // "emailPdfUrl" field.
+  String? _emailPdfUrl;
+  String get emailPdfUrl => _emailPdfUrl ?? '';
+  bool hasEmailPdfUrl() => _emailPdfUrl != null;
+
+  // "Cancel" field.
+  bool? _cancel;
+  bool get cancel => _cancel ?? false;
+  bool hasCancel() => _cancel != null;
+
+  // "QrcScanTime" field.
+  DateTime? _qrcScanTime;
+  DateTime? get qrcScanTime => _qrcScanTime;
+  bool hasQrcScanTime() => _qrcScanTime != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -125,6 +140,9 @@ class UsersRecord extends FirestoreRecord {
     _colorCode = snapshotData['Color_Code'] as String?;
     _ruffleDraw = snapshotData['RuffleDraw'] as bool?;
     _index = castToType<int>(snapshotData['Index']);
+    _emailPdfUrl = snapshotData['emailPdfUrl'] as String?;
+    _cancel = snapshotData['Cancel'] as bool?;
+    _qrcScanTime = snapshotData['QrcScanTime'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -179,6 +197,9 @@ Map<String, dynamic> createUsersRecordData({
   String? colorCode,
   bool? ruffleDraw,
   int? index,
+  String? emailPdfUrl,
+  bool? cancel,
+  DateTime? qrcScanTime,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -200,6 +221,9 @@ Map<String, dynamic> createUsersRecordData({
       'Color_Code': colorCode,
       'RuffleDraw': ruffleDraw,
       'Index': index,
+      'emailPdfUrl': emailPdfUrl,
+      'Cancel': cancel,
+      'QrcScanTime': qrcScanTime,
     }.withoutNulls,
   );
 
@@ -228,7 +252,10 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.userStateStatus == e2?.userStateStatus &&
         e1?.colorCode == e2?.colorCode &&
         e1?.ruffleDraw == e2?.ruffleDraw &&
-        e1?.index == e2?.index;
+        e1?.index == e2?.index &&
+        e1?.emailPdfUrl == e2?.emailPdfUrl &&
+        e1?.cancel == e2?.cancel &&
+        e1?.qrcScanTime == e2?.qrcScanTime;
   }
 
   @override
@@ -250,7 +277,10 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.userStateStatus,
         e?.colorCode,
         e?.ruffleDraw,
-        e?.index
+        e?.index,
+        e?.emailPdfUrl,
+        e?.cancel,
+        e?.qrcScanTime
       ]);
 
   @override

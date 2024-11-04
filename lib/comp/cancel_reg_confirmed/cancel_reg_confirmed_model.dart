@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'empty_email_field_widget.dart' show EmptyEmailFieldWidget;
+import 'cancel_reg_confirmed_widget.dart' show CancelRegConfirmedWidget;
 import 'package:flutter/material.dart';
 
-class EmptyEmailFieldModel extends FlutterFlowModel<EmptyEmailFieldWidget> {
+class CancelRegConfirmedModel
+    extends FlutterFlowModel<CancelRegConfirmedWidget> {
   @override
   void initState(BuildContext context) {}
 

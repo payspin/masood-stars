@@ -45,6 +45,11 @@ class MasaoodDBRecord extends FirestoreRecord {
   String get department => _department ?? '';
   bool hasDepartment() => _department != null;
 
+  // "PrimaryEmail" field.
+  String? _primaryEmail;
+  String get primaryEmail => _primaryEmail ?? '';
+  bool hasPrimaryEmail() => _primaryEmail != null;
+
   void _initializeFields() {
     _name = snapshotData['Name'] as String?;
     _firstName = snapshotData['FirstName'] as String?;
@@ -52,6 +57,7 @@ class MasaoodDBRecord extends FirestoreRecord {
     _primarySmtpAddress = snapshotData['PrimarySmtpAddress'] as String?;
     _domain = snapshotData['Domain'] as String?;
     _department = snapshotData['Department'] as String?;
+    _primaryEmail = snapshotData['PrimaryEmail'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -95,6 +101,7 @@ Map<String, dynamic> createMasaoodDBRecordData({
   String? primarySmtpAddress,
   String? domain,
   String? department,
+  String? primaryEmail,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -104,6 +111,7 @@ Map<String, dynamic> createMasaoodDBRecordData({
       'PrimarySmtpAddress': primarySmtpAddress,
       'Domain': domain,
       'Department': department,
+      'PrimaryEmail': primaryEmail,
     }.withoutNulls,
   );
 
@@ -120,7 +128,8 @@ class MasaoodDBRecordDocumentEquality implements Equality<MasaoodDBRecord> {
         e1?.lastName == e2?.lastName &&
         e1?.primarySmtpAddress == e2?.primarySmtpAddress &&
         e1?.domain == e2?.domain &&
-        e1?.department == e2?.department;
+        e1?.department == e2?.department &&
+        e1?.primaryEmail == e2?.primaryEmail;
   }
 
   @override
@@ -130,7 +139,8 @@ class MasaoodDBRecordDocumentEquality implements Equality<MasaoodDBRecord> {
         e?.lastName,
         e?.primarySmtpAddress,
         e?.domain,
-        e?.department
+        e?.department,
+        e?.primaryEmail
       ]);
 
   @override

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Event APP</string>
+	<string>MasaoodStarsAwards</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Event APP</string>
+	<string>MasaoodStarsAwards</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 
@@ -37,10 +37,10 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>eventapp.com</string>
+        <string>masaoodstarsawards.com</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>eventapp</string>
+        <string>masaoodstarsawards</string>
         </array>
         </dict>
     </array>
@@ -55,7 +55,10 @@
 
 	<key>NSCameraUsageDescription</key>
     <string>In order to scan for barcodes and QR codes, this app requires permission to access the camera.</string>
-
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>We need access to your photo library to save and read the QrCode.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+    <string>We need access to your photo library to save the image.</string>
 
 
 	<key>UILaunchStoryboardName</key>

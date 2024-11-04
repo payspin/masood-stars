@@ -1,9 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/comp/tap_bar_mob_view/tap_bar_mob_view_widget.dart';
+import '/comp/ticket_event_manager/ticket_event_manager_widget.dart';
 import '/components/ruffle_draw_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'ruffle_draw_model.dart';
@@ -475,8 +475,24 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                               GoRouter.of(context)
                                                   .clearRedirectLocation();
 
-                                              context.goNamedAuth(
-                                                  'Login', context.mounted);
+                                              if (Navigator.of(context)
+                                                  .canPop()) {
+                                                context.pop();
+                                              }
+                                              context.pushNamedAuth(
+                                                'emailPage',
+                                                context.mounted,
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      const TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
+                                                  ),
+                                                },
+                                              );
                                             },
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -544,13 +560,8 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
-                                          child: CachedNetworkImage(
-                                            fadeInDuration:
-                                                const Duration(milliseconds: 500),
-                                            fadeOutDuration:
-                                                const Duration(milliseconds: 500),
-                                            imageUrl:
-                                                'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+                                          child: Image.asset(
+                                            'assets/images/stars_awards_logo_-_white.png',
                                             width: 44.0,
                                             height: 44.0,
                                             fit: BoxFit.cover,
@@ -568,7 +579,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Andrew D.',
+                                              currentUserDisplayName,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyLarge
@@ -582,7 +593,7 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                                   ),
                                             ),
                                             Text(
-                                              'admin@gmail.com',
+                                              currentUserEmail,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .labelMedium
@@ -602,17 +613,45 @@ class _RuffleDrawWidgetState extends State<RuffleDrawWidget> {
                                   ],
                                 ),
                               ),
-                              const Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Icon(
-                                      Icons.menu_open_rounded,
-                                      color: Color(0xFF606A85),
-                                      size: 24.0,
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await showModalBottomSheet(
+                                          isScrollControlled: true,
+                                          backgroundColor: Colors.transparent,
+                                          enableDrag: false,
+                                          context: context,
+                                          builder: (context) {
+                                            return GestureDetector(
+                                              onTap: () =>
+                                                  FocusScope.of(context)
+                                                      .unfocus(),
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child:
+                                                    const TicketEventManagerWidget(),
+                                              ),
+                                            );
+                                          },
+                                        ).then((value) => safeSetState(() {}));
+                                      },
+                                      child: const Icon(
+                                        Icons.menu_open_rounded,
+                                        color: Color(0xFF606A85),
+                                        size: 24.0,
+                                      ),
                                     ),
                                   ],
                                 ),

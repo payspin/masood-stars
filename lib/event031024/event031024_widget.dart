@@ -696,8 +696,8 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                 GoRouter.of(context)
                                                     .clearRedirectLocation();
 
-                                                context.goNamedAuth(
-                                                    'Login', context.mounted);
+                                                context.goNamedAuth('emailPage',
+                                                    context.mounted);
                                               },
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -3323,7 +3323,7 @@ class _Event031024WidgetState extends State<Event031024Widget>
                                                             .clearRedirectLocation();
 
                                                         context.goNamedAuth(
-                                                            'Login',
+                                                            'emailPage',
                                                             context.mounted);
                                                       },
                                                     ),

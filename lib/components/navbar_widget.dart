@@ -313,7 +313,7 @@ class _NavbarWidgetState extends State<NavbarWidget>
                       await authManager.signOut();
                       GoRouter.of(context).clearRedirectLocation();
 
-                      context.goNamedAuth('Login', context.mounted);
+                      context.goNamedAuth('emailPage', context.mounted);
                     },
                   ),
                 ),

@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom widgets
+import '/custom_code/actions/index.dart'; // Imports custom actions
 import '/flutter_flow/custom_functions.dart'; // Imports custom functions
 import 'package:flutter/material.dart';
 // Begin custom widget code
@@ -59,18 +60,6 @@ class _ScreenshotCustomState extends State<ScreenshotCustom> {
     );
   }
 
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      // Delay the capture to ensure full rendering
-      Future.delayed(
-          const Duration(milliseconds: 5000),
-          () => _captureAndUploadImage(
-              widget.email!, widget.userName!, widget.employeeNumber!));
-    });
-  }
-
   Future<String?> _captureAndUploadImage(
       String email, String userName, String employeeNumber) async {
     try {
@@ -100,10 +89,10 @@ class _ScreenshotCustomState extends State<ScreenshotCustom> {
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode(<String, String>{
-          'senderName': 'Masaood stars Event',
-          'subject': 'Welcome to Masaood Stars Event',
+          'senderName': 'Masaood Stars Awards',
+          'subject': 'Welcome to Masaood Stars Awards',
           'message':
-              'Thank you for signing up to attend our upcoming Masaood Stars Awards Ceremony & Union Day Celebrations,\n The event is taking place on Sunday 10 November 2024 starting 3pm,\n This event is for employees of Al Masaood only,\n no family or friends will be admitted, Please show your QR code at the door for entry.',
+              'Thank you for signing up to attend our upcoming Masaood Stars Ceremony & Union Day Celebration. The event is taking place on Sunday 10 November 2024 at ADNIC, Hall 11. Use Parking B. Doors open at 2:15pm and the show starts at 3:00pm sharp until 8:00pm. Food will be served at 5:00pm. This event is for Al Masaood Employees ONLY. Family & friends are will not be permitted. Please show your QR code at the door.',
           'email': email,
           'imageUrl': downloadUrl,
           'userName': userName,

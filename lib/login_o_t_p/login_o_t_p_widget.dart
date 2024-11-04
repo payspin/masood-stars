@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'login_o_t_p_model.dart';
 export 'login_o_t_p_model.dart';
 
@@ -168,6 +169,8 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -227,23 +230,7 @@ class _LoginOTPWidgetState extends State<LoginOTPWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         34.0, 0.0, 34.0, 5.0),
                                     child: FFButtonWidget(
-                                      onPressed: () async {
-                                        if (Navigator.of(context).canPop()) {
-                                          context.pop();
-                                        }
-                                        context.pushNamed(
-                                          'Registeration',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType:
-                                                  PageTransitionType.fade,
-                                              duration:
-                                                  Duration(milliseconds: 0),
-                                            ),
-                                          },
-                                        );
-                                      },
+                                      onPressed: () async {},
                                       text: 'REGISTER',
                                       options: FFButtonOptions(
                                         width: 600.0,

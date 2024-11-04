@@ -421,7 +421,8 @@ class _RuffleDrawComponentWidgetState extends State<RuffleDrawComponentWidget>
                                                     .email,
                                                 'Winner email',
                                               ).maybeHandleOverflow(
-                                                  maxChars: 50),
+                                                maxChars: 50,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .headlineMedium

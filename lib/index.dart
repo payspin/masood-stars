@@ -30,7 +30,13 @@ export '/event031024/event031024_widget.dart' show Event031024Widget;
 export '/pages/ruffle_draw_page/ruffle_draw_page_widget.dart'
     show RuffleDrawPageWidget;
 export '/pages/new_password/new_password_widget.dart' show NewPasswordWidget;
-export '/q_rcode_page_view/q_rcode_page_view_widget.dart'
+export '/pages/q_rcode_page_view/q_rcode_page_view_widget.dart'
     show QRcodePageViewWidget;
 export '/pages/email_page/email_page_widget.dart' show EmailPageWidget;
 export '/pages/addguest/addguest_widget.dart' show AddguestWidget;
+export '/pages/event_page_enlarged/event_page_enlarged_widget.dart'
+    show EventPageEnlargedWidget;
+export '/pages/ruffle_draw_page2/ruffle_draw_page2_widget.dart'
+    show RuffleDrawPage2Widget;
+export '/pages/q_rcode_page_view_copy/q_rcode_page_view_copy_widget.dart'
+    show QRcodePageViewCopyWidget;

@@ -1,3 +1,4 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
@@ -71,23 +72,56 @@ class _QRcodePageViewWidgetState extends State<QRcodePageViewWidget> {
                   _model.qrCodeOutputScanning,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Space Grotesk',
+                        fontSize: 16.0,
                         letterSpacing: 0.0,
                       ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(45.0, 100.0, 45.0, 0.0),
-                child: SizedBox(
-                  width: 300.0,
-                  height: 300.0,
-                  child: custom_widgets.QrSCannerWidget(
-                    width: 300.0,
-                    height: 300.0,
-                    onValueChanged: (selectedValue) async {
-                      _model.qrCodeOutputScanning = selectedValue;
-                      safeSetState(() {});
-                    },
-                  ),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                child: Text(
+                  _model.qrCodeOutputScanning,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Space Grotesk',
+                        fontSize: 16.0,
+                        letterSpacing: 0.0,
+                      ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                decoration: const BoxDecoration(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Align(
+                      alignment: const AlignmentDirectional(1.0, -1.0),
+                      child: FlutterFlowIconButton(
+                        borderRadius: 8.0,
+                        buttonSize: 40.0,
+                        icon: Icon(
+                          Icons.close_rounded,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          size: 24.0,
+                        ),
+                        onPressed: () async {
+                          context.pushNamed('QRcodePageView');
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: 300.0,
+                      height: 300.0,
+                      child: custom_widgets.QrSCannerWidget(
+                        width: 300.0,
+                        height: 300.0,
+                        onValueChanged: (selectedValue) async {
+                          _model.qrCodeOutputScanning = selectedValue;
+                          safeSetState(() {});
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

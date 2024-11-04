@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'registeration_widget.dart' show RegisterationWidget;
@@ -102,6 +103,8 @@ class RegisterationModel extends FlutterFlowModel<RegisterationWidget> {
 
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<UsersRecord>? o3;
+  // Stores action output result for [Backend Call - API (Send an email)] action in Button widget.
+  ApiCallResponse? apiResultz1r;
 
   @override
   void initState(BuildContext context) {

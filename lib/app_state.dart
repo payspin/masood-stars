@@ -123,6 +123,54 @@ class FFAppState extends ChangeNotifier {
     _totalRegistered = value;
   }
 
+  String _registerguestEmail = '';
+  String get registerguestEmail => _registerguestEmail;
+  set registerguestEmail(String value) {
+    _registerguestEmail = value;
+  }
+
+  String _HowManyRegisteredG = '';
+  String get HowManyRegisteredG => _HowManyRegisteredG;
+  set HowManyRegisteredG(String value) {
+    _HowManyRegisteredG = value;
+  }
+
+  String _employeeNum = '';
+  String get employeeNum => _employeeNum;
+  set employeeNum(String value) {
+    _employeeNum = value;
+  }
+
+  bool _searchisactive = true;
+  bool get searchisactive => _searchisactive;
+  set searchisactive(bool value) {
+    _searchisactive = value;
+  }
+
+  int _GuestTotalwoEventManager = 0;
+  int get GuestTotalwoEventManager => _GuestTotalwoEventManager;
+  set GuestTotalwoEventManager(int value) {
+    _GuestTotalwoEventManager = value;
+  }
+
+  int _totalNotarrived = 0;
+  int get totalNotarrived => _totalNotarrived;
+  set totalNotarrived(int value) {
+    _totalNotarrived = value;
+  }
+
+  String _ScanResult = 'QrCode Scan result';
+  String get ScanResult => _ScanResult;
+  set ScanResult(String value) {
+    _ScanResult = value;
+  }
+
+  String _QrCodeScanCheck = 'Arrived';
+  String get QrCodeScanCheck => _QrCodeScanCheck;
+  set QrCodeScanCheck(String value) {
+    _QrCodeScanCheck = value;
+  }
+
   final _winnersManager = StreamRequestManager<List<UsersRecord>>();
   Stream<List<UsersRecord>> winners({
     String? uniqueQueryKey,

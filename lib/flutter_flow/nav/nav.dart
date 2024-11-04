@@ -73,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const EventPageWidget() : const LoginWidget(),
+          appStateNotifier.loggedIn ? const EventPageWidget() : const EmailPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const EventPageWidget() : const LoginWidget(),
+              appStateNotifier.loggedIn ? const EventPageWidget() : const EmailPageWidget(),
         ),
         FFRoute(
           name: 'Settings',
@@ -227,6 +227,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'addguest',
           path: '/addguest',
           builder: (context, params) => const AddguestWidget(),
+        ),
+        FFRoute(
+          name: 'EventPageEnlarged',
+          path: '/eventpageEnlarged',
+          requireAuth: true,
+          builder: (context, params) => const EventPageEnlargedWidget(),
+        ),
+        FFRoute(
+          name: 'RuffleDrawPage2',
+          path: '/ruffleDrawPage2',
+          requireAuth: true,
+          builder: (context, params) => const RuffleDrawPage2Widget(),
+        ),
+        FFRoute(
+          name: 'QRcodePageViewCopy',
+          path: '/qRcodePageViewCopy',
+          requireAuth: true,
+          builder: (context, params) => const QRcodePageViewCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -397,7 +415,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/login';
+            return '/emailPage';
           }
           return null;
         },

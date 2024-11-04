@@ -268,7 +268,7 @@ class _DropdownWidgetState extends State<DropdownWidget> {
                         await authManager.signOut();
                         GoRouter.of(context).clearRedirectLocation();
 
-                        context.goNamedAuth('Login', context.mounted);
+                        context.goNamedAuth('emailPage', context.mounted);
                       },
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 150),
@@ -310,7 +310,7 @@ class _DropdownWidgetState extends State<DropdownWidget> {
                                           .clearRedirectLocation();
 
                                       context.goNamedAuth(
-                                          'Login', context.mounted);
+                                          'emailPage', context.mounted);
                                     },
                                     child: Text(
                                       'Log out',

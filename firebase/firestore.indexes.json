@@ -15,11 +15,25 @@
       ]
     },
     {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "email",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "display_name",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "masaoodDB",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "PrimarySmtpAddress",
+          "fieldPath": "PrimaryEmail",
           "order": "ASCENDING"
         },
         {

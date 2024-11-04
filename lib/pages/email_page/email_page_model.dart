@@ -16,34 +16,27 @@ class EmailPageModel extends FlutterFlowModel<EmailPageWidget> {
   TextEditingController? emailAddressGuestTextController;
   String? Function(BuildContext, String?)?
       emailAddressGuestTextControllerValidator;
-  String? _emailAddressGuestTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Write correct email';
-    }
-
-    if (val.length < 4) {
-      return 'Requires at least 4 characters.';
-    }
-
-    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'Invalid email address, please enter a valid email address';
-    }
-    return null;
-  }
-
+  // State field(s) for employeeNumTXT widget.
+  FocusNode? employeeNumTXTFocusNode;
+  TextEditingController? employeeNumTXTTextController;
+  String? Function(BuildContext, String?)?
+      employeeNumTXTTextControllerValidator;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<UsersRecord>? outputQueryUserDB;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<UsersRecord>? howManyRegistered;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<MasaoodDBRecord>? outputQueryDB;
 
   @override
-  void initState(BuildContext context) {
-    emailAddressGuestTextControllerValidator =
-        _emailAddressGuestTextControllerValidator;
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
     emailAddressGuestFocusNode?.dispose();
     emailAddressGuestTextController?.dispose();
+
+    employeeNumTXTFocusNode?.dispose();
+    employeeNumTXTTextController?.dispose();
   }
 }
